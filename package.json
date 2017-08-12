@@ -1,0 +1,28 @@
+{
+  "name": "mori.space",
+  "version": "1.0.0",
+  "description": "mori.space 메인페이지 입니다.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/small-sunshines/mori.space.git"
+  },
+  "author": "small-sunshines",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/small-sunshines/mori.space/issues"
+  },
+  "private": true,
+  "homepage": "https://github.com/small-sunshines/mori.space#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "jquery": "^3.2.1",
+    "log4js": "^2.3.3",
+    "materialize-css": "^0.100.1",
+    "morgan": "^1.8.2",
+    "pug": "^2.0.0-rc.3"
+  }
+}

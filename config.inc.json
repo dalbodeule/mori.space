@@ -1,0 +1,11 @@
+{
+    "dev": true,
+    "http_port": 80,
+    "trustproxy": false,
+    "redis": {
+        "host": "host",
+        "port": 6379,
+        "pass": "password",
+        "database": 0
+    }
+}

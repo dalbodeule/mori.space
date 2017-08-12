@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        block title
+        link(rel="stylesheet", href="/css/materialize.min.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    body
+        header
+            nav.blue.lighten-1
+                .nav-wrapper
+                    a.brand-logo(href="#") logo
+                    a.button-collapse(href="#", data-activates="mobile-menu")
+                        i.material-icons menu
+                    ul.right.hide-on-med-and-down
+                        li
+                            a(href="#") test
+                    ul.side-nav#mobile-menu
+                        li
+                            a(href="#") test
+        .container#contents(style="min-height: 400px")
+            block content
+
+        footer.page-footer.blue.lighten-1
+            .container
+                .row
+                    .col.l6.s12
+                        h5.white-text footer
+                        p.grey-text.text-lighten-4 footer test
+                    .col.l4.offset-12.s12
+                        h5.white-text Links
+                            ul
+                                li
+                                    a.grey-text.text-lighten-3(href="#") test
+            .footer-copyright
+                .container
+                    p © 2014 Copyright Text
+
+        script(src="/js/jquery.min.js")
+        script(src="js/materialize.min.js")
+        script(type="text/javascript").
+            $(document).ready(() => {
+                $(".button-collapse").sideNav();
+            });
