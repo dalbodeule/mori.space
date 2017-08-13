@@ -19,10 +19,15 @@
   "homepage": "https://github.com/small-sunshines/mori.space#readme",
   "dependencies": {
     "express": "^4.15.4",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "log4js": "^2.3.3",
+    "material-design-icons-iconfont": "^3.0.3",
     "materialize-css": "^0.100.1",
+    "moment": "^2.18.1",
     "morgan": "^1.8.2",
-    "pug": "^2.0.0-rc.3"
+    "node-waves": "^0.7.5",
+    "pug": "^2.0.0-rc.3",
+    "vue": "^2.4.2"
   }
 }

@@ -34,10 +34,13 @@ try {
     });
 
     // ststic setting
-    app.use('/css', express.static(__dirname + '/node_modules/materialize-css/dist/css')) //materialize css
-    app.use('/js', express.static(__dirname + '/node_modules/materialize-css/dist/js')) //materialize js
-    app.use('/fonts', express.static(__dirname + '/node_modules/materialize-css/dist/fonts')) //materialize fonts
-    app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')) //jquery js
+    app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist')) //materialize css
+    app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist')) //jquery js
+    app.use('/waves', express.static(__dirname + '/node_modules/node-waves/dist')) //jquery js
+    app.use('/material-design-icons-iconfont', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist')) //material-design-icons-iconfont
+    app.use('/vue', express.static(__dirname + '/node_modules/vue/dist')) //vue js
+    app.use('/moment', express.static(__dirname + '/node_modules/moment/min')) //moment js
+    app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome')) //moment js
     app.use(express.static(__dirname + '/src'));
 
     //view engine config
@@ -46,6 +49,9 @@ try {
 
     //main config
     app.use('/', require('./router/index.js'));
+
+    //minecraft config
+    app.use('/minecraft', require('./router/minecraft.js'));
 
     //error handler
     app.use((err, req, res, next) => {

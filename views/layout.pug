@@ -5,8 +5,20 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         block title
-        link(rel="stylesheet", href="/css/materialize.min.css")
-        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", href="/materialize/css/materialize.min.css")
+        link(rel="stylesheet", href="/waves/waves.min.css")
+        link(rel="stylesheet", href="/material-design-icons-iconfont/material-design-icons.css")
+        link(rel="stylesheet", href="/font-awesome/css/font-awesome.min.css")
+        style.
+            @media (max-width: 992px) {
+                #floatMenu {
+                    display: none;
+                }
+            }
+
+            [v-cloak] {
+                display: none;
+            }
     body
         header
             nav.blue.lighten-1
@@ -21,26 +33,35 @@ html
                         li
                             a(href="#") test
         .container#contents(style="min-height: 400px")
-            block content
-
+            .row
+                .col.s12.l1.push-l11#floatMenu
+                    block scrollspy
+                .col.s12.l11.pull-l1
+                    block content
         footer.page-footer.blue.lighten-1
             .container
                 .row
-                    .col.l6.s12
+                    .col.l6.s0
                         h5.white-text footer
                         p.grey-text.text-lighten-4 footer test
                     .col.l4.offset-12.s12
                         h5.white-text Links
-                            ul
-                                li
-                                    a.grey-text.text-lighten-3(href="#") test
+                        ul
+                            li
+                                a.grey-text.text-lighten-3(href="#") test
+                            li
+                                a.grey-text.text-lighten-3(href="#") test
+                            li
+                                a.grey-text.text-lighten-3(href="#") test
+                            li
+                                a.grey-text.text-lighten-3(href="#") test
             .footer-copyright
                 .container
                     p © 2014 Copyright Text
 
-        script(src="/js/jquery.min.js")
-        script(src="js/materialize.min.js")
-        script(type="text/javascript").
-            $(document).ready(() => {
-                $(".button-collapse").sideNav();
-            });
+        script(src="/jquery/jquery.min.js")
+        script(async, src="/materialize/js/materialize.min.js")
+        script(async, src="/waves/waves.min.js")
+        script(async, src="/vue/vue.min.js")
+        script(async, src="/js/init.js")
+        block scripts
