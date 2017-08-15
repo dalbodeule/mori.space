@@ -6,9 +6,9 @@ block content
     #search.section.scrollspy
         .card.z-depth-2
             .card-content
-                #mcnick(v-cloak)
-                    p.card-title 마인크래프트 닉네임 조회
-                    p 마인크래프트 닉네임으로 유저정보를 찾아볼 수 있습니다.
+                #mcuuid(v-cloak)
+                    p.card-title 마인크래프트 UUID 조회
+                    p 마인크래프트 UUID으로 유저정보를 찾아볼 수 있습니다.
                     br
                     div(v-if="status == 'searching'")
                         .center-align
@@ -28,13 +28,13 @@ block content
                             .card.red.lighten-2
                                 .card-content.white-text
                                     span.card-title Error
-                                    p 없는 유저입니다. 닉네임을 다시 확인해주세요.
-                    div(v-else-if="status == 'nick_null'")
+                                    p 없는 유저입니다. UUID를 다시 확인해주세요.
+                    div(v-else-if="status == 'uuid_null'")
                         .center-align
                             .card.red.lighten-2
                                 .card-content.white-text
                                     span.card-title Error
-                                    p 찾을 닉네임을 입력해주세요.
+                                    p 찾을 UUID를 입력해주세요.
                     div(v-else-if="status == 'error'")
                         .center-align
                             .card.red.lighten-2
@@ -66,8 +66,8 @@ block content
                     div(v-if="form == true")
                         form.row(v-on:submit.prevent="onSubmit")
                             .input-field.col.s9
-                                input#input(placeholder="닉네임", type="text", v-model="query_nick")
-                                label(for="nickname") 닉네임
+                                input#input(placeholder="UUID", type="text", v-model="query_uuid")
+                                label(for="uuid") UUID
                             .col.s3
                                 input.btn.btn-large.green.accent-3(type="submit" value="조회")
                 noscript
@@ -111,5 +111,5 @@ block scrollspy
                 a(href="#help") Help
 block scripts
     script(async, src="/js/scrollspy.js")
-    script(async, src="/js/mcnick.js")
+    script(async, src="/js/mcuuid.js")
     script(async, src="/moment/moment.min.js")

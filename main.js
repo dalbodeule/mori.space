@@ -1,6 +1,7 @@
 "use strict";
 
 const express = require('express'), app = express(),
+    onFinished = require('on-finished'),
     logger = require('log4js').getLogger(),
     config = require('./config.json');
 try {
@@ -27,7 +28,7 @@ try {
 
     //logger setup
     app.use((req, res, next) => {
-        res.on('finish', () => {
+        onFinished(res, (err, res) => {
             logger.info(req.protocol+' '+req.method+' '+res.statusCode+' '+req.ip.replace('::ffff:', '')+' '+req.originalUrl);
         });
         next();
@@ -36,7 +37,6 @@ try {
     // ststic setting
     app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist')) //materialize css
     app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist')) //jquery js
-    app.use('/waves', express.static(__dirname + '/node_modules/node-waves/dist')) //jquery js
     app.use('/material-design-icons-iconfont', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist')) //material-design-icons-iconfont
     app.use('/vue', express.static(__dirname + '/node_modules/vue/dist')) //vue js
     app.use('/moment', express.static(__dirname + '/node_modules/moment/min')) //moment js

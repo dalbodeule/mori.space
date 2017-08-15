@@ -6,13 +6,13 @@ const changeURL = (url) => {
     }
 }
 
-const mcnick = new Vue({
-    el: '#mcnick',
+const mcuuid = new Vue({
+    el: '#mcuuid',
     data: () => {
         return {
             status: null,
             form: true,
-            query_nick: null,
+            query_uuid: null,
             user: {
                 nick: null,
                 uuid: null,
@@ -24,73 +24,73 @@ const mcnick = new Vue({
     },
     methods: {
         onSubmit: () => {
-            if(mcnick.form == true) {
-                mcnick.form = false;
-                mcnick.user.nick = null;
-                mcnick.user.uuid = null;
-                mcnick.user.full_uuid = null;
-                mcnick.user.query_time = null;
-                mcnick.user.skin = null;
-                console.log(mcnick.query_nick);
+            if(mcuuid.form == true) {
+                mcuuid.form = false;
+                mcuuid.user.nick = null;
+                mcuuid.user.uuid = null;
+                mcuuid.user.full_uuid = null;
+                mcuuid.user.query_time = null;
+                mcuuid.user.skin = null;
+                console.log(mcuuid.query_uuid);
 
-                if(mcnick.query_nick) {
-                    changeURL('/minecraft/nick?'+mcnick.query_nick+document.location.hash);
+                if(mcuuid.query_uuid) {
+                    changeURL('/minecraft/uuid?'+mcuuid.query_uuid+document.location.hash);
                         try {
                             console.log('ajax start');
                             $.ajax({
-                                url: 'https://mcapi.mori.space/nick/'+mcnick.query_nick,
+                                url: 'https://mcapi.mori.space/uuid/'+mcuuid.query_uuid,
                                 dataType: 'jsonp',
                                 beforeSend: () => {
-                                    mcnick.status = 'searching';
-                                    mcnick.form = false;
+                                    mcuuid.status = 'searching';
+                                    mcuuid.form = false;
                                 },
                                 success: (data) => {
                                     if(data.error != true) {
                                         console.log('ajax success');
                                         console.log('user found');
                                         console.log(data);
-                                        mcnick.user.nick = data.nick;
-                                        mcnick.user.uuid = data.uuid;
-                                        mcnick.user.full_uuid = data.full_uuid;
-                                        mcnick.user.skin = 'https://crafatar.com/renders/body/'+mcnick.user.uuid+'?&default=MHF_Alex&overlay';
+                                        mcuuid.user.nick = data.nick;
+                                        mcuuid.user.uuid = data.uuid;
+                                        mcuuid.user.full_uuid = data.full_uuid;
+                                        mcuuid.user.skin = 'https://crafatar.com/renders/body/'+mcuuid.user.uuid+'?&default=MHF_Alex&overlay';
 
                                         let date = moment.unix(data.query_time);
 
-                                        mcnick.user.query_time = date.format('YYYY.MM.D. HH:mm:ss');
+                                        mcuuid.user.query_time = date.format('YYYY.MM.D. HH:mm:ss');
 
-                                        mcnick.status = true;
+                                        mcuuid.status = true;
                                     } else {
                                         console.log('ajax success');
                                         console.log('user not found');
-                                        mcnick.status = false;
+                                        mcuuid.status = false;
                                     }
                                 },
                                 error: (err) => {
                                     console.log('error');
-                                    mcnick.status = 'error';
+                                    mcuuid.status = 'error';
                                 },
                                 complete: () => {
-                                    mcnick.form = true;
+                                    mcuuid.form = true;
                                     setTimeout(()=> {
                                         $('#input').focus();
-                                        console.log('focused');
                                     }, 300);
+                                    
                                 }
                             });
                         } catch(e) {
                             console.log('error');
-                            mcnick.form = true;
-                            mcnick.status = 'error';
+                            mcuuid.form = true;
+                            mcuuid.status = 'error';
                             setTimeout(()=> {
                                 $('#input').focus();
                                 console.log('focused');
                             }, 300);
                         }
                 } else {
-                    changeURL('/minecraft/nick');
-                    console.log('query nick is null');
-                    mcnick.form = true;
-                    mcnick.status = 'nick_null';
+                    changeURL('/minecraft/uuid');
+                    console.log('query uuid is null');
+                    mcuuid.form = true;
+                    mcuuid.status = 'uuid_null';
                     setTimeout(()=> {
                         $('#input').focus();
                         console.log('focused');
@@ -101,14 +101,15 @@ const mcnick = new Vue({
     }
 });
 
+
 $(document).ready(() => {
     console.log('ready');
     let regex = window.location.href.match(/https?:\/\/.*\?([a-zA-Z0-9\_]+)/);
     if(regex != null) {
-        if(mcnick.form == true) {
+        if(mcuuid.form == true) {
             console.log(regex[1]);
-            mcnick.query_nick = regex[1];
-            mcnick.onSubmit();
+            mcuuid.query_uuid = regex[1];
+            mcuuid.onSubmit();
         }
     }
 });

@@ -10,4 +10,12 @@ router.get('/nick', (req, res) => {
     res.render('minecraft/nick.pug');
 });
 
+router.get('/uuid', (req, res) => {
+    res.render('minecraft/uuid.pug');
+});
+
+router.get('/api', (req, res) => {
+    res.render('minecraft/api.pug');
+});
+
 module.exports = router;

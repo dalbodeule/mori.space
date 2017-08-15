@@ -1,0 +1,47 @@
+extends ../layout.pug
+
+block title
+    title ON Demand - Minecraft - API
+block content
+    #info.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title 마인크래프트 유저조회 API
+                p ON Demand에서 운영하는 마인크래프트 유저조회 API 설명서입니다.
+                p API 사용에는 아무런 제약이 없습니다. API 사용은 모두가 가능합니다.
+                p
+                    | 본 API는 
+                    b JSONP
+                    |  를 지원합니다. 
+                    b URI?callback=(function name)
+                    |  으로 사용이 가능합니다.
+    #nick.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title Query Nickname
+                
+    #uuid.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title Query UUID
+
+    #history.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title Query History
+                
+block scrollspy
+    div
+        ul.section.table-of-contents
+            li
+                a(href="#info") Information
+            li
+                a(href="#nick") Query Nickname
+            li
+                a(href="#uuid") Query UUID
+            li
+                a(href="#history") Query History
+block scripts
+    script(async, src="/js/scrollspy.js")
+    script(async, src="/js/mcnick.js")
+    script(async, src="/moment/moment.min.js")

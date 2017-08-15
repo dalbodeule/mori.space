@@ -6,32 +6,41 @@ html
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         block title
         link(rel="stylesheet", href="/materialize/css/materialize.min.css")
-        link(rel="stylesheet", href="/waves/waves.min.css")
+        //link(rel="stylesheet", href="/waves/waves.min.css")
         link(rel="stylesheet", href="/material-design-icons-iconfont/material-design-icons.css")
         link(rel="stylesheet", href="/font-awesome/css/font-awesome.min.css")
-        style.
-            @media (max-width: 992px) {
-                #floatMenu {
-                    display: none;
-                }
-            }
-
-            [v-cloak] {
-                display: none;
-            }
+        link(rel="stylesheet", href="/css/init.css")
     body
         header
             nav.blue.lighten-1
                 .nav-wrapper
-                    a.brand-logo(href="#") logo
+                    a.brand-logo(href="/") ON Demand
                     a.button-collapse(href="#", data-activates="mobile-menu")
                         i.material-icons menu
                     ul.right.hide-on-med-and-down
                         li
                             a(href="#") test
+                        li
+                            a.dropdown-button(href="/minecraft", data-activates="minecraft-nav") 
+                                | Minecraft
+                                i.material-icons.right arrow_drop_down
+                            ul#minecraft-nav.dropdown-content
+                                li
+                                    a.blue-text.text-lighten-1(href="/minecraft/nick") 닉네임 조회
+                                li
+                                    a.blue-text.text-lighten-1(href="/minecraft/uuid") UUID 조회
                     ul.side-nav#mobile-menu
                         li
                             a(href="#") test
+                        li
+                            a.dropdown-button(href="/minecraft", data-activates="minecraft-side") 
+                                | Minecraft
+                                i.material-icons.right arrow_drop_down
+                            ul#minecraft-side.dropdown-content
+                                li
+                                    a(href="/minecraft/nick") 닉네임 조회
+                                li
+                                    a(href="/minecraft/uuid") UUID 조회
         .container#contents(style="min-height: 400px")
             .row
                 .col.s12.l1.push-l11#floatMenu
@@ -60,8 +69,8 @@ html
                     p © 2014 Copyright Text
 
         script(src="/jquery/jquery.min.js")
-        script(async, src="/materialize/js/materialize.min.js")
-        script(async, src="/waves/waves.min.js")
-        script(async, src="/vue/vue.min.js")
+        script(src="/vue/vue.min.js")
+        //script(src="/waves/waves.min.js")
+        script(async, src="/materialize/js/materialize.js")
         script(async, src="/js/init.js")
         block scripts

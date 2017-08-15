@@ -2,6 +2,10 @@ $(document).ready(() => {
     $(".button-collapse").sideNav({
         edge: 'left'
     });
+    $(".dropdown-button").dropdown({
+        hover: false,
+        belowOrigin: true
+    });
 
     let floatPosition = parseInt($('#floatMenu').css('top'));
 
@@ -13,7 +17,4 @@ $(document).ready(() => {
             top: newPosition
         }, 1000);
     }).scroll();
-
-    Waves.attach('.waves-effect');
-    Waves.init();
 });
