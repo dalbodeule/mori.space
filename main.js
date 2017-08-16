@@ -53,11 +53,19 @@ try {
     //minecraft config
     app.use('/minecraft', require('./router/minecraft.js'));
 
+    //HTTP 404 page setup
+    app.use((req, res, next) => {
+        res.status(404).jsonp({error: "HTTP Not Found"}).end();
+    });
+
     //error handler
     app.use((err, req, res, next) => {
+        console.log('test'); 
         if(err) {
             logger.error(err);
             res.status(500).jsonp({error: 'Something went wrong. Please contact the administrator.'}).end();
+        } else {
+            next();
         }
     });
 

@@ -12,7 +12,7 @@ html
         link(rel="stylesheet", href="/css/init.css")
     body
         header
-            nav.blue.lighten-1
+            nav.blue.lighten-1.theme
                 .nav-wrapper
                     a.brand-logo(href="/") ON Demand
                     a.button-collapse(href="#", data-activates="mobile-menu")
@@ -29,6 +29,10 @@ html
                                     a.blue-text.text-lighten-1(href="/minecraft/nick") 닉네임 조회
                                 li
                                     a.blue-text.text-lighten-1(href="/minecraft/uuid") UUID 조회
+                                li
+                                    a.blue-text.text-lighten-1(href="/minecraft/history") History 조회
+                                li
+                                    a.blue-text.text-lighten-1(href="/minecraft/api") API Docs
                     ul.side-nav#mobile-menu
                         li
                             a(href="#") test
@@ -47,12 +51,16 @@ html
                     block scrollspy
                 .col.s12.l11.pull-l1
                     block content
-        footer.page-footer.blue.lighten-1
+        footer.page-footer.blue.lighten-1.theme
             .container
                 .row
                     .col.l6.s0
-                        h5.white-text footer
-                        p.grey-text.text-lighten-4 footer test
+                        h5.white-text 사이트 안내
+                        p.grey-text.text-lighten-4 
+                            | 본 사이트는 Materialize 프레임워크를 사용하여 개발되었습니다.
+                            br
+                            | 본 사이트와 같은 레이아웃은 대부분 쉽게 개발이 가능합니다만,
+                            |  그대로 배끼는 것은 양심의 문제로 보겠습니다.
                     .col.l4.offset-12.s12
                         h5.white-text Links
                         ul
@@ -66,7 +74,7 @@ html
                                 a.grey-text.text-lighten-3(href="#") test
             .footer-copyright
                 .container
-                    p © 2014 Copyright Text
+                    p © 2017. 볕뉘(small-sunshine) all rights reserved.
 
         script(src="/jquery/jquery.min.js")
         script(src="/vue/vue.min.js")
