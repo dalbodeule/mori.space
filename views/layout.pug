@@ -48,7 +48,10 @@ html
         .container#contents(style="min-height: 400px")
             .row
                 .col.s12.l1.push-l11#floatMenu
-                    block scrollspy
+                    a(href="/donate")
+                        <!-- Donate icon by Icons8 -->
+                        img(src="https://png.icons8.com/donate/color/96", title="Donate", style="margin-top: 20px; margin-bottom: -20px")
+                    block scrollspy 
                 .col.s12.l11.pull-l1
                     block content
         footer.page-footer.blue.lighten-1.theme
@@ -59,8 +62,9 @@ html
                         p.grey-text.text-lighten-4 
                             | 본 사이트는 Materialize 프레임워크를 사용하여 개발되었습니다.
                             br
-                            | 본 사이트와 같은 레이아웃은 대부분 쉽게 개발이 가능합니다만,
-                            |  그대로 배끼는 것은 양심의 문제로 보겠습니다.
+                            | 본 사이트의 Donate icon은 
+                            a(href="https://icons8.com") icons8.com
+                            | 에서 제공받고 있습니다.
                     .col.l4.offset-12.s12
                         h5.white-text Links
                         ul
