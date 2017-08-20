@@ -3,7 +3,8 @@
 const express = require('express'), app = express(),
     onFinished = require('on-finished'),
     logger = require('log4js').getLogger(),
-    config = require('./config.json');
+    config = require('./config.json'),
+    bodyParser = require('body-parser');
 try {
     if(config.dev == false) {
         logger.level = 'INFO';
@@ -20,6 +21,9 @@ try {
     app.disable('x-powered-by');
     app.set('trust proxy', config.trustproxy);
     logger.info('trust proxy: '+config.trustproxy);
+
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json());
 
     //health moniter
     app.all('/health', (req, res) => {

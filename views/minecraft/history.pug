@@ -1,14 +1,14 @@
 extends ../layout.pug
 
 block title
-    title ON Demand - Minecraft - UUID Query
+    title ON Demand - Minecraft - History Query
 block content
     #search.section.scrollspy
         .card.z-depth-2
             .card-content
-                #mcuuid(v-cloak)
-                    p.card-title 마인크래프트 UUID 조회
-                    p 마인크래프트 UUID으로 유저정보를 찾아볼 수 있습니다.
+                #mchistory(v-cloak)
+                    p.card-title 마인크래프트 닉네임 변경이력 조회
+                    p 마인크래프트 UUID으로 닉네임 변경기록을 찾아볼 수 있습니다.
                     br
                     div(v-if="status == 'searching'")
                         .center-align
@@ -28,7 +28,7 @@ block content
                             .card.red.lighten-2
                                 .card-content.white-text
                                     span.card-title Error
-                                    p 없는 유저입니다. UUID를 다시 확인해주세요.
+                                    p 없는 유저입니다. 닉네임을 다시 확인해주세요.
                     div(v-else-if="status == 'uuid_null'")
                         .center-align
                             .card.red.lighten-2
@@ -52,17 +52,23 @@ block content
                                     img(v-bind:src='user.skin')
                                 table.col.s12.m6.bordered
                                     tr
-                                        th 닉네임
-                                        td {{user.nick}}
-                                    tr
                                         th UUID
                                         td {{user.uuid}}
                                     tr
-                                        th Full UUID
-                                        td {{user.full_uuid}}
-                                    tr
                                         th 검색 시간
                                         td {{user.query_time}}
+                                table.col.s12.m6.bordered
+                                    thead
+                                        tr
+                                            th #
+                                            th 닉네임
+                                            th 변경 시점
+                                    tbody
+                                        tr(v-for="(item, index) in user.history")
+                                            td {{index}}
+                                            td {{item.name}}
+                                            td(v-if="typeof item.changedToAt == 'number'") {{moment.unix(item.changedToAt / 1000).format('YYYY.MM.D. HH:mm:ss')}}
+                                            td(v-else) #
                     div(v-if="form == true")
                         form.row(v-on:submit.prevent="onSubmit")
                             .input-field.col.s9
@@ -110,5 +116,5 @@ block scrollspy
             li
                 a(href="#help") Help
 block scripts
-    script(async, src="/js/mcuuid.js")
+    script(async, src="/js/mchistory.js")
     script(async, src="/moment/moment.min.js")

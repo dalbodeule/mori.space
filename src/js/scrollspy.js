@@ -1,3 +1,5 @@
 $(document).ready(() => {
-    $('.scrollspy').scrollSpy();
+    $(document).ready(() => {
+        $('.scrollspy').scrollSpy();
+    });
 });

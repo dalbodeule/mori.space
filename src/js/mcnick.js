@@ -34,7 +34,7 @@ const mcnick = new Vue({
                 console.log(mcnick.query_nick);
 
                 if(mcnick.query_nick) {
-                    changeURL('/minecraft/nick?'+mcnick.query_nick+document.location.hash);
+                    changeURL('/minecraft/nick?'+encodeURIComponent(mcnick.query_nick+document.location.hash));
                         try {
                             console.log('ajax start');
                             $.ajax({
@@ -103,7 +103,7 @@ const mcnick = new Vue({
 
 $(document).ready(() => {
     console.log('ready');
-    let regex = window.location.href.match(/https?:\/\/.*\?([a-zA-Z0-9\_]+)/);
+    let regex = decodeURIComponent(window.location.href).match(/https?:\/\/.*\?([a-zA-Z0-9\_\-]+)/);
     if(regex != null) {
         if(mcnick.form == true) {
             console.log(regex[1]);

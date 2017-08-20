@@ -5,7 +5,24 @@
         display: none;
     }
 }
+@media (min-width: 992px) {
+    nav div.nav-wrapper a.brand-logo {
+        margin-left: 10px !important;
+    }
+}
 
 [v-cloak] {
     display: none;
+}
+
+header nav {
+    margin-bottom: 20px;
+}
+
+div.ad p {
+    font-size: 0.8em; text-align: right; margin: 0;
+}
+
+div#sidebox {
+    position: absolute;
 }

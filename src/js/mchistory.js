@@ -6,8 +6,8 @@ const changeURL = (url) => {
     }
 }
 
-const mcuuid = new Vue({
-    el: '#mcuuid',
+const mchistory = new Vue({
+    el: '#mchistory',
     data: () => {
         return {
             status: null,
@@ -18,79 +18,82 @@ const mcuuid = new Vue({
                 uuid: null,
                 full_uuid: null,
                 query_time: null,
-                skin: null
+                skin: null,
+                history: null
             }
         }
     },
     methods: {
         onSubmit: () => {
-            if(mcuuid.form == true) {
-                mcuuid.form = false;
-                mcuuid.user.nick = null;
-                mcuuid.user.uuid = null;
-                mcuuid.user.full_uuid = null;
-                mcuuid.user.query_time = null;
-                mcuuid.user.skin = null;
-                console.log(mcuuid.query_uuid);
+            if(mchistory.form == true) {
+                mchistory.form = false;
+                mchistory.user.nick = null;
+                mchistory.user.uuid = null;
+                mchistory.user.full_uuid = null;
+                mchistory.user.query_time = null;
+                mchistory.user.skin = null;
+                mchistory.user.history = null;
+                console.log(mchistory.query_uuid);
 
-                if(mcuuid.query_uuid) {
-                    changeURL('/minecraft/uuid?'+encodeURIComponent(mcuuid.query_uuid+document.location.hash));
+                if(mchistory.query_uuid) {
+                    changeURL('/minecraft/history?'+encodeURIComponent(mchistory.query_uuid+document.location.hash));
                         try {
                             console.log('ajax start');
                             $.ajax({
-                                url: 'https://mcapi.mori.space/uuid/'+mcuuid.query_uuid,
+                                url: 'https://mcapi.mori.space/history/'+mchistory.query_uuid,
                                 dataType: 'jsonp',
                                 beforeSend: () => {
-                                    mcuuid.status = 'searching';
-                                    mcuuid.form = false;
+                                    mchistory.status = 'searching';
+                                    mchistory.form = false;
                                 },
                                 success: (data) => {
                                     if(data.error != true) {
                                         console.log('ajax success');
                                         console.log('user found');
                                         console.log(data);
-                                        mcuuid.user.nick = data.nick;
-                                        mcuuid.user.uuid = data.uuid;
-                                        mcuuid.user.full_uuid = data.full_uuid;
-                                        mcuuid.user.skin = 'https://crafatar.com/renders/body/'+mcuuid.user.uuid+'?&default=MHF_Alex&overlay';
+                                        mchistory.user.nick = data.history[data.history.length - 1].name;
+                                        mchistory.user.uuid = data.uuid;
+                                        mchistory.user.full_uuid = data.full_uuid;
+                                        mchistory.user.history = data.history;
+                                        mchistory.user.skin = 'https://crafatar.com/renders/body/'+mchistory.user.uuid+'?&default=MHF_Alex&overlay';
 
                                         let date = moment.unix(data.query_time);
 
-                                        mcuuid.user.query_time = date.format('YYYY.MM.D. HH:mm:ss');
+                                        mchistory.user.query_time = date.format('YYYY.MM.D. HH:mm:ss');
 
-                                        mcuuid.status = true;
+                                        mchistory.status = true;
                                     } else {
                                         console.log('ajax success');
                                         console.log('user not found');
-                                        mcuuid.status = false;
+                                        mchistory.status = false;
                                     }
                                 },
                                 error: (err) => {
                                     console.log('error');
-                                    mcuuid.status = 'error';
+                                    mchistory.status = 'error';
                                 },
                                 complete: () => {
-                                    mcuuid.form = true;
+                                    mchistory.form = true;
                                     setTimeout(()=> {
                                         $('#input').focus();
+                                        console.log('focused');
                                     }, 300);
-                                    
                                 }
                             });
                         } catch(e) {
                             console.log('error');
-                            mcuuid.form = true;
-                            mcuuid.status = 'error';
+                            mchistory.form = true;
+                            mchistory.status = 'error';
                             setTimeout(()=> {
                                 $('#input').focus();
                                 console.log('focused');
                             }, 300);
                         }
                 } else {
-                    changeURL('/minecraft/uuid');
+                    changeURL('/minecraft/history');
                     console.log('query uuid is null');
-                    mcuuid.form = true;
-                    mcuuid.status = 'uuid_null';
+                    mchistory.form = true;
+                    mchistory.status = 'uuid_null';
                     setTimeout(()=> {
                         $('#input').focus();
                         console.log('focused');
@@ -101,15 +104,14 @@ const mcuuid = new Vue({
     }
 });
 
-
 $(document).ready(() => {
     console.log('ready');
     let regex = decodeURIComponent(window.location.href).match(/https?:\/\/.*\?([a-zA-Z0-9\_\-]+)/);
     if(regex != null) {
-        if(mcuuid.form == true) {
+        if(mchistory.form == true) {
             console.log(regex[1]);
-            mcuuid.query_uuid = regex[1];
-            mcuuid.onSubmit();
+            mchistory.query_uuid = regex[1];
+            mchistory.onSubmit();
         }
     }
 });

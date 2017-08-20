@@ -14,6 +14,10 @@ router.get('/uuid', (req, res) => {
     res.render('minecraft/uuid.pug');
 });
 
+router.get('/history', (req, res) => {
+    res.render('minecraft/history.pug');
+});
+
 router.get('/api', (req, res) => {
     res.render('minecraft/api.pug');
 });

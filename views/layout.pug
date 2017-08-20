@@ -58,20 +58,28 @@ html
                                     a(href="/minecraft/history") History 조회
                                 li
                                     a(href="/minecraft/api") API Docs
-        .container#contents(style="min-height: 400px")
-            <!-- script(async, src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-            <!-- On Demand-main -->
-            <!-- ins.adsbygoogle(style="display:block", data-ad-client="ca-pub-2810659463174293", data-ad-slot="4386636415", data-ad-format="auto")
-            <!-- script.
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            -->.row
-                .col.s12.l1.push-l11#floatMenu
-                    a(href="/donate")
-                        <!-- Donate icon by Icons8 -->
-                        img(src="https://png.icons8.com/donate/color/96", title="Donate", style="margin-top: 20px; margin-bottom: -20px")
-                    block scrollspy 
-                .col.s12.l11.pull-l1
+        .container#contents
+            .ad
+                <!-- On Demand-main -->
+                ins.adsbygoogle(style="display:block", data-ad-client="ca-pub-2810659463174293", data-ad-slot="4386636415", data-ad-format="auto")
+                script.
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                p google AD
+            .row
+                .col.s12.l1.push-l11
+                    #sidebox
+                        a(href="/donate")
+                            <!-- Donate icon by Icons8 -->
+                            img(src="https://png.icons8.com/donate/color/96", title="Donate", style="margin-top: 20px; margin-bottom: -20px")
+                        block scrollspy
+                .col.s12.l11.pull-l1(style="min-height: 400px;")
                     block content
+            .ad(style="margin-top: -20px")
+                <!-- On Demand-footer -->
+                ins.adsbygoogle(style="display:block", data-ad-client="ca-pub-2810659463174293", data-ad-slot="9403901631", data-ad-format="auto")
+                script.
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                p google AD
         footer.page-footer.blue.lighten-1.theme
             .container
                 .row
@@ -97,7 +105,10 @@ html
             .footer-copyright
                 .container
                     p © 2017. 볕뉘(small-sunshine) all rights reserved.
-
         script(async, src="/materialize/js/materialize.js")
         script(async, src="/js/init.js")
+        script(async, src="/js/sidenav.js")
+        script(async, src="/js/dropdown.js")
+        script(async, src="/js/sidemenu.js")
+        script(async, src="/js/scrollspy.js")
         block scripts
