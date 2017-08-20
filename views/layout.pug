@@ -42,6 +42,13 @@ html
                                     a.blue-text.text-lighten-1(href="/minecraft/history") History 조회
                                 li
                                     a.blue-text.text-lighten-1(href="/minecraft/api") API Docs
+                        li
+                            a.dropdown-button(href="/dev", data-activates="dev-nav") 
+                                | Dev
+                                i.material-icons.right arrow_drop_down
+                            ul#dev-nav.dropdown-content
+                                li
+                                    a(href="/dev/gjmoribot") GJMoriBot
                     ul.side-nav#mobile-menu
                         li
                             a(href="#") test
@@ -58,6 +65,13 @@ html
                                     a(href="/minecraft/history") History 조회
                                 li
                                     a(href="/minecraft/api") API Docs
+                        li
+                            a.dropdown-button(href="/dev", data-activates="dev-side") 
+                                | Dev
+                                i.material-icons.right arrow_drop_down
+                            ul#dev-side.dropdown-content
+                                li
+                                    a(href="/dev/gjmoribot") GJMoriBot
         .container#contents
             .ad
                 <!-- On Demand-main -->

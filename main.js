@@ -56,6 +56,7 @@ try {
 
     //minecraft config
     app.use('/minecraft', require('./router/minecraft.js'));
+    app.use('/dev', require('./router/dev.js'));
 
     //HTTP 404 page setup
     app.use((req, res, next) => {

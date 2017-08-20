@@ -1,0 +1,19 @@
+extends ../layout.pug
+
+block title
+    title Dev - On Demand
+block content
+    #gjmoribot.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title GJMoriBot
+                span
+                | Telegram GJMoriBot 소개페이지로 이동합니다.
+                br
+                br
+                a.btn.light-blue.lighten-1(href="/dev/gjmoribot") 이동하기
+block scrollspy
+    div
+        ul.section.table-of-contents
+            li
+                a(href="#gjmoribot") GJMoriBot
