@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @media (max-width: 992px) {
-    #floatMenu {
+    div.sidebox {
         display: none;
     }
 }
@@ -23,6 +23,6 @@ div.ad p {
     font-size: 0.8em; text-align: right; margin: 0;
 }
 
-div#sidebox {
+div.sidebox {
     position: absolute;
 }

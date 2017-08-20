@@ -67,7 +67,7 @@ html
                 p google AD
             .row
                 .col.s12.l1.push-l11
-                    #sidebox
+                    .sidebox
                         a(href="/donate")
                             <!-- Donate icon by Icons8 -->
                             img(src="https://png.icons8.com/donate/color/96", title="Donate", style="margin-top: 20px; margin-bottom: -20px")
@@ -89,8 +89,8 @@ html
                             | 본 사이트는 Materialize 프레임워크를 사용하여 개발되었습니다.
                             br
                             | 본 사이트의 Donate icon은 
-                            a(href="https://icons8.com") icons8.com
-                            | 에서 제공받고 있습니다.
+                            a.white-text(href="https://icons8.com") icons8.com
+                            |  에서 제공받고 있습니다.
                     .col.l4.offset-12.s12
                         h5.white-text Links
                         ul
@@ -109,6 +109,6 @@ html
         script(async, src="/js/init.js")
         script(async, src="/js/sidenav.js")
         script(async, src="/js/dropdown.js")
-        script(async, src="/js/sidemenu.js")
+        script(async, src="/js/jquery.sticky-kit.min.js")
         script(async, src="/js/scrollspy.js")
         block scripts

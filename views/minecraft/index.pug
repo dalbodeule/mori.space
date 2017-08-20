@@ -1,6 +1,52 @@
 extends ../layout.pug
 
 block title
-    title index.pug
+    title Minecraft - On Demand
 block content
-    p 컨텐츠 테스트
+    #nick.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title 닉네임 조회
+                span
+                | 마인크래프트 닉네임으로 유저의 정보를 조회할 수 있습니다.
+                br
+                br
+                a.btn.light-blue.lighten-1(href="/minecraft/nick") 이동하기
+    #uuid.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title UUID 조회
+                span
+                | 마인크래프트 UUID로 유저의 정보를 조회할 수 있습니다.
+                br
+                br
+                a.btn.light-blue.lighten-1(href="/minecraft/uuid") 이동하기
+    #history.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title 닉네임 변경이력 조회
+                span
+                | 마인크래프트 UUID로 유저가 사용했던 닉네임을 조회할 수 있습니다.
+                br
+                br
+                a.btn.light-blue.lighten-1(href="/minecraft/history") 이동하기
+    #api.section.scrollspy
+        .card.z-depth-2
+            .card-content
+                p.card-title API Docs
+                span
+                | 마인크래프트 유저정보 조회 API 상세 설명서입니다.
+                br
+                br
+                a.btn.light-blue.lighten-1(href="/minecraft/api") 이동하기
+block scrollspy
+    div
+        ul.section.table-of-contents
+            li
+                a(href="#nick") Nick 조회
+            li
+                a(href="#uuid") UUID 조회
+            li
+                a(href="#history") History 조회
+            li
+                a(href="#api") API Docs

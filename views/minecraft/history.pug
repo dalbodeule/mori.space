@@ -1,7 +1,7 @@
 extends ../layout.pug
 
 block title
-    title ON Demand - Minecraft - History Query
+    title History Query - Minecraft - ON Demand
 block content
     #search.section.scrollspy
         .card.z-depth-2
@@ -49,7 +49,7 @@ block content
                                     p 검색에 성공했습니다.
                             .row
                                 .col.s12.m4
-                                    img(v-bind:src='user.skin')
+                                    img(v-bind:src="'https://crafatar.com/renders/body/'+user.uuid+'?&default=MHF_Alex&overlay'")
                                 table.col.s12.m6.bordered
                                     tr
                                         th UUID
@@ -75,7 +75,7 @@ block content
                                 input#input(placeholder="UUID", type="text", v-model="query_uuid")
                                 label(for="uuid") UUID
                             .col.s3
-                                input.btn.btn-large.green.accent-3(type="submit" value="조회")
+                                input.btn.btn-large.green.darken-2(type="submit" value="조회")
                 noscript
                     | 본 페이지는 Javascript를 기반으로 작동됩니다.
                     br
@@ -87,8 +87,9 @@ block content
                 p.card-title 정보
                 p 유저 정보는 자체 API서버에서 받아오며, 5분 캐시가 적용됩니다.
                 p
-                | 자체 API서버는 사용을 원하신다면 잠시만 기다려주세요.
-                | 아직 준비중입니다.
+                | 자체 API서버는 사용을 원하신다면 
+                a(href="/minecraft/api") API Docs
+                |  를 확인 부탁드립니다.
                 p
                 |  유저 스킨은 
                 a(href="https://crafatar.com", target="_blank") Crafatar

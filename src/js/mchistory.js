@@ -18,7 +18,6 @@ const mchistory = new Vue({
                 uuid: null,
                 full_uuid: null,
                 query_time: null,
-                skin: null,
                 history: null
             }
         }
@@ -55,7 +54,6 @@ const mchistory = new Vue({
                                         mchistory.user.uuid = data.uuid;
                                         mchistory.user.full_uuid = data.full_uuid;
                                         mchistory.user.history = data.history;
-                                        mchistory.user.skin = 'https://crafatar.com/renders/body/'+mchistory.user.uuid+'?&default=MHF_Alex&overlay';
 
                                         let date = moment.unix(data.query_time);
 

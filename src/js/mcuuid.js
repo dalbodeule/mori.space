@@ -30,7 +30,6 @@ const mcuuid = new Vue({
                 mcuuid.user.uuid = null;
                 mcuuid.user.full_uuid = null;
                 mcuuid.user.query_time = null;
-                mcuuid.user.skin = null;
                 console.log(mcuuid.query_uuid);
 
                 if(mcuuid.query_uuid) {
@@ -52,7 +51,6 @@ const mcuuid = new Vue({
                                         mcuuid.user.nick = data.nick;
                                         mcuuid.user.uuid = data.uuid;
                                         mcuuid.user.full_uuid = data.full_uuid;
-                                        mcuuid.user.skin = 'https://crafatar.com/renders/body/'+mcuuid.user.uuid+'?&default=MHF_Alex&overlay';
 
                                         let date = moment.unix(data.query_time);
 
