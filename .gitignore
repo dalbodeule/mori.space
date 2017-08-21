@@ -62,3 +62,7 @@ package-lock.json
 
 # config.json
 config.json
+
+src/css
+src/js
+lib/js/*.babel.js
