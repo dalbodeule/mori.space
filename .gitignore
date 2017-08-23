@@ -59,7 +59,6 @@ typings/
 
 # package-lock.json
 package-lock.json
-yarn.lock
 
 # config.json
 config.json

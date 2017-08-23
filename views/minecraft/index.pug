@@ -3,7 +3,7 @@ extends ../layout.pug
 block title
     title Minecraft - On Demand
 block content
-    #nick.section.scrollspy(style="min-height: 200px")
+    #nick.section.scrollspy
         .card.z-depth-2
             .card-content
                 p.card-title 닉네임 조회
@@ -12,7 +12,7 @@ block content
                 br
                 br
                 a.btn.light-blue.lighten-1(href="/minecraft/nick") 이동하기
-    #uuid.section.scrollspy(style="min-height: 200px")
+    #uuid.section.scrollspy
         .card.z-depth-2
             .card-content
                 p.card-title UUID 조회
@@ -21,7 +21,7 @@ block content
                 br
                 br
                 a.btn.light-blue.lighten-1(href="/minecraft/uuid") 이동하기
-    #history.section.scrollspy(style="min-height: 200px")
+    #history.section.scrollspy
         .card.z-depth-2
             .card-content
                 p.card-title 닉네임 변경이력 조회
@@ -30,7 +30,7 @@ block content
                 br
                 br
                 a.btn.light-blue.lighten-1(href="/minecraft/history") 이동하기
-    #api.section.scrollspy(style="min-height: 200px")
+    #api.section.scrollspy
         .card.z-depth-2
             .card-content
                 p.card-title API Docs
