@@ -28,12 +28,14 @@ html
                         i.material-icons menu
                     ul.right.hide-on-med-and-down
                         li
-                            a(href="#") test
+                            a(href="/profile") Profile
                         li
                             a.dropdown-button(href="/minecraft", data-activates="minecraft-nav") 
                                 | Minecraft
                                 i.material-icons.right arrow_drop_down
                             ul#minecraft-nav.dropdown-content
+                                li
+                                    a.blue-text.text-lighten-1(href="/minecraft") Index
                                 li
                                     a.blue-text.text-lighten-1(href="/minecraft/nick") 닉네임 조회
                                 li
@@ -48,15 +50,19 @@ html
                                 i.material-icons.right arrow_drop_down
                             ul#dev-nav.dropdown-content
                                 li
-                                    a(href="/dev/gjmoribot") GJMoriBot
+                                    a.blue-text.text-lighten-1(href="/dev") Index
+                                li
+                                    a.blue-text.text-lighten-1(href="/dev/gjmoribot") GJMoriBot
                     ul.side-nav#mobile-menu
                         li
-                            a(href="#") test
+                            a(href="/profile") Profile
                         li
                             a.dropdown-button(href="/minecraft", data-activates="minecraft-side") 
                                 | Minecraft
                                 i.material-icons.right arrow_drop_down
                             ul#minecraft-side.dropdown-content
+                                li
+                                    a(href="/minecraft") Index
                                 li
                                     a(href="/minecraft/nick") 닉네임 조회
                                 li
@@ -70,6 +76,8 @@ html
                                 | Dev
                                 i.material-icons.right arrow_drop_down
                             ul#dev-side.dropdown-content
+                                li
+                                    a(href="/dev") Index
                                 li
                                     a(href="/dev/gjmoribot") GJMoriBot
         .container#contents
@@ -109,13 +117,11 @@ html
                         h5.white-text Links
                         ul
                             li
-                                a.grey-text.text-lighten-3(href="#") test
+                                a.grey-text.text-lighten-3(href="/profile") Profile
                             li
-                                a.grey-text.text-lighten-3(href="#") test
+                                a.grey-text.text-lighten-3(href="/minecraft") Minecraft
                             li
-                                a.grey-text.text-lighten-3(href="#") test
-                            li
-                                a.grey-text.text-lighten-3(href="#") test
+                                a.grey-text.text-lighten-3(href="/dev") Dev
             .footer-copyright
                 .container
                     p © 2017. 볕뉘(small-sunshine) all rights reserved.
