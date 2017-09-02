@@ -4,7 +4,11 @@ const express = require('express'), app = express(),
     onFinished = require('on-finished'),
     logger = require('log4js').getLogger(),
     config = require('./config.json'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    i18n = require('i18n-express'),
+    geolang = require('geolang-express');
 try {
     if(config.dev == false) {
         logger.level = 'INFO';
@@ -24,6 +28,23 @@ try {
 
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
+    app.use(cookieParser());
+    app.use(session({
+        secret: 'secret',
+        resave: false,
+        saveUninitialized: true
+    }));
+
+    //lang setting
+    app.use(geolang({
+        siteLangs: ['ko', 'en'],
+        defaultCountry: 'KR',
+    }));
+    app.use(i18n({
+        translationsPath: __dirname+'/langs',
+        siteLangs: ['ko', 'en'],
+        defaultLang: 'ko'
+    }));
 
     //health moniter
     app.all('/health', (req, res) => {
