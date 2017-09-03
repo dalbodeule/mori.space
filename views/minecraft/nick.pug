@@ -27,13 +27,13 @@ block content
                         .center-align
                             .card.red.lighten-2
                                 .card-content.white-text
-                                    span.card-title #{texts.minecraft.not_exist}
+                                    span.card-title #{texts.minecraft.error.title}
                                     p #{texts.minecraft.error.not_exist}
                     div(v-else-if="status == 'nick_null'")
                         .center-align
                             .card.red.lighten-2
                                 .card-content.white-text
-                                    span.card-title Error
+                                    span.card-title #{texts.minecraft.error.title}
                                     p #{texts.minecraft.error.null}
                     div(v-else-if="status == 'error'")
                         .center-align
@@ -75,12 +75,12 @@ block content
         .card.z-depth-2
             .card-content
                 p.card-title #{texts.minecraft.information.title}
-                p !{texts.minecraft.information.content}
+                div !{texts.minecraft.information.content}
     #help.section.scrollspy
         .card.z-depth-2
             .card-content
                 p.card-title #{texts.minecraft.help.title}
-                p !{texts.minecraft.help.content}
+                div !{texts.minecraft.help.content}
 block scrollspy
     div
         ul.section.table-of-contents

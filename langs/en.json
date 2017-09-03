@@ -8,7 +8,25 @@
                 "info": "Information",
                 "help": "Help"
             }
-        }, "nickname": "Nickname",
+        }, "uuid": {
+            "title": "View Minecraft UUID",
+            "description": "You can find user information with the Minecraft UUID.",
+            "menu": {
+                "search": "Search",
+                "info": "Information",
+                "help": "Help"
+            }
+        }, "history": {
+            "title": "View the history of the change of the nickname change",
+            "description": "You can find your nickname change history with the Minecraft UUID.",
+            "time":"Change point",
+            "menu": {
+                "search": "Search",
+                "info": "Information",
+                "help": "Help"
+            }
+        }
+        , "nickname": "Nickname",
         "search": "Search",
         "wait": "I am looking for a user. Please wait.",
         "error": {
