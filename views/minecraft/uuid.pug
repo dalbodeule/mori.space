@@ -6,7 +6,7 @@ block content
     #search.section.scrollspy
         .card.z-depth-2
             .card-content
-                #mcuuid(v-cloak)
+                #app(v-cloak)
                     p.card-title 마인크래프트 UUID 조회
                     p 마인크래프트 UUID으로 유저정보를 찾아볼 수 있습니다.
                     br
@@ -66,7 +66,7 @@ block content
                     div(v-if="form == true")
                         form.row(v-on:submit.prevent="onSubmit")
                             .input-field.col.s9
-                                input#input(placeholder="UUID", type="text", v-model="query_uuid")
+                                input#input(placeholder="UUID", type="text", v-model="query")
                                 label(for="uuid") UUID
                             .col.s3
                                 input.btn.btn-large.green.darken-2(type="submit" value="조회")
@@ -111,5 +111,6 @@ block scrollspy
             li
                 a(href="#help") Help
 block scripts
-    script(async, src="/js/mcuuid.min.js")
+    script(async, src="/url.min.js")
     script(async, src="/moment/moment.min.js")
+    script(async, src="/js/mcuuid.min.js")

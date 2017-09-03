@@ -6,7 +6,7 @@ block content
     #search.section.scrollspy
         .card.z-depth-2
             .card-content
-                #mcnick(v-cloak)
+                #app(v-cloak)
                     p.card-title #{texts.minecraft.nick.title}
                     p #{texts.minecraft.nick.description}
                     br
@@ -66,7 +66,7 @@ block content
                     div(v-if="form == true")
                         form.row(v-on:submit.prevent="onSubmit")
                             .input-field.col.s9
-                                input#input(placeholder=texts.minecraft.nickname, type="text", v-model="query_nick")
+                                input#input(placeholder=texts.minecraft.nickname, type="text", v-model="query")
                                 label(for="nickname") #{texts.minecraft.nickname}
                             .col.s3
                                 input.btn.btn-large.green.darken-2(type="submit" value=texts.minecraft.search)
@@ -91,5 +91,6 @@ block scrollspy
             li
                 a(href="#help") !{texts.minecraft.nick.menu.help}
 block scripts
-    script(async, src="/js/mcnick.min.js")
+    script(async, src="/url.min.js")
     script(async, src="/moment/moment.min.js")
+    script(async, src="/js/mcnick.min.js")

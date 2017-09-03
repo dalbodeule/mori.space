@@ -9,7 +9,7 @@ module.exports = (grunt) => {
             }, main: {
                 files: [{
                     expand: true,
-                    cwd: 'lib/js/',
+                    cwd: 'src/js/',
                     src: ['*.babel.js'],
                     dest: 'src/js/',
                     ext: '.min.js'
@@ -23,7 +23,7 @@ module.exports = (grunt) => {
                     expand: true,
                     cwd: 'lib/js/',
                     src: ['*.js', '!*.min.js'],
-                    dest: 'lib/js/',
+                    dest: 'src/js/',
                     ext: '.babel.js'
                 }]
             }
@@ -51,6 +51,10 @@ module.exports = (grunt) => {
                     ext: '.min.css'
                 }]
             }
+        }, clean: {
+            main: {
+                src: ['src/js/*.babel.js']
+            }
         }
     });
 
@@ -58,6 +62,7 @@ module.exports = (grunt) => {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['babel', 'uglify', 'cssmin', 'copy']);
+    grunt.registerTask('default', ['babel', 'uglify', 'cssmin', 'copy', 'clean']);
 }
