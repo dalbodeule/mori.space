@@ -7,6 +7,7 @@ block content
         .card.z-depth-2
             .card-content
                 #app(v-cloak)
+                    p#query(style="display: none")=query
                     p.card-title #{texts.minecraft.uuid.title}
                     p #{texts.minecraft.nick.description}
                     br

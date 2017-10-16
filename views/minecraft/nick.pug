@@ -1,12 +1,13 @@
 extends ../layout.pug
 
 block title
-    title Nickname Query - Minecraft - ON Demand  
+    title Nickname Query - Minecraft - ON Demand
 block content
     #search.section.scrollspy
         .card.z-depth-2
             .card-content
                 #app(v-cloak)
+                    p#query(style="display: none")=query
                     p.card-title #{texts.minecraft.nick.title}
                     p #{texts.minecraft.nick.description}
                     br
