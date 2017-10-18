@@ -36,7 +36,7 @@ try {
     }));
 
     //lang setting
-    app.use(geolang({
+    /*app.use(geolang({
         siteLangs: ['ko', 'en'],
         defaultCountry: 'KR',
     }));
@@ -44,7 +44,7 @@ try {
         translationsPath: __dirname+'/langs',
         siteLangs: ['ko', 'en'],
         defaultLang: 'ko'
-    }));
+    }));*/
 
     //health moniter
     app.all('/health', (req, res) => {
