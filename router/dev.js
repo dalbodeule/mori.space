@@ -1,16 +1,18 @@
 "use strict";
 
-const express = require('express'), router = express.Router();
+const express = require('express'),
+    router = express.Router(),
+    title = require('../utils/title.js');
 
 router.get('/', (req, res) => {
     res.render('dev/index.pug', {
-        title: 'Dev'+' :: '+global.title
+        title: title('Dev')
     });
 })
 
 router.get('/gjmoribot', (req, res) => {
     res.render('dev/gjmoribot.pug', {
-        title: 'GJMoriBot :: Dev'+' :: '+global.title
+        title: title('GJMoriBot', 'Dev')
     });
 });
 
