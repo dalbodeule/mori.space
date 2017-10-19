@@ -4,7 +4,7 @@ html
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        block title
+        title=title
         link(rel="stylesheet", href="/materialize/css/materialize.min.css")
         link(rel="stylesheet", href="/material-design-icons-iconfont/material-design-icons.css")
         link(rel="stylesheet", href="/font-awesome/css/font-awesome.min.css")
@@ -16,6 +16,7 @@ html
                 google_ad_client: "ca-pub-2810659463174293",
                 enable_page_level_ads: true
             });
+        block head
     body
         header
             nav.blue.lighten-1.theme
@@ -46,6 +47,8 @@ html
                             ul#dev-nav.dropdown-content
                                 li
                                     a.blue-text.text-lighten-1(href="/dev/gjmoribot") GJMoriBot
+                        li
+                            p(style="width: 1em")
                     ul.side-nav#mobile-menu
                         li
                             a(href="#") test

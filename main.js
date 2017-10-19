@@ -59,7 +59,7 @@ try {
         next();
     });
 
-    // ststic setting
+    //ststic setting
     app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist')); //materialize css
     app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist')); //jquery js
     app.use('/material-design-icons-iconfont', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist')) //material-design-icons-iconfont
@@ -73,12 +73,11 @@ try {
     app.set('view engine', 'pug');
     app.set('views', __dirname+'/views');
 
-    //main config
+    //router
     app.use('/', require('./router/index.js'));
-
-    //minecraft config
     app.use('/minecraft', require('./router/minecraft.js'));
     app.use('/dev', require('./router/dev.js'));
+    app.use('/introduce', require('./router/introduce.js'));
 
     //HTTP 404 page setup
     app.use((req, res, next) => {
@@ -95,6 +94,11 @@ try {
             next();
         }
     });
+    
+    //site title and etc...
+    global = {
+        title: 'On Demand'
+    };
 
     const server = app.listen(config.http_port, () => {
         logger.info('expres app on port '+server.address().port);
