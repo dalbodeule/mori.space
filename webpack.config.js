@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -40,10 +41,24 @@ module.exports = {
         chunkFilename: '[id].bundle.js'
     },
     module: {
-
+        loaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env']
+                }
+            }
+        ]
     },
     plugins: [
-
+        new UglifyJSPlugin({
+            uglifyOptions: {
+                ie8: false,
+                ecma: 5
+            }
+        })
     ],
     resolve: {
         modules: ['node_modules'],
