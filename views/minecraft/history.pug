@@ -54,19 +54,20 @@ block content
                                         th UUID
                                         td {{user.uuid}}
                                     tr
+                                        th 닉네임
+                                        td {{user.history[0].name}}
+                                    tr
                                         th 검색 시간
                                         td {{user.query_time}}
                                 table.col.s12.m6.bordered
                                     thead
                                         tr
-                                            th #
-                                            th UUID
+                                            th 닉네임
                                             th 변경 시점
                                     tbody
                                         tr(v-for="(item, index) in user.history")
-                                            td {{index}}
                                             td {{item.name}}
-                                            td(v-if="typeof item.changedToAt == 'number'") {{moment.unix(item.changedToAt / 1000).format('YYYY.MM.D. HH:mm:ss')}}
+                                            td(v-if="item.changedToAt") {{item.changedToAt}}
                                             td(v-else) #
                     div(v-if="form == true")
                         form.row(v-on:submit.prevent="onSubmit")
@@ -80,12 +81,28 @@ block content
         .card.z-depth-2
             .card-content
                 p.card-title 정보
-                div <p>유저 정보는 자체 API서버에서 받아오며, 5분 캐시가 적용됩니다.</p><p>자체 API서버는 사용을 원하신다면 <a href=\"/minecraft/api\">API Docs</a> 를 확인 부탁드립니다.</p><p> 유저 스킨은 <a href=\"https://crafatar.com\" target=\"_blank\">Crafatar</a> 에서 받아오고 있습니다.</p>
+                p 
+                    | 유저 정보는 자체 API서버에서 받아오며, 5분 캐시가 적용됩니다.
+                    | 자체 API서버는 사용을 원하신다면 
+                    a(href="/minecraft/api") API Docs
+                    | 를 확인 부탁드립니다. 유저 스킨은 
+                    a(href="https://crafatar.com" target="_blank") Crafatar
+                    | 에서 받아오고 있습니다.
     #help.section.scrollspy
         .card.z-depth-2
             .card-content
                 p.card-title 도움말
-                div <p>만약 도움이 필요하신 경우 여기로 연락 부탁드립니다.<br/><a href=\"mailto:webmaster@mori.space\" target=\"_blank\"><i class=\"material-icons tiny\">contact_mail</i> webmaster@mori.space</a><br/><a href=\"https://t.me/small_sunshine\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa fa-telegram\"></i> @small_sunshine</a></p>
+                div 
+                    p
+                        | 만약 도움이 필요하신 경우 여기로 연락 부탁드립니다.
+                        br
+                        a(href="mailto:webmaster@mori.space" target="_blank")
+                            i(class="material-icons tiny") contact_mail
+                            |  webmaster@mori.space
+                        br
+                        a(href="https://t.me/small_sunshine" target="_blank")
+                            i(aria-hidden="true" class="fa fa-telegram")
+                            |  @small_sunshine
 block scrollspy
     div
         ul.section.table-of-contents
@@ -96,6 +113,4 @@ block scrollspy
             li
                 a(href="#help") Help
 block scripts
-    script(async, src="/url.min.js")
-    script(async, src="/moment/moment.min.js")
-    script(async, src="/js/mchistory.min.js")
+    script(src="/js/mchistory.bundle.js")

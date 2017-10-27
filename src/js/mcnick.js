@@ -1,3 +1,7 @@
+import Vue from 'vue';
+require('js-url');
+const moment = require('moment');
+
 const changeURL = (url) => {
     if (history.pushState) {
         window.history.pushState("", "", url);
@@ -24,6 +28,7 @@ const app = new Vue({
     },
     methods: {
         onSubmit: () => {
+            'use strict';
             if(app.form == true) {
                 app.form = false;
                 app.user.nick = null;
@@ -33,12 +38,12 @@ const app = new Vue({
                 console.log(app.query);
 
                 if(app.query) {
-                    changeURL('/minecraft/history/'+app.query+'/'+(url('query') ? '?'+url('query') : '')+
-                    (url('hash') ? url('hash') : ''));
+                    changeURL('/minecraft/nick/'+app.query+'/'+(url('query') ? '?'+url('query') : '')+
+                        (url('hash') ? url('hash') : ''));
                         try {
                             console.log('ajax start');
                             $.ajax({
-                                url: 'https://mcapi.mori.space/uuid/'+app.query,
+                                url: 'https://mcapi.mori.space/nick/'+app.query,
                                 dataType: 'jsonp',
                                 beforeSend: () => {
                                     app.status = 'searching';
@@ -72,8 +77,8 @@ const app = new Vue({
                                     app.form = true;
                                     setTimeout(()=> {
                                         $('#input').focus();
+                                        console.log('focused');
                                     }, 300);
-                                    
                                 }
                             });
                         } catch(e) {
@@ -86,11 +91,11 @@ const app = new Vue({
                             }, 300);
                         }
                 } else {
-                    changeURL('/minecraft/history/'+(url('query') ? '?'+url('query') : '')+
+                    changeURL('/minecraft/nick/'+(url('query') ? '?'+url('query') : '')+
                         (url('hash') ? url('hash') : ''));
-                    console.log('query uuid is null');
+                    console.log('query nick is null');
                     app.form = true;
-                    app.status = 'uuid_null';
+                    app.status = 'nick_null';
                     setTimeout(()=> {
                         $('#input').focus();
                         console.log('focused');

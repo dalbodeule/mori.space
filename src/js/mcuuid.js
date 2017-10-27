@@ -1,3 +1,7 @@
+import Vue from 'vue';
+require('js-url');
+const moment = require('moment');
+
 const changeURL = (url) => {
     if (history.pushState) {
         window.history.pushState("", "", url);
@@ -18,29 +22,28 @@ const app = new Vue({
                 uuid: null,
                 full_uuid: null,
                 query_time: null,
-                history: null
+                skin: null
             }
         }
     },
     methods: {
         onSubmit: () => {
+            'use strict';
             if(app.form == true) {
                 app.form = false;
                 app.user.nick = null;
                 app.user.uuid = null;
                 app.user.full_uuid = null;
                 app.user.query_time = null;
-                app.user.skin = null;
-                app.user.history = null;
                 console.log(app.query);
 
                 if(app.query) {
-                    changeURL('/minecraft/history/'+app.query+'/'+(url('query') ? '?'+url('query') : '')+
-                        (url('hash') ? url('hash') : ''));
+                    changeURL('/minecraft/uuid/'+app.query+'/'+(url('query') ? '?'+url('query') : '')+
+                    (url('hash') ? url('hash') : ''));
                         try {
                             console.log('ajax start');
                             $.ajax({
-                                url: 'https://mcapi.mori.space/history/'+app.query,
+                                url: 'https://mcapi.mori.space/uuid/'+app.query,
                                 dataType: 'jsonp',
                                 beforeSend: () => {
                                     app.status = 'searching';
@@ -51,10 +54,9 @@ const app = new Vue({
                                         console.log('ajax success');
                                         console.log('user found');
                                         console.log(data);
-                                        app.user.nick = data.history[data.history.length - 1].name;
+                                        app.user.nick = data.nick;
                                         app.user.uuid = data.uuid;
                                         app.user.full_uuid = data.full_uuid;
-                                        app.user.history = data.history;
 
                                         let date = moment.unix(data.query_time);
 
@@ -75,8 +77,8 @@ const app = new Vue({
                                     app.form = true;
                                     setTimeout(()=> {
                                         $('#input').focus();
-                                        console.log('focused');
                                     }, 300);
+                                    
                                 }
                             });
                         } catch(e) {
@@ -89,7 +91,7 @@ const app = new Vue({
                             }, 300);
                         }
                 } else {
-                    changeURL('/minecraft/history/'+(url('query') ? '?'+url('query') : '')+
+                    changeURL('/minecraft/uuid/'+(url('query') ? '?'+url('query') : '')+
                         (url('hash') ? url('hash') : ''));
                     console.log('query uuid is null');
                     app.form = true;
