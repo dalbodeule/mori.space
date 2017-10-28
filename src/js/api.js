@@ -1,3 +1,5 @@
+window.$ = window.jQuery = require("jquery");
+
 $(document).ready(() => {
     let res_success_nick = '{"uuid":"2e45712e3747428094cb1d39fe7ee434","full_uuid":"2e45712e-3747-4280-94cb-1d39fe7ee434","nick":"small_sunshine","query":"small_sunshine","query_time":1502880710,"cached":false}';
     let res_error_nick = '{"error":true,"type":"unregistered nickname","query":"test125","cached":true,"expire":295}';

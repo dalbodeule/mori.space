@@ -8,7 +8,7 @@ module.exports = {
             'materialize',
             './src/js/dropdown.js',
             './src/js/init.js',
-            './src/js/jquery.sticky-kit.min.js',
+            './src/js/jquery.sticky-kit.js',
             './src/js/scrollspy.js',
             './src/js/sidenav.js'
         ],

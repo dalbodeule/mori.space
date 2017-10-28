@@ -1,5 +1,5 @@
+window.$ = window.jQuery = require("jquery");
+
 $(document).ready(() => {
-    $(document).ready(() => {
-        $('.scrollspy').scrollSpy();
-    });
+    $('.scrollspy').scrollSpy();
 });
