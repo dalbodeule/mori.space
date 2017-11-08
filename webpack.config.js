@@ -56,44 +56,54 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[path][name].[ext]',
                     publicPath (file) {
                         const material = [
-                            "MaterialIcons-Regular.woff",
-                            "MaterialIcons-Regular.eot",
-                            "MaterialIcons-Regular.woff2",
-                            "MaterialIcons-Regular.ttf"
+                            "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff",
+                            "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.eot",
+                            "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff2",
+                            "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.ttf"
                         ];
                         const roboto = [
-                            'Roboto-Thin.woff2',
-                            'Roboto-Thin.woff',
-                            'Roboto-Light.woff2',
-                            'Roboto-Light.woff',
-                            'Roboto-Regular.woff2',
-                            'Roboto-Regular.woff',
-                            'Roboto-Medium.woff2',
-                            'Roboto-Medium.woff',
-                            'Roboto-Bold.woff2',
-                            'Roboto-Bold.woff'
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Thin.woff2',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Thin.woff',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Light.woff2',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Light.woff',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Regular.woff2',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Regular.woff',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Medium.woff2',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Medium.woff',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Bold.woff2',
+                            'node_modules/materialize-css/dist/fonts/roboto/Roboto-Bold.woff'
+                        ];
+                        const fa = [
+                            'node_modules/font-awesome/fonts/fontawesome-webfont.eot',
+                            'node_modules/font-awesome/fonts/fontawesome-webfont.svg',
+                            'node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
+                            'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
+                            'node_modules/font-awesome/fonts/fontawesome-webfont.woff2',
+                            'node_modules/font-awesome/fonts/FontAwesome.otf'
                         ];
                         if(material.includes(file)) {
-                            return 'material/'+file;
+                            return '/material/'+file.replace('node_modules/material-design-icons-iconfont/dist/fonts/', '');
                         } else if(roboto.includes(file)) {
-                            return 'roboto/'+file;
+                            return '/roboto/'+file.replace('node_modules/materialize-css/dist/fonts/roboto/', '');
+                        } else if(fa.includes(file)) {
+                            return '/fa/'+file.replace('node_modules/font-awesome/fonts/', '');
                         }
                         return false;
-                    }
+                    },
+                    name: '[path][name].[ext]'
                 }
             }
         ]
     },
     plugins: [
-        /*new UglifyJSPlugin({
+        new UglifyJSPlugin({
             uglifyOptions: {
                 ie8: false,
                 ecma: 5
             }
-        })*/
+        })
     ],
     resolve: {
         modules: ['node_modules'],
@@ -105,7 +115,8 @@ module.exports = {
             'materializecss$': 'materialize-css/dist/css/materialize.css',
             'js-url$': 'js-url/url.js',
             'moment$': 'moment/moment.js',
-            'iconfont$': 'material-design-icons-iconfont/dist/material-design-icons.css'
+            'iconfont$': 'material-design-icons-iconfont/dist/material-design-icons.css',
+            'font-awesome$': 'font-awesome/css/font-awesome.min.css'
         }
     }
 }

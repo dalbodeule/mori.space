@@ -62,7 +62,7 @@ try {
     //ststic setting
     app.use('/roboto', express.static(__dirname + '/node_modules/materialize-css/dist/fonts/roboto')); //materialize fonts
     app.use('/material', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist/fonts')) //material-design-icons-iconfont fonts
-    app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome')); //font awesome font
+    app.use('/fa', express.static(__dirname + '/node_modules/font-awesome/fonts')); //font awesome font
     app.use(express.static(__dirname + '/public')); //public folder
 
     //view engine config
