@@ -60,11 +60,9 @@ try {
     });
 
     //ststic setting
-    app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist')); //materialize css
-    app.use('/material-design-icons-iconfont', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist')) //material-design-icons-iconfont
-    app.use('/moment', express.static(__dirname + '/node_modules/moment/min')); //moment js
+    app.use('/roboto', express.static(__dirname + '/node_modules/materialize-css/dist/fonts/roboto')); //materialize fonts
+    app.use('/material', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist/fonts')) //material-design-icons-iconfont fonts
     app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome')); //font awesome font
-    app.use('/url.min.js', express.static(__dirname + '/node_modules/js-url/url.min.js')); //js-url 
     app.use(express.static(__dirname + '/public')); //public folder
 
     //view engine config
