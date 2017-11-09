@@ -63,5 +63,5 @@ package-lock.json
 # config.json
 config.json
 
-public/css
 public/js
+public/fonts
