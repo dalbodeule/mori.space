@@ -48,7 +48,7 @@ block content
                                     p 검색에 성공했습니다.
                             .row
                                 .col.s12.m4
-                                    img(v-bind:src="'https://crafatar.com/renders/body/'+user.uuid+'?&default=MHF_Alex&overlay'")
+                                    img(v-bind:src="'https://use.gameapis.net/mc/images/skin/'+user.nick+'/100/true'")
                                 table.col.s12.m6.bordered
                                     tr
                                         th UUID
@@ -86,7 +86,7 @@ block content
                     | 자체 API서버는 사용을 원하신다면 
                     a(href="/minecraft/api") API Docs
                     | 를 확인 부탁드립니다. 유저 스킨은 
-                    a(href="https://crafatar.com" target="_blank") Crafatar
+                    a(href="https://docs.gameapis.net" target="_blank") GameAPIs
                     | 에서 받아오고 있습니다.
     #help.section.scrollspy
         .card.z-depth-2
