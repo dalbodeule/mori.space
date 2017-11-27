@@ -3,7 +3,7 @@ module.exports = function() {
         global.title = 'title';
     }
     let result = '';
-    if(typeof arguments == 'array') {
+    if(typeof arguments == 'object') {
         for(let i in arguments) {
             result = result + arguments[i]
             if(i != arguments.length - 1) {
