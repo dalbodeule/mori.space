@@ -6,7 +6,8 @@ const express = require('express'),
 
 router.get('/', (req, res) => {
     res.render('index', {
-        title: title()
+        title: title(),
+        description: '메인 페이지 입니다.'
     });
 });
 

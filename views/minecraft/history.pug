@@ -48,7 +48,7 @@ block content
                                     p 검색에 성공했습니다.
                             .row
                                 .col.s12.m4
-                                    img(v-bind:src="'https://use.gameapis.net/mc/images/skin/'+user.nick+'/100/true'")
+                                    img(v-bind:src="'https://use.gameapis.net/mc/images/skin/'+user.history[user.history.length - 1].name+'/100/true'")
                                 table.col.s12.m6.bordered
                                     tr
                                         th UUID

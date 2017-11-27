@@ -6,37 +6,47 @@ const express = require('express'),
 
 router.get('/', (req, res) => {
     res.render('minecraft/index.pug', {
-        title: title('Minecraft')
+        title: title('Minecraft'),
+        description: '마인크래프트 관련 페이지입니다.'
     });
 })
 
 router.get('/user', (req, res) => {
     res.render('minecraft/user.pug', {
-        title: title('User Query', 'Minecraft')
+        title: title('User Query', 'Minecraft'),
+        description: '마인크래프트 유저를 찾아보세요.',
+        image: 'https://use.gameapis.net/mc/images/avatar/steve/40'
     });
 });
 router.get('/user/:query', (req, res) => {
     res.render('minecraft/user.pug', {
         query: req.params.query,
-        title: title('User Query', 'Minecraft')
+        title: title('User Query', 'Minecraft'),
+        description: '마인크래프트 유저를 찾아보세요.',
+        image: 'https://use.gameapis.net/mc/images/avatar/'+req.params.query+'/40'
     });
 });
 
 router.get('/history', (req, res) => {
     res.render('minecraft/history.pug', {
-        title: title('History Query', 'Minecraft')
+        title: title('History Query', 'Minecraft'),
+        description: '마인크래프트 유저를 찾아보세요.',
+        image: 'https://use.gameapis.net/mc/images/avatar/'+req.params.query+'/40'
     });
 });
 router.get('/history/:query', (req, res) => {
     res.render('minecraft/history.pug', {
         query: req.params.query,
-        title: title('History Query', 'Minecraft')
+        title: title('History Query', 'Minecraft'),
+        description: '마인크래프트 유저를 찾아보세요.',
+        image: 'https://use.gameapis.net/mc/images/avatar/'+req.params.query+'/40'
     });
 });
 
 router.get('/api', (req, res) => {
     res.render('minecraft/api.pug', {
-        title: title('API', 'Minecraft')
+        title: title('API', 'Minecraft'),
+        description: '마인크래프트 유저정보 API Docs 입니다.'
     });
 });
 
