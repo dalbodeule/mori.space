@@ -4,21 +4,12 @@ block content
     #nick.section.scrollspy
         .card.z-depth-2
             .card-content
-                p.card-title 닉네임 조회
+                p.card-title 유저 조회
                 span
-                | 마인크래프트 닉네임으로 유저의 정보를 조회할 수 있습니다.
+                | 마인크래프트 닉네임이나 UUID로 유저의 정보를 조회할 수 있습니다.
                 br
                 br
-                a.btn.light-blue.lighten-1(href="/minecraft/nick") 이동하기
-    #uuid.section.scrollspy
-        .card.z-depth-2
-            .card-content
-                p.card-title UUID 조회
-                span
-                | 마인크래프트 UUID로 유저의 정보를 조회할 수 있습니다.
-                br
-                br
-                a.btn.light-blue.lighten-1(href="/minecraft/uuid") 이동하기
+                a.btn.light-blue.lighten-1(href="/minecraft/user") 이동하기
     #history.section.scrollspy
         .card.z-depth-2
             .card-content
@@ -41,9 +32,7 @@ block scrollspy
     div
         ul.section.table-of-contents
             li
-                a(href="#nick") Nick 조회
-            li
-                a(href="#uuid") UUID 조회
+                a(href="#user") 유저 조회
             li
                 a(href="#history") History 조회
             li

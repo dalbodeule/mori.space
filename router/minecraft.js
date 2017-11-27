@@ -10,27 +10,15 @@ router.get('/', (req, res) => {
     });
 })
 
-router.get('/nick', (req, res) => {
-    res.render('minecraft/nick.pug', {
-        title: title('Nickname Query', 'Minecraft')
+router.get('/user', (req, res) => {
+    res.render('minecraft/user.pug', {
+        title: title('User Query', 'Minecraft')
     });
 });
-router.get('/nick/:query', (req, res) => {
-    res.render('minecraft/nick.pug', {
+router.get('/user/:query', (req, res) => {
+    res.render('minecraft/user.pug', {
         query: req.params.query,
-        title: title('Nickname Query', 'Minecraft')
-    });
-});
-
-router.get('/uuid', (req, res) => {
-    res.render('minecraft/uuid.pug', {
-        title: title('UUID Query', 'Minecraft')
-    });
-});
-router.get('/uuid/:query', (req, res) => {
-    res.render('minecraft/uuid.pug', {
-        query: req.params.query,
-        title: title('UUID Query', 'Minecraft')
+        title: title('User Query', 'Minecraft')
     });
 });
 

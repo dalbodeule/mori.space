@@ -17,6 +17,7 @@ const app = new Vue({
             status: null,
             form: true,
             query: null,
+            queryType: null,
             user: {
                 nick: null,
                 uuid: null,
@@ -35,15 +36,34 @@ const app = new Vue({
                 app.user.uuid = null;
                 app.user.full_uuid = null;
                 app.user.query_time = null;
+                app.user.queryType = null;
                 console.log(app.query);
 
                 if(app.query) {
-                    changeURL('/minecraft/nick/'+app.query+'/'+(url('query') ? '?'+url('query') : '')+
+                    if(/^[a-zA-Z0-9\_]{4,16}$/.test(app.query)) app.user.queryType = 'nick';
+                    else if(/^([a-z0-9]{32}|[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12})$/
+                        .test(app.query)) app.user.queryType = 'uuid';
+                    else {
+                        changeURL('/minecraft/user/'+(url('query') ? '?'+url('query') : '')+
+                            (url('hash') ? url('hash') : ''));
+                        console.log('query user is not user');
+                        app.form = true;
+                        app.status = 'not_user';
+                        setTimeout(()=> {
+                            $('#input').focus();
+                            console.log('focused');
+                        }, 300);
+                    }
+                    changeURL('/minecraft/user/'+app.query+'/'+(url('query') ? '?'+url('query') : '')+
                         (url('hash') ? url('hash') : ''));
                         try {
+                            let url;
+                            if(app.user.queryType == 'nick') url = 'https://mcapi.mori.space/nick/'+app.query;
+                            else if(app.user.queryType == 'uuid') url = 'https://mcapi.mori.space/uuid/'+app.query
+                            console.log(app.user.queryType);
                             console.log('ajax start');
                             $.ajax({
-                                url: 'https://mcapi.mori.space/nick/'+app.query,
+                                url: url,
                                 dataType: 'jsonp',
                                 beforeSend: () => {
                                     app.status = 'searching';
@@ -91,11 +111,11 @@ const app = new Vue({
                             }, 300);
                         }
                 } else {
-                    changeURL('/minecraft/nick/'+(url('query') ? '?'+url('query') : '')+
+                    changeURL('/minecraft/user/'+(url('query') ? '?'+url('query') : '')+
                         (url('hash') ? url('hash') : ''));
-                    console.log('query nick is null');
+                    console.log('query user is null');
                     app.form = true;
-                    app.status = 'nick_null';
+                    app.status = 'user_null';
                     setTimeout(()=> {
                         $('#input').focus();
                         console.log('focused');

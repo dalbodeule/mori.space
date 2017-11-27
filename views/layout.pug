@@ -33,9 +33,7 @@ html
                                 i.material-icons.right arrow_drop_down
                             ul#minecraft-nav.dropdown-content
                                 li
-                                    a.blue-text.text-lighten-1(href="/minecraft/nick") 닉네임 조회
-                                li
-                                    a.blue-text.text-lighten-1(href="/minecraft/uuid") UUID 조회
+                                    a.blue-text.text-lighten-1(href="/minecraft/user") 유저 조회
                                 li
                                     a.blue-text.text-lighten-1(href="/minecraft/history") History 조회
                                 li
@@ -58,9 +56,7 @@ html
                                 i.material-icons.right arrow_drop_down
                             ul#minecraft-side.dropdown-content
                                 li
-                                    a(href="/minecraft/nick") 닉네임 조회
-                                li
-                                    a(href="/minecraft/uuid") UUID 조회
+                                    a(href="/minecraft/user") 유저 조회
                                 li
                                     a(href="/minecraft/history") History 조회
                                 li
@@ -97,25 +93,23 @@ html
         footer.page-footer.blue.lighten-1.theme
             .container
                 .row
-                    .col.l6.s0
+                    .col.l6.s12
                         h5.white-text 사이트 안내
                         p.grey-text.text-lighten-4 
-                            | 본 사이트는 Materialize 프레임워크를 사용하여 개발되었습니다.
+                            | 본 사이트는 
+                            a.white-text(href="http://materializecss.com") Materialize
+                            |  프레임워크를 사용하여 개발되었습니다.
                             br
                             | 본 사이트의 Donate icon은 
                             a.white-text(href="https://icons8.com") icons8.com
                             |  에서 제공받고 있습니다.
-                    .col.l4.offset-12.s12
-                        h5.white-text Links
-                        ul
-                            li
-                                a.grey-text.text-lighten-3(href="#") test
-                            li
-                                a.grey-text.text-lighten-3(href="#") test
-                            li
-                                a.grey-text.text-lighten-3(href="#") test
-                            li
-                                a.grey-text.text-lighten-3(href="#") test
+                    .col.l6.s12
+                        h5.white-text 개발자 정보
+                        p.grey-text.text-lighten-4 
+                            i.fa.fa-envelope(aria-hidden="true")
+                            |  email: 
+                            a.grey-text.text-lighten-4.email(data-email="jioo0224##naver.com")
+                        p.grey-text.text-lighten-4 본 사이트는 이메일 무단 수집에 거부합니다.
             .footer-copyright
                 .container
                     p © 2017. 볕뉘(small-sunshine) all rights reserved.

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -10,19 +11,14 @@ module.exports = {
             './src/js/init.js',
             './src/js/jquery.sticky-kit.js',
             './src/js/scrollspy.js',
-            './src/js/sidenav.js'
+            './src/js/sidenav.js',
+            './src/js/email.js'
         ],
-        mcnick: [
+        mcuser: [
             'vue',
             'url',
             'moment',
-            './src/js/mcnick.js'
-        ],
-        mcuuid: [
-            'vue',
-            'url',
-            'moment',
-            './src/js/mcuuid.js'
+            './src/js/mcuser.js'
         ],
         mchistory: [
             'vue',
@@ -56,6 +52,7 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
+                    publicPath: '/fonts/',
                     outputPath: '../fonts/',
                     name: '[name].[ext]'
                 }
@@ -68,6 +65,12 @@ module.exports = {
                 ie8: false,
                 ecma: 5
             }
+        }),
+        new CleanWebpackPlugin([
+            'js/*.*',
+            'fonts/*.*'
+        ], {
+            root: __dirname+'/public'
         })
     ],
     resolve: {
