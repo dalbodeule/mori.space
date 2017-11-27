@@ -22,8 +22,8 @@ router.get('/user/:query', (req, res) => {
     res.render('minecraft/user.pug', {
         query: req.params.query,
         title: title('User Query', 'Minecraft'),
-        description: '마인크래프트 유저를 찾아보세요.',
-        image: 'https://use.gameapis.net/mc/images/avatar/'+req.params.query+'/40'
+        description: req.params.query+' 에 대한 검색결과 입니다.',
+        image: 'https://use.gameapis.net/mc/images/avatar/steve/40'
     });
 });
 
@@ -31,15 +31,15 @@ router.get('/history', (req, res) => {
     res.render('minecraft/history.pug', {
         title: title('History Query', 'Minecraft'),
         description: '마인크래프트 유저를 찾아보세요.',
-        image: 'https://use.gameapis.net/mc/images/avatar/'+req.params.query+'/40'
+        image: 'https://use.gameapis.net/mc/images/avatar/steve/40'
     });
 });
 router.get('/history/:query', (req, res) => {
     res.render('minecraft/history.pug', {
         query: req.params.query,
         title: title('History Query', 'Minecraft'),
-        description: '마인크래프트 유저를 찾아보세요.',
-        image: 'https://use.gameapis.net/mc/images/avatar/'+req.params.query+'/40'
+        description: req.params.query+' 에 대한 검색결과 입니다.',
+        image: 'https://use.gameapis.net/mc/images/avatar/steve/40'
     });
 });
 
