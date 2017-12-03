@@ -48,5 +48,11 @@ module.exports = {
         'window.jQuery': 'jquery'
       })
     ]
-  }
+  },
+  modules: [
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-2810659463174293',
+      pageLevelAds: true
+    }]
+  ]
 }

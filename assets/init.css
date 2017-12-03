@@ -20,7 +20,7 @@ header nav {
 }
 
 div.ad p {
-    font-size: 0.8em; text-align: right; margin: 0; width: 100%; max-width: 800px;
+    font-size: 0.8em; text-align: right; margin: 0;
 }
 
 div.sidebox {
@@ -30,4 +30,5 @@ div.sidebox {
 div.ad {
     margin-top: 0.8em;
     margin-bottom: 0.8em;
+    width: 100%;
 }
