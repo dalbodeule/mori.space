@@ -17,10 +17,6 @@
 import '~/assets/api.css'
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
-
-import Prism from 'prismjs'
-import 'prismjs/themes/prism.css'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'Dev :: On Demand'
@@ -30,11 +26,6 @@ const meta = buildmeta(title, '개발 프로그램 정보 페이지입니다.',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
-
-    Prism.highlightAll()
   },
   head () {
     return {

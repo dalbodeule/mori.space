@@ -98,9 +98,10 @@ import Sidebox from '~/components/Sidebox.vue'
 import MinecraftHelp from '~/components/MinecraftHelp.vue'
 import MinecraftInfo from '~/components/MinecraftInfo.vue'
 
+import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
-const title = 'User Query :: Minecraft :: On Demand'
+const title = 'History Query :: Minecraft :: On Demand'
 const meta = buildmeta(title, '찾으려 하는 유저의 정보입니다.',
   'https://use.gameapis.net/mc/images/avatar/steve/40', 'small_sunshine', [
     {name: 'og:image:height', content: 40},
@@ -136,6 +137,7 @@ export default {
     MinecraftInfo
   },
   mounted () {
+    init()
     focus()
   },
   data () {
@@ -175,78 +177,80 @@ export default {
         url.segment(segment)
 
         if (this.query) {
-          if (!/^[a-zA-Z0-9_]{4,16}$/.test(this.query)) {
+          if (!/^([a-z0-9]{32}|[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})$/
+            .test(this.query)) {
             changeURL(url.toString())
             console.log('query user is not user')
             this.form = true
             this.status = 'not_user'
             focus()
-          }
-          try {
-            changeURL(url.segment(this.query).toString())
+          } else {
+            try {
+              changeURL(url.segment(this.query).toString())
 
-            const app = this
+              const app = this
 
-            $.ajax({
-              url: 'https://mcapi.mori.space/history/' + app.query,
-              dataType: 'jsonp',
-              beforeSend () {
-                app.status = 'searching'
-                app.form = false
-              },
-              success (data) {
-                console.log('ajax success')
-                if (!data.error) {
-                  console.log('user found')
-                  console.log(data)
+              $.ajax({
+                url: 'https://mcapi.mori.space/history/' + app.query,
+                dataType: 'jsonp',
+                beforeSend () {
+                  app.status = 'searching'
+                  app.form = false
+                },
+                success (data) {
+                  console.log('ajax success')
+                  if (!data.error) {
+                    console.log('user found')
+                    console.log(data)
 
-                  app.user.nick = data.nick
-                  app.user.uuid = data.uuid
-                  app.user.full_uuid = data.full_uuid
+                    app.user.nick = data.nick
+                    app.user.uuid = data.uuid
+                    app.user.full_uuid = data.full_uuid
 
-                  for (let i in data.history) {
-                    console.log(i)
-                    let result = {name: data.history[i].name}
-                    if (typeof data.history[i].changedToAt === 'number') {
-                      let temp = moment.unix(data.history[i].changedToAt / 1000)
-                      result.changedToAt = temp.format('YYYY.MM.D. HH:mm:ss')
+                    for (let i in data.history) {
+                      console.log(i)
+                      let result = {name: data.history[i].name}
+                      if (typeof data.history[i].changedToAt === 'number') {
+                        let temp = moment.unix(data.history[i].changedToAt / 1000)
+                        result.changedToAt = temp.format('YYYY.MM.D. HH:mm:ss')
+                      }
+                      app.user.history.push(result)
                     }
-                    app.user.history.push(result)
+                    console.log(app.user.history)
+
+                    let date = moment.unix(data.query_time)
+
+                    app.user.query_time = date.format('YYYY.MM.D. HH:mm:ss')
+
+                    app.status = true
+                  } else {
+                    console.log('user not found')
+                    app.status = false
                   }
-                  console.log(app.user.history)
-
-                  let date = moment.unix(data.query_time)
-
-                  app.user.query_time = date.format('YYYY.MM.D. HH:mm:ss')
-
-                  app.status = true
-                } else {
-                  console.log('user not found')
-                  app.status = false
+                },
+                error (err) {
+                  console.error('error')
+                  console.error(err)
+                  app.status = 'error'
+                },
+                complete () {
+                  app.form = true
+                  focus()
                 }
-              },
-              error (err) {
-                console.error('error')
-                console.error(err)
-                app.status = 'error'
-              },
-              complete () {
-                app.form = true
-                focus()
-              }
-            })
-          } catch (e) {
-            console.error('error')
-            console.error(e)
-            this.form = true
-            this.status = 'error'
-            focus()
+              })
+            } catch (e) {
+              console.error('error')
+              console.error(e)
+              this.form = true
+              this.status = 'error'
+              focus()
+            }
           }
         } else {
           changeURL(url.toString())
           console.log('query user is null')
           this.form = true
-          this.status = 'user_null'
+          this.status = 'uuid_null'
           focus()
         }
       }

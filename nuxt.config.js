@@ -43,8 +43,9 @@ module.exports = {
     ],
     plugins: [
       new webpack.ProvidePlugin({
-        '$': 'jquery',
-        'jQuery': 'jquery',
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
         'window.jQuery': 'jquery'
       })
     ]
@@ -61,8 +62,5 @@ module.exports = {
   },
   'google-analytics': {
     id: 'UA-61070671-7'
-  },
-  plugins: [
-    {src: '~/plugins/init.js', ssr: false}
-  ]
+  }
 }

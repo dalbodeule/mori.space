@@ -13,10 +13,6 @@
 import '~/assets/api.css'
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
-
-import Prism from 'prismjs'
-import 'prismjs/themes/prism.css'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'GJMoriBot :: Dev :: On Demand'
@@ -26,11 +22,6 @@ const meta = buildmeta(title, 'GJMoriBot 프로그램 정보입니다.',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
-
-    Prism.highlightAll()
   },
   head () {
     return {
