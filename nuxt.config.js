@@ -52,7 +52,8 @@ module.exports = {
   },
   modules: [
     ['@nuxtjs/google-adsense'],
-    ['@nuxtjs/google-analytics']
+    ['@nuxtjs/google-analytics'],
+    ['@nuxtjs/sitemap']
   ],
   'google-adsense': {
     id: 'ca-pub-2810659463174293',
@@ -62,5 +63,8 @@ module.exports = {
   },
   'google-analytics': {
     id: 'UA-61070671-7'
+  },
+  sitemap: {
+    path: '/sitemap.xml'
   }
 }
