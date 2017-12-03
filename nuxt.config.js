@@ -52,7 +52,9 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-2810659463174293',
-      pageLevelAds: true
+      pageLevelAds: true,
+      analyticsUacct: 'UA-61070671-7',
+      analyticsDomainName: 'mori.space'
     }]
   ]
 }

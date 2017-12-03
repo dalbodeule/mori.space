@@ -12,3 +12,7 @@ dist
 
 # config
 config.json
+
+# lockfile
+yarn.lock
+package-lock.json
