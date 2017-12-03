@@ -57,8 +57,7 @@ module.exports = {
     id: 'ca-pub-2810659463174293',
     pageLevelAds: true,
     analyticsUacct: 'UA-61070671-7',
-    analyticsDomainName: 'mori.space',
-    test: true
+    analyticsDomainName: 'mori.space'
   },
   'google-analytics': {
     id: 'UA-61070671-7'
