@@ -1,6 +1,6 @@
 <template lang="pug">
   .row
-    sidebox(:data="[{id: 'easteregg', title: 'EasterEggs'}]")
+    sidebox(:data="[{id: 'easteregg', title: 'EasterEgg'}]")
     .col.s12.l11.pull-l1(style="min-height: 400px;")
       #easteregg.section.scrollspy
         .card.z-depth-2
@@ -25,7 +25,7 @@ import Sidebox from '~/components/Sidebox.vue'
 import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
-const title = 'Donate :: On Demand'
+const title = 'EasterEgg :: On Demand'
 const meta = buildmeta(title, 'Donate',
   '', 'small_sunshine', [
     {name: 'robots', content: 'noindex'}
