@@ -98,7 +98,6 @@ import Sidebox from '~/components/Sidebox.vue'
 import MinecraftHelp from '~/components/MinecraftHelp.vue'
 import MinecraftInfo from '~/components/MinecraftInfo.vue'
 
-import init from '~/assets/init'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'User Query :: Minecraft :: On Demand'
@@ -137,7 +136,6 @@ export default {
     MinecraftInfo
   },
   mounted () {
-    init()
     focus()
     this.query = this.$route.params.query
     this.onSubmit()

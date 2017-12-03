@@ -50,11 +50,20 @@ module.exports = {
     ]
   },
   modules: [
-    ['@nuxtjs/google-adsense', {
-      id: 'ca-pub-2810659463174293',
-      pageLevelAds: true,
-      analyticsUacct: 'UA-61070671-7',
-      analyticsDomainName: 'mori.space'
-    }]
+    ['@nuxtjs/google-adsense'],
+    ['@nuxtjs/google-analytics']
+  ],
+  'google-adsense': {
+    id: 'ca-pub-2810659463174293',
+    pageLevelAds: true,
+    analyticsUacct: 'UA-61070671-7',
+    analyticsDomainName: 'mori.space',
+    test: true
+  },
+  'google-analytics': {
+    id: 'UA-61070671-7'
+  },
+  plugins: [
+    {src: '~/plugins/init.js', ssr: false}
   ]
 }

@@ -333,8 +333,6 @@
 import '~/assets/api.css'
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
-
 import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
 import buildmeta from '~/assets/buildmeta'
@@ -348,8 +346,6 @@ export default {
     Sidebox
   },
   mounted () {
-    init()
-
     Prism.highlightAll()
   },
   head () {

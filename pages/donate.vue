@@ -13,7 +13,6 @@
 import '~/assets/api.css'
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'Donate :: On Demand'
@@ -23,9 +22,6 @@ const meta = buildmeta(title, 'Donate',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
   },
   head () {
     return {
