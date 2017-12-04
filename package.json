@@ -34,7 +34,6 @@
     "on-finished": "^2.3.0",
     "prismjs": "^1.8.4",
     "pug": "^2.0.0-rc.4",
-    "stringify-object": "^3.2.1",
     "urijs": "^1.19.0"
   },
   "devDependencies": {
