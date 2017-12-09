@@ -25,6 +25,7 @@ div.ad p {
     position: absolute;
     bottom: 0;
     right: 0;
+    margin-right: 4em;
 }
 
 div.sidebox {
