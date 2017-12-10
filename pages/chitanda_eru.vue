@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import '~/assets/api.css'
 import Sidebox from '~/components/Sidebox.vue'
 
 import init from '~/assets/init.js'

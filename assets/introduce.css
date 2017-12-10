@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+ul.introduce li {
+    margin-bottom: 0.5em;
+    list-style-type: disc;
+}
+ul.introduce li.ul {
+    list-style-type: none;
+}
+ul.introduce li i.fa {
+    margin-right: 0.5em;
+}
+ul.introduce {
+    margin-left: 1em;
+}

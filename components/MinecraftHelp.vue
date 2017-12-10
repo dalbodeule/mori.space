@@ -8,10 +8,10 @@
             | 만약 도움이 필요하신 경우 여기로 연락 부탁드립니다.
             br
             a.email(data-email="webmaster##mori.space")
-                i.fa.fa-envelope(aria-hidden="true")
+                i.fa.fa-envelope-o
                 |  webmaster@mori.space
             br
             a(href="https://t.me/small_sunshine" target="_blank")
-                i(aria-hidden="true" class="fa fa-telegram")
+                i.fa.fa-telegram
                 |  @small_sunshine
 </template>

@@ -8,7 +8,7 @@
         </div>
         <div class="col l6 s12">
           <h5 class="white-text">개발자 정보</h5>
-          <p class="grey-text text-lighten-4"><i aria-hidden="true" class="fa fa-envelope"></i> email: <a data-email="webmaster##mori.space" class="grey-text text-lighten-4 email"></a></p>
+          <p class="grey-text text-lighten-4"><i class="fa fa-envelope-o"></i> email: <a data-email="webmaster##mori.space" class="grey-text text-lighten-4 email"></a></p>
           <p class="grey-text text-lighten-4">본 사이트는 이메일 무단 수집을 거부합니다.</p>
         </div>
       </div>
