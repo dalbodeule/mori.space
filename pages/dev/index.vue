@@ -1,20 +1,19 @@
 <template lang="pug">
   .row
-    sidebox(:data="[{id: 'gjmoribot', title: 'GJMoriBot'}]")
+    sidebox(:data="[{id: 'moribot', title: 'MoriBot'}]")
     .col.s12.l11.pull-l1(style="min-height: 400px;")
-      #gjmoribot.section.scrollspy
+      #moribot.section.scrollspy
         .card.z-depth-2
           .card-content
-            p.card-title GJMoriBot
+            p.card-title MoriBot
             span
-            | Telegram GJMoriBot 소개페이지로 이동합니다.
+            | Telegram MoriBot 소개페이지로 이동합니다.
             br
             br
-            nuxt-link.btn.light-blue.lighten-1(to="/dev/gjmoribot") 살펴보기
+            nuxt-link.btn.light-blue.lighten-1(to="/dev/moribot") 살펴보기
 </template>
 
 <script>
-import '~/assets/api.css'
 import Sidebox from '~/components/Sidebox.vue'
 
 import buildmeta from '~/assets/buildmeta'

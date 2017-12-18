@@ -14,13 +14,13 @@
             li.ul
               ul.introduce
                 li
-                  i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email: 
+                  i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email:&nbsp;
                   a.email(data-email="jioo0224@naver.com")
                 li
-                  i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email: 
+                  i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email:&nbsp;
                   a.email(data-email="webmaster.mori.space")
                 li
-                  i.fa.fa-telegram(aria-hidden="true") &nbsp;telegram: 
+                  i.fa.fa-telegram(aria-hidden="true") &nbsp;telegram:&nbsp;
                   a(href="https://t.me/small_sunshine", target="_blank") small_sunshine
                 li
                   p discord: @볕뉘#8486
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import '~/assets/introduce.css'
+import '~/assets/ul.css'
 import Sidebox from '~/components/Sidebox.vue'
 
 import init from '~/assets/init.js'

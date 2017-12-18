@@ -2,6 +2,10 @@
 .row
   sidebox(:data="[{id: 'user', title: '유저 조회'}, {id: 'history', title: 'History 조회'}, {id: 'api', title: 'API Docs'}]")
   .col.s12.l11.pull-l1(style="min-height: 400px;")
+    .card.z-depth-2.teal.accent-3
+      .card-content
+        p.card-title 공지
+        p 본 서비스는 곧 별개의 사이트로 이관 예정입니다.
     #user.section.scrollspy
       .card.z-depth-2
         .card-content
