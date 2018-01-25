@@ -38,7 +38,6 @@
 import '~/assets/ul.css'
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'MoriBot :: Dev :: On Demand'
@@ -48,9 +47,6 @@ const meta = buildmeta(title, 'MoriBot 프로그램 정보입니다.',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
   },
   head () {
     return {

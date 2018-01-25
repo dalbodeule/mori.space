@@ -21,7 +21,6 @@
 <script>
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'EasterEgg :: On Demand'
@@ -33,9 +32,6 @@ const meta = buildmeta(title, 'Donate',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
   },
   head () {
     return {

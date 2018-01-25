@@ -15,13 +15,13 @@
               ul.introduce
                 li
                   i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email:&nbsp;
-                  a.email(data-email="jioo0224@naver.com")
+                  a.email(data-email="jioo0224##naver.com")
                 li
                   i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email:&nbsp;
-                  a.email(data-email="webmaster.mori.space")
+                  a.email(data-email="webmaster##mori.space")
                 li
                   i.fa.fa-telegram(aria-hidden="true") &nbsp;telegram:&nbsp;
-                  a(href="https://t.me/small_sunshine", target="_blank") small_sunshine
+                  a(href="https://t.me/small_sunshine", target="_blank") @small_sunshine
                 li
                   p discord: @볕뉘#8486
     #dev.section.scrollspy
@@ -61,7 +61,6 @@
 import '~/assets/ul.css'
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = '개발자 정보 :: On Demand'
@@ -71,9 +70,6 @@ const meta = buildmeta(title, '자기소개 페이지입니다.',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
   },
   head () {
     return {

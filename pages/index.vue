@@ -16,7 +16,6 @@
 <script>
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'On Demand'
@@ -26,9 +25,6 @@ const meta = buildmeta(title, 'On Demand 메인 페이지 입니다.',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
   },
   head () {
     return {

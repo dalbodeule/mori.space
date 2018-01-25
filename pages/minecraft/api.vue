@@ -336,7 +336,6 @@ import Sidebox from '~/components/Sidebox.vue'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'API Docs :: Minecraft :: On Demand'
@@ -348,7 +347,6 @@ export default {
     Sidebox
   },
   mounted () {
-    init()
     Prism.highlightAll()
   },
   head () {

@@ -38,7 +38,6 @@
 <script>
 import Sidebox from '~/components/Sidebox.vue'
 
-import init from '~/assets/init.js'
 import buildmeta from '~/assets/buildmeta'
 
 const title = 'Minecraft :: On Demand'
@@ -48,9 +47,6 @@ const meta = buildmeta(title, 'On Demand Minecraft 페이지입니다.',
 export default {
   components: {
     Sidebox
-  },
-  mounted () {
-    init()
   },
   head () {
     return {

@@ -23,6 +23,8 @@ import 'font-awesome/css/font-awesome.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import '~/assets/init.css'
 
+import init from '~/assets/init.js'
+
 import Headers from '~/components/Header.vue'
 import Footers from '~/components/Footer.vue'
 
@@ -30,6 +32,29 @@ export default {
   components: {
     Headers,
     Footers
+  },
+  mounted () {
+    init()
+  },
+  updated () {
+    console.log('updated')
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.fullPath === from.fullPath) {
+        return
+      }
+      if (to.path !== from.path) {
+        if (this.isServer) {
+          return
+        }
+        this.$nextTick(() => {
+          setTimeout(() => {
+            init()
+          }, 700)
+        })
+      }
+    }
   }
 }
 </script>

@@ -7,11 +7,10 @@
           p
             | 만약 도움이 필요하신 경우 여기로 연락 부탁드립니다.
             br
+            i.fa.fa-envelope-o
+            | &nbsp; 
             a.email(data-email="webmaster##mori.space")
-                i.fa.fa-envelope-o
-                |  webmaster@mori.space
             br
-            a(href="https://t.me/small_sunshine" target="_blank")
-                i.fa.fa-telegram
-                |  @small_sunshine
+            i.fa.fa-telegram
+            a(href="https://t.me/small_sunshine" target="_blank") &nbsp; @small_sunshine
 </template>
