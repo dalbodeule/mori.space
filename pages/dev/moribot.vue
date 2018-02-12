@@ -17,20 +17,21 @@
               a(href="https://whatanime.ga/", target="_blank") whatanime.ga
               | 를 통한 애니메이션 검색이 가능합니다.
             p 이 봇은&nbsp;
-              a(href="https://nodejs.org/", target="_blank") node.js
+              a(href="https://nodejs.org/", target="_blank") 
+                fa-icon(pack="fab" name="node" size="2x")
               | 를 이용해서 만들어졌습니다.
             ul.introduce
               li 
-                i.fa.fa-github
-                | : 
+                fa-icon(pack="fab" name="github")
+                | &nbsp;
                 a(href="https://github.com/small-sunshines/gjmoribot") https://github.com/small-sunshines/gjmoribot
               li 
-                i.fa.fa-telegram
-                | : 
+                fa-icon(pack="fab" name="telegram")
+                | &nbsp;
                 a(href="https://t.me/gjmoribot") https://t.me/gjmoribot
               li 
-                i.fa.fa-telegram
-                | Beta : 
+                fa-icon(pack="fab" name="telegram")
+                | &nbsp; Beta 
                 a(href="https://t.me/mori_betabot") https://t.me/mori_betabot
 </template>
 

@@ -5,8 +5,8 @@
       <div class="row">
         <sidebox v-bind:data="[{id: 'error', title: '오류'}]"/>
         <div class="col s12 l11 pull-l1" style="min-height: 400px;">
-          <div class="center">
-            <i class="fa fa-exclamation" aria-hidden="true" style="font-size:15em;"></i>
+          <div class="center" style="margin-top: 5em;">
+            <fa-icon pack="fas" name="exclamation" size="9x"/>
             <div v-if="error.statusCode === 404" class="card-content">
               <p>없는 페이지입니다.</p>
             </div>
@@ -28,7 +28,6 @@
 
 <script>
 import 'materialize-css/dist/css/materialize.css'
-import 'font-awesome/css/font-awesome.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import '~/assets/init.css'
 

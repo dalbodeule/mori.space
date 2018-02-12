@@ -1,6 +1,6 @@
 <template lang="pug">
   .row
-    sidebox(:data="[{id: 'moribot', title: 'MoriBot'}]")
+    sidebox(:data="[{id: 'moribot', title: 'MoriBot'}, {id: 'kkutu', title: '모리끄투'}]")
     .col.s12.l11.pull-l1(style="min-height: 400px;")
       #moribot.section.scrollspy
         .card.z-depth-2
@@ -11,6 +11,15 @@
             br
             br
             nuxt-link.btn.light-blue.lighten-1(to="/dev/moribot") 살펴보기
+      #kkutu.section.scrollspy
+        .card.z-depth-2
+          .card-content
+            p.card-title 모리끄투
+            span
+            | 모리끄투 소개페이지로 이동합니다.
+            br
+            br
+            nuxt-link.btn.light-blue.lighten-1(to="/dev/kkutu") 살펴보기
 </template>
 
 <script>

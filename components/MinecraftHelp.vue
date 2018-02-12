@@ -7,10 +7,10 @@
           p
             | 만약 도움이 필요하신 경우 여기로 연락 부탁드립니다.
             br
-            i.fa.fa-envelope-o
+            fa-icon(pack="far" name="envelope")
             | &nbsp; 
             a.email(data-email="webmaster##mori.space")
             br
-            i.fa.fa-telegram
+            fa-icon(pack="fab" name="telegram")
             a(href="https://t.me/small_sunshine" target="_blank") &nbsp; @small_sunshine
 </template>

@@ -53,7 +53,8 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-adsense'],
     ['@nuxtjs/google-analytics'],
-    ['@nuxtjs/sitemap']
+    ['@nuxtjs/sitemap'],
+    ['qonfucius-nuxt-fontawesome']
   ],
   'google-adsense': {
     id: 'ca-pub-2810659463174293',
@@ -66,5 +67,19 @@ module.exports = {
   },
   sitemap: {
     path: '/sitemap.xml'
+  },
+  fontAwesome: {
+    packs: [
+      {
+        package: '@fortawesome/fontawesome-free-regular',
+        icons: ['faEnvelope']
+      }, {
+        package: '@fortawesome/fontawesome-free-brands',
+        icons: ['faTelegram', 'faDiscord', 'faNpm', 'faGithub', 'faNode']
+      }, {
+        package: '@fortawesome/fontawesome-free-solid',
+        icons: ['faExclamation']
+      }
+    ]
   }
 }

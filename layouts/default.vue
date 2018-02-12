@@ -19,7 +19,6 @@
 
 <script>
 import 'materialize-css/dist/css/materialize.css'
-import 'font-awesome/css/font-awesome.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import '~/assets/init.css'
 
@@ -37,7 +36,9 @@ export default {
     init()
   },
   updated () {
-    console.log('updated')
+    setTimeout(() => {
+      init()
+    }, 700)
   },
   watch: {
     '$route' (to, from) {

@@ -2,6 +2,10 @@
   .row#app
     sidebox(:data="[{id: 'search', title: 'Search'}, {id: 'info', title: 'Information'}, {id: 'help', title: 'Help'}]")
     .col.s12.l11.pull-l1(style="min-height: 400px;")
+      .card.teal.accent-3
+        .card-content
+          p.card-title 공지
+          p 본 서비스는 곧 별개의 사이트로 이관 예정입니다.
       #search.section.scrollspy(style="min-height: 200px")
         .card.z-depth-2
           .card-content

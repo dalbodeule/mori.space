@@ -14,27 +14,36 @@
             li.ul
               ul.introduce
                 li
-                  i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email:&nbsp;
+                  fa-icon(pack="far" name="envelope")
+                  | &nbsp;
                   a.email(data-email="jioo0224##naver.com")
                 li
-                  i.fa.fa-envelope-o(aria-hidden="true") &nbsp;email:&nbsp;
+                  fa-icon(pack="far" name="envelope")
+                  | &nbsp;
                   a.email(data-email="webmaster##mori.space")
                 li
-                  i.fa.fa-telegram(aria-hidden="true") &nbsp;telegram:&nbsp;
+                  fa-icon(pack="fab" name="telegram")
+                  | &nbsp;
                   a(href="https://t.me/small_sunshine", target="_blank") @small_sunshine
                 li
-                  p discord: @볕뉘#8486
+                  fa-icon(pack="fab" name="discord")
+                  | &nbsp; @볕뉘#8486
     #dev.section.scrollspy
       .card.z-depth-2
         .card-content
           p.card-title 개발 관련
           ul.introduce
-            li 주사용 언어: 
+            li
+              fa-icon(pack="fab" name="node")
+              | &nbsp;
               a(href="https://nodejs.org/", target="_blank") Node.js
-            li npmjs: 
+            li
+              fa-icon(pack="fab" name="npm")
+              | &nbsp;
               a(href="https://www.npmjs.com/~trusty_people", target="_blank") trusty_people
             li 
-              i.fa.fa-github 
+              fa-icon(pack="fab" name="github")
+              | &nbsp;
               a(href="https://github.com/small-sunshines", target="_blank") small-sunshines
     #inter.section.scrollspy
       .card.z-depth-2
