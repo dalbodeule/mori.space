@@ -13,7 +13,7 @@ try {
     logger.level = 'INFO'
   } else if (process.env.NODE_ENV === 'development') {
     logger.level = 'DEBUG'
-    nuxtConfig.dev = true
+    nuxtConfig.isDev = true
   }
   logger.info(process.env.NODE_ENV + ' mode')
 
@@ -49,7 +49,7 @@ try {
   const nuxt = new Nuxt(nuxtConfig)
 
   // Build only in dev mode
-  if (nuxtConfig.dev) {
+  if (nuxtConfig.isDev) {
     const builder = new Builder(nuxt)
     builder.build()
   }
