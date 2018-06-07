@@ -32,14 +32,7 @@ module.exports = {
     vendor: [
       'jquery',
       'materialize-css',
-      'urijs',
-      './assets/dropdown.js',
-      './assets/email.js',
-      './assets/init.js',
-      './assets/jquery.sticky-kit.js',
-      './assets/scrollspy.js',
-      './assets/sidenav.js',
-      './assets/sidebox.js'
+      'babel-polyfill'
     ],
     plugins: [
       new webpack.ProvidePlugin({
