@@ -1,7 +1,0 @@
-{
-    "name": "morispace",
-    "script": "./main.js",
-    "env": {
-        "NODE_ENV": "production"
-    }
-}
