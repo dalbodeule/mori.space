@@ -4,16 +4,21 @@ const { Nuxt, Builder } = require('nuxt')
 const onFinished = require('on-finished')
 const logger = require('log4js').getLogger()
 const bodyParser = require('body-parser')
-const config = require('./config.json')
 const nuxtConfig = require('./nuxt.config.js')
 const userAgent = require('express-useragent')
 const path = require('path')
 
+const config = {
+  trust_proxy: (process.env.trust_proxy || false)
+}
+
 try {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.dev === false) {
     logger.level = 'INFO'
-  } else if (process.env.NODE_ENV === 'development') {
+    process.env.NODE_ENV = 'production'
+  } else {
     logger.level = 'DEBUG'
+    process.env.NODE_ENV = 'development'
     nuxtConfig.isDev = true
   }
   logger.info(process.env.NODE_ENV + ' mode')
@@ -69,7 +74,7 @@ try {
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
-  const server = app.listen(config.http_port, () => {
+  const server = app.listen(80, () => {
     logger.info('expres app on port ' + server.address().port)
   })
 } catch (e) {

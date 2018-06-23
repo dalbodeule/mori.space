@@ -31,8 +31,7 @@ module.exports = {
     },
     vendor: [
       'jquery',
-      'materialize-css',
-      'babel-polyfill'
+      'materialize-css'
     ],
     plugins: [
       new webpack.ProvidePlugin({
