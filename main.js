@@ -13,9 +13,9 @@ const config = {
 }
 
 try {
-  if (process.env.dev === false) {
+  if (process.env.NODE_ENV === 'production') {
     logger.level = 'INFO'
-    process.env.NODE_ENV = 'production'
+    nuxtConfig.isDev = false
   } else {
     logger.level = 'DEBUG'
     process.env.NODE_ENV = 'development'
@@ -25,8 +25,8 @@ try {
 
   // main setting
   app.disable('x-powered-by')
-  app.set('trust proxy', config.trustproxy)
-  logger.info('trust proxy: ' + config.trustproxy)
+  app.set('trust proxy', config.trust_proxy)
+  logger.info('trust proxy: ' + config.trust_proxy)
 
   app.use(bodyParser.urlencoded({extended: true}))
   app.use(bodyParser.json())
