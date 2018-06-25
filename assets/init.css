@@ -7,7 +7,7 @@
 }
 @media (min-width: 992px) {
     nav div.nav-wrapper a.brand-logo {
-        margin-left: 10px !important;
+        margin-left: 20px !important;
     }
 }
 
@@ -38,4 +38,9 @@ div.ad {
     width: 100%;
     min-height: 60px;
     position: relative;
+}
+
+ul.table-of-contents li {
+    min-width: 90px !important;
+    max-width: 120px !important;
 }
