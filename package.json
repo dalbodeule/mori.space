@@ -34,6 +34,7 @@
     "materialize-css": "^0.100.2",
     "moment": "^2.19.2",
     "nuxt": "^1.0.0",
+    "nuxt-rfg-icon": "^0.4.3",
     "on-finished": "^2.3.0",
     "prismjs": "^1.8.4",
     "pug": "^2.0.0-rc.4",

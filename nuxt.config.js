@@ -31,7 +31,15 @@ module.exports = {
     },
     vendor: [
       'jquery',
-      'materialize-css'
+      'materialize-css',
+      'urijs',
+      './assets/dropdown.js',
+      './assets/email.js',	
+      './assets/init.js',	
+      './assets/jquery.sticky-kit.js',	
+      './assets/scrollspy.js',	
+      './assets/sidenav.js',	
+      './assets/sidebox.js'
     ],
     plugins: [
       new webpack.ProvidePlugin({
@@ -46,7 +54,8 @@ module.exports = {
     ['@nuxtjs/google-adsense'],
     ['@nuxtjs/google-analytics'],
     ['@nuxtjs/sitemap'],
-    ['qonfucius-nuxt-fontawesome']
+    ['qonfucius-nuxt-fontawesome'],
+    'nuxt-rfg-icon'
   ],
   'google-adsense': {
     id: 'ca-pub-2810659463174293',
@@ -73,5 +82,10 @@ module.exports = {
         icons: ['faExclamation']
       }
     ]
+  },
+  'rfg-icon': {
+    static: true,
+    staticPath: '/_favicons/',
+    masterPicture: 'static/icon.png'
   }
 }
