@@ -1,4 +1,4 @@
-# morispacewithnuxt
+# mori.space
 
 > Nuxt.js project
 
