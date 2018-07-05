@@ -33,7 +33,11 @@ try {
     hsts: false,
     contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self'"]
+        defaultSrc: ["'self' https://pagead2.googlesyndication.com 'unsafe-inline'"],
+        scriptSrc: ["* 'unsafe-inline'"],
+        styleSrc: ["* 'unsafe-inline'"],
+        imgSrc: ["'self' https://www.google-analytics.com"],
+        frameSrc: ["'self' https://googleads.g.doubleclick.net"]
       }
     }
   }))
