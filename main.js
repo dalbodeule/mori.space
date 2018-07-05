@@ -29,7 +29,14 @@ try {
   app.set('trust proxy', config.trust_proxy)
   logger.info('trust proxy: ' + config.trust_proxy)
 
-  app.use(helmet())
+  app.use(helmet({
+    hsts: false,
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"]
+      }
+    }
+  }))
 
   app.use(bodyParser.urlencoded({extended: true}))
   app.use(bodyParser.json())
