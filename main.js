@@ -37,7 +37,7 @@ try {
         scriptSrc: ["* 'unsafe-inline'"],
         styleSrc: ["* 'unsafe-inline'"],
         imgSrc: ["'self' https://www.google-analytics.com"],
-        frameSrc: ["'self' https://goog'"]
+        frameSrc: ["'self' https://googleads.g.doubleclick.net"]
       }
     }
   }))
