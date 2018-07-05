@@ -1,6 +1,6 @@
 {
   "name": "mori.space",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "볕뉘의 개인사이트입니다.",
   "author": "small_sunshine <jioo0224@naver.com>",
   "private": true,
@@ -37,8 +37,7 @@
     "nuxt-rfg-icon": "^0.4.3",
     "on-finished": "^2.3.0",
     "pug": "^2.0.0-rc.4",
-    "qonfucius-nuxt-fontawesome": "^0.0.1",
-    "urijs": "^1.19.0"
+    "qonfucius-nuxt-fontawesome": "^0.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

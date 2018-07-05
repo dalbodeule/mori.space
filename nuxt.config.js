@@ -32,7 +32,6 @@ module.exports = {
     vendor: [
       'jquery',
       'materialize-css',
-      'urijs',
       './assets/dropdown.js',
       './assets/email.js',	
       './assets/init.js',	
