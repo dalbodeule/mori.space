@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const nuxtConfig = require('./nuxt.config.js')
 const userAgent = require('express-useragent')
 const path = require('path')
+const helmet = require('helmet')
 
 const config = {
   trust_proxy: (process.env.trust_proxy || false)
@@ -28,6 +29,8 @@ try {
   app.set('trust proxy', config.trust_proxy)
   logger.info('trust proxy: ' + config.trust_proxy)
 
+  app.use(helmet())
+
   app.use(bodyParser.urlencoded({extended: true}))
   app.use(bodyParser.json())
 
@@ -35,9 +38,13 @@ try {
 
   // static setup (chrome.html)
   app.use('/static/jquery',
-    express.static((path.resolve(__dirname, 'node_modules', 'jquery', 'dist'))))
+    express.static(path.resolve(__dirname, 'node_modules', 'jquery', 'dist')))
   app.use('/static/materializecss',
-    express.static((path.resolve(__dirname, 'node_modules', 'materialize-css', 'dist'))))
+    express.static(path.resolve(__dirname, 'node_modules', 'materialize-css', 'dist')))
+  app.use('/static/material-design-icons',
+    express.static(path.resolve(__dirname, 'node_modules', 'material-design-icons-iconfont', 'dist')))
+  app.use('/static/jquery.sticky-kit.js',
+    express.static(path.resolve(__dirname, 'assets', 'jquery.sticky-kit.js')))
 
   // health moniter
   app.all('/health', (req, res) => {

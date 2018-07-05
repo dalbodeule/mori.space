@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">사이트 안내</h5>
-          <p class="grey-text text-lighten-4" style="word-break: keep-all;">본 사이트는 <a href="http://materializecss.com" class="white-text">Materialize</a> 프레임워크를 사용하여 개발되었습니다.<br>본 사이트의 Donate icon은 <a href="https://icons8.com" class="white-text">icons8.com</a> 에서 제공받고 있습니다.</p>
+          <p class="grey-text text-lighten-4" style="word-break: keep-all;">본 사이트는 <a href="http://materializecss.com" class="white-text">Materialize</a> 프레임워크를 사용하여 개발되었습니다.</p>
         </div>
         <div class="col l6 s12">
           <h5 class="white-text">개발자 정보</h5>

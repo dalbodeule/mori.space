@@ -11,7 +11,6 @@
               <li><nuxt-link to="/dev/kkutu" class="blue-text text-lighten-1">모리끄투</nuxt-link></li>
             </ul>
           </li>
-          <li><nuxt-link to="/donate">Donate</nuxt-link></li>
           <li>
             <p style="width: 1em"></p>
           </li>
@@ -26,7 +25,6 @@
               <li><nuxt-link to="/dev/kkutu">모리끄투</nuxt-link></li>
             </ul>
           </li>
-          <li><nuxt-link to="/donate">Donate</nuxt-link></li>
         </ul>
       </div>
     </nav>

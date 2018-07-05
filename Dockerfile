@@ -8,8 +8,6 @@ COPY package.json /src/package.json
 COPY package-lock.json /src/package-lock.json
 COPY . /src
 RUN npm install
-RUN npm audit fix
 RUN npm run build
-WORKDIR /src
 
 CMD ["node", "main.js"]

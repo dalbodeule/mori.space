@@ -19,6 +19,11 @@
               margin-left: 10px !important;
           }
       }
+      @media (max-width: 992px) {
+          div.sidebox {
+              display: none;
+          }
+      }
 
       header nav {
           margin-bottom: 20px;
@@ -47,9 +52,14 @@
       <nav class="blue lighten-1 theme">
         <div class="nav-wrapper"><a href="/" class="brand-logo">ON Demand</a><a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-          <li><a href="https://chrome.com/">Google Chrome</a></li>
-          <li><a href="https://firefix.com/">Mozilla Firefox</a></li>
-          <li><a href="https://whale.naver.com">Naver Whale</a></li>
+            <li><a href="https://chrome.com/">Google Chrome</a></li>
+            <li><a href="https://firefix.com/">Mozilla Firefox</a></li>
+            <li><a href="https://whale.naver.com">Naver Whale</a></li>
+          <ul id="mobile-menu" class="side-nav">
+            <li><a href="https://chrome.com/">Google Chrome</a></li>
+            <li><a href="https://firefix.com/">Mozilla Firefox</a></li>
+            <li><a href="https://whale.naver.com">Naver Whale</a></li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -68,6 +78,14 @@
     <div id="contents" class="container">
       <div class="row">
         <div class="col s12 l1 push-l11">
+          <div class="sidebox">
+            <ul class="section table-of-contents">
+              <li><a href="#notice">notice</a></li>
+              <li><a href="#chrome">Google Chrome</a></li>
+              <li><a href="#firefox">Mozilla Firefox</a></li>
+              <li><a href="#whale">Naver Whale</a></li>
+            </ul>
+          </div>
         </div>
         <div class="col s12 l11 pull-l1">
           <div class="card z-depth-2">
@@ -140,18 +158,27 @@
       </div>
     </footer>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async src="/static/jquery/jquery.min.js"></script>
-    <script async src="/static/materializecss/js/materialize.min.js"></script>
+    <script src="/static/jquery/jquery.min.js"></script>
+    <script src="/static/materializecss/js/materialize.min.js"></script>
+    <script src="/static/jquery.sticky-kit.js"></script>
     <script>
-      $(document).on('ready', () => {
-        $('.email').each((index, data) => {
-          var email = $(data).data('email').replace(/##/g, '@')
-          $(data).text(email)
-          $(data).attr('href', 'mailto:' + email)
-          $(data).removeAttr('data-email')
-        })
-        console.log('email display success')
-      })
+$(document).ready(function () {
+  $('.button-collapse').sideNav({
+    edge: 'left',
+    draggable: true
+  })
+  $('.scrollspy').scrollSpy()
+  $('.sidebox').stick_in_parent({
+    parent: $('.row')
+  })
+  $('.email').each(function (index, data) {
+    var email = $(data).data('email').replace(/##/g, '@')
+    $(data).text(email)
+    $(data).attr('href', 'mailto:' + email)
+    $(data).removeAttr('data-email')
+  })
+  console.log('email display success')
+})
     </script>
   </body>
 </html>
