@@ -1,6 +1,6 @@
 {
   "name": "mori.space",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "볕뉘의 개인사이트입니다.",
   "author": "small_sunshine <jioo0224@naver.com>",
   "private": true,
@@ -30,7 +30,7 @@
     "helmet": "^3.12.1",
     "jquery": "^3.2.1",
     "json-stringify-pretty-compact": "^1.0.4",
-    "log4js": "^2.10.0",
+    "log4js": "^2.11.0",
     "material-design-icons-iconfont": "^3.0.3",
     "materialize-css": "^0.100.2",
     "nuxt": "^1.0.0",
