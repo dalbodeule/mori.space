@@ -16,6 +16,7 @@ module.exports = {
     middleware: ['ssr-cookie']
   },
   build: {
+    publicPath: '//mori.space/_nuxt/',
     /*
     ** Run ESLint on save
     */

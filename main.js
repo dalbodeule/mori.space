@@ -33,11 +33,13 @@ try {
     hsts: false,
     contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self' https://pagead2.googlesyndication.com 'unsafe-inline'"],
-        scriptSrc: ["* 'unsafe-inline'"],
-        styleSrc: ["* 'unsafe-inline'"],
-        imgSrc: ["'self' https://www.google-analytics.com"],
-        frameSrc: ["'self' https://googleads.g.doubleclick.net"]
+        defaultSrc: ["'self' mori.space"],
+        scriptSrc: ["'self' 'unsafe-inline' pagead2.googlesyndication.com mori.space adservice.google.co.kr adservice.google.com www.google-analytics.com"],
+        styleSrc: ["'unsafe-inline' mori.space"],
+        imgSrc: ["'self' www.google-analytics.com mori.space"],
+        frameSrc: ["googleads.g.doubleclick.net"],
+        formAction: ["'self'"],
+        fontSrc: ["'self' mori.space"]
       }
     }
   }))
