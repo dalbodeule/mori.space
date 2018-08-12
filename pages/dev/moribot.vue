@@ -24,7 +24,7 @@
               li 
                 fa-icon(pack="fab" name="github")
                 | &nbsp;
-                a(href="https://github.com/small-sunshines/gjmoribot") https://github.com/small-sunshines/gjmoribot
+                a(href="https://git.mori.space/small-sunshine/gjmoribot") https://git.mori.space/small-sunshine/gjmoribot
               li 
                 fa-icon(pack="fab" name="telegram")
                 | &nbsp;
