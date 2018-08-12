@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const SriPlugin = require('webpack-subresource-integrity')
 
 module.exports = {
   /*
@@ -29,6 +30,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      config.output.crossOriginLoading = 'anonymous'
     },
     vendor: [
       'jquery',
@@ -47,6 +49,10 @@ module.exports = {
         $: 'jquery',
         jquery: 'jquery',
         'window.jQuery': 'jquery'
+      }),
+      new SriPlugin({
+        hashFuncNames: ['sha256', 'sha384'],
+        enabled: true
       })
     ]
   },
