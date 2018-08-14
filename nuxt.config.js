@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const SriPlugin = require('webpack-subresource-integrity')
 
 module.exports = {
   /*
@@ -17,7 +16,6 @@ module.exports = {
     middleware: ['ssr-cookie']
   },
   build: {
-    publicPath: '//mori.space/_nuxt/',
     /*
     ** Run ESLint on save
     */
@@ -49,26 +47,18 @@ module.exports = {
         $: 'jquery',
         jquery: 'jquery',
         'window.jQuery': 'jquery'
-      }),
-      new SriPlugin({
-        hashFuncNames: ['sha256', 'sha384'],
-        enabled: true
       })
     ]
   },
   modules: [
-    ['@nuxtjs/google-adsense'],
     ['@nuxtjs/google-analytics'],
     ['@nuxtjs/sitemap'],
     ['qonfucius-nuxt-fontawesome'],
     'nuxt-rfg-icon'
   ],
-  'google-adsense': {
-    id: 'ca-pub-2810659463174293',
-    pageLevelAds: true,
-    analyticsUacct: 'UA-61070671-7',
-    analyticsDomainName: 'mori.space'
-  },
+  plugins: [
+    { src: '~/plugins/vue-google-adsense', ssr: false }
+  ],
   'google-analytics': {
     id: 'UA-61070671-7'
   },
@@ -93,5 +83,15 @@ module.exports = {
     static: true,
     staticPath: '/_favicons/',
     masterPicture: 'static/icon.png'
+  },
+  render: {
+    csp: {
+      enabled: true,
+      hashAlgorithm: 'sha256',
+      allowedSources: ['pagead2.googlesyndication.com', 'www.google-analytics.com'],
+      policies: {
+        'font-src': "'self'"
+      }
+    }
   }
 }

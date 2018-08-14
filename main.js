@@ -30,18 +30,7 @@ try {
   logger.info('trust proxy: ' + config.trust_proxy)
 
   app.use(helmet({
-    hsts: false,
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self' mori.space"],
-        scriptSrc: ["'self' pagead2.googlesyndication.com mori.space adservice.google.co.kr adservice.google.com www.google-analytics.com"],
-        styleSrc: ["'self' mori.space"],
-        imgSrc: ["'self' www.google-analytics.com mori.space"],
-        frameSrc: ["googleads.g.doubleclick.net"],
-        formAction: ["'self'"],
-        fontSrc: ["'self' mori.space"]
-      }
-    }
+    hsts: false
   }))
 
   app.use(bodyParser.urlencoded({extended: true}))

@@ -1,6 +1,6 @@
 {
   "name": "mori.space",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "description": "볕뉘의 개인사이트입니다.",
   "author": "small_sunshine <jioo0224@naver.com>",
   "private": true,
@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "startnuxt": "nuxt start",
     "start": "cross-env NODE_ENV=production node main.js",
     "startdev": "cross-env NODE_ENV=development node main.js",
     "generate": "nuxt generate",
@@ -18,7 +19,6 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.6",
     "@fortawesome/fontawesome-free-regular": "^5.0.6",
     "@fortawesome/fontawesome-free-solid": "^5.0.6",
-    "@nuxtjs/google-adsense": "^1.1.2",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "^0.0.3",
     "axios": "^0.17.1",
@@ -37,14 +37,15 @@
     "nuxt-rfg-icon": "^0.4.3",
     "on-finished": "^2.3.0",
     "pug": "^2.0.0-rc.4",
-    "qonfucius-nuxt-fontawesome": "^0.0.1"
+    "qonfucius-nuxt-fontawesome": "^0.0.1",
+    "vue-google-adsense": "^1.2.0",
+    "vue-script2": "^2.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "webpack-subresource-integrity": "^1.1.0-rc.4"
+    "eslint-plugin-vue": "^4.0.0"
   }
 }
