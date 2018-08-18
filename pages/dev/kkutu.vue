@@ -16,6 +16,7 @@
               | 를 끄투에 적용하기도 하였습니다.
             p 여러가지 개발을 하고 적용하던 도중, 끄투를 즐겨주시는 몇몇 분들이 
               | 저도 서버를 한번 열어보는 것을 제안하셔서 열어보게 되었습니다.
+            p 현재는 해티님께서 모리끄투를 인수, 운영하고 계십니다.
             p 끄투는 &nbsp;
               a(href="https://nodejs.org/", target="_blank") 
                 fa-icon(pack="fab" name="node" size="2x")
@@ -24,15 +25,15 @@
               li 
                 fa-icon(pack="fab" name="github")
                 | &nbsp; Game &nbsp;
-                a(href="https://github.com/small-sunshines/morikkutu-game") https://github.com/small-sunshines/morikkutu-game
+                a(href="https://github.com/hatty163/morikkutu-game") https://github.com/hatty163/morikkutu-game
               li 
                 fa-icon(pack="fab" name="github")
                 | &nbsp; Web &nbsp;
-                a(href="https://github.com/small-sunshines/morikkutu-web") https://github.com/small-sunshines/morikkutu-web
+                a(href="https://github.com/hatty163/morikkutu-web") https://github.com/hatty163/morikkutu-web
               li 
                 fa-icon(pack="fab" name="github")
                 | &nbsp; Lib &nbsp;
-                a(href="https://github.com/small-sunshines/morikkutu-lib") https://github.com/small-sunshines/morikkutu-lib
+                a(href="https://github.com/hatty163/morikkutu-lib") https://github.com/hatty163/morikkutu-lib
 </template>
 
 <script>
