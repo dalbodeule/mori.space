@@ -31,7 +31,6 @@ try {
 
   app.use(helmet({
     hsts: false
-    }
   }))
 
   app.use(bodyParser.urlencoded({extended: true}))
