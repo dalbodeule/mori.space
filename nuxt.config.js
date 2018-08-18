@@ -17,7 +17,6 @@ module.exports = {
     middleware: ['ssr-cookie']
   },
   build: {
-    publicPath: '//mori.space/_nuxt/',
     /*
     ** Run ESLint on save
     */
@@ -93,5 +92,16 @@ module.exports = {
     static: true,
     staticPath: '/_favicons/',
     masterPicture: 'static/icon.png'
+  },
+  render: {
+    /*csp: {
+      enabled: true,
+      hashAlgorithm: 'sha256',
+      allowedSources: ['pagead2.googlesyndication.com', 'www.google-analytics.com',
+        'ajax.cloudflare.com', 'adservice.google.co.kr', 'adservice.google.com'],
+      policies: {
+        'font-src': "'self'"
+      }
+    }*/
   }
 }

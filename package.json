@@ -1,6 +1,6 @@
 {
   "name": "mori.space",
-  "version": "1.2.4",
+  "version": "1.2.8",
   "description": "볕뉘의 개인사이트입니다.",
   "author": "small_sunshine <jioo0224@naver.com>",
   "private": true,
@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "startnuxt": "nuxt start",
     "start": "cross-env NODE_ENV=production node main.js",
     "startdev": "cross-env NODE_ENV=development node main.js",
     "generate": "nuxt generate",
