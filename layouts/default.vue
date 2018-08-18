@@ -3,20 +3,20 @@
     <headers/>
     <div class="ad">
       <!-- On Demand-main -->
-      <Adsenes
+      <Adsense
         ad-client="ca-pub-2810659463174293"
         ad-slot="4386636415">
-      </Adsenes>
+      </Adsense>
       <p>google AD</p>
     </div>
     <div id="contents" class="container">
       <nuxt/>
     </div>
     <div style="margin-top: -20px" class="ad">
-      <Adsenes
+      <Adsense
         ad-client="ca-pub-2810659463174293"
         ad-slot="9403901631">
-      </Adsenes>
+      </Adsense>
       <p>google AD</p>
     </div>
     <footers/>

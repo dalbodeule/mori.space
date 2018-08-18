@@ -85,13 +85,14 @@ module.exports = {
     masterPicture: 'static/icon.png'
   },
   render: {
-    csp: {
+    /*csp: {
       enabled: true,
       hashAlgorithm: 'sha256',
-      allowedSources: ['pagead2.googlesyndication.com', 'www.google-analytics.com'],
+      allowedSources: ['pagead2.googlesyndication.com', 'www.google-analytics.com',
+        'ajax.cloudflare.com', 'adservice.google.co.kr', 'adservice.google.com'],
       policies: {
         'font-src': "'self'"
       }
-    }
+    }*/
   }
 }
