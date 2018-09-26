@@ -10,13 +10,16 @@ module.exports = {
   /*
   ** Build configuration
   */
-  loading: {
-    height: '0.5em'
-  },
+  loading: '~/components/loading.vue',
   router: {
     middleware: ['ssr-cookie']
   },
   build: {
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
+      }
+    },
     /*
     ** Run ESLint on save
     */
@@ -32,23 +35,8 @@ module.exports = {
       config.output.crossOriginLoading = 'anonymous'
     },
     vendor: [
-      'jquery',
-      'materialize-css',
-      './assets/dropdown.js',
-      './assets/email.js',	
-      './assets/init.js',	
-      './assets/jquery.sticky-kit.js',	
-      './assets/scrollspy.js',	
-      './assets/sidenav.js',	
-      './assets/sidebox.js'
     ],
     plugins: [
-      new webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery',
-        'window.jQuery': 'jquery'
-      }),
       new SriPlugin({
         hashFuncNames: ['sha256', 'sha384'],
         enabled: true
@@ -60,11 +48,12 @@ module.exports = {
     ['@nuxtjs/google-analytics'],
     ['@nuxtjs/sitemap'],
     ['qonfucius-nuxt-fontawesome'],
-    'nuxt-rfg-icon'
+    'nuxt-rfg-icon',
+    '@nuxtjs/bulma',
   ],
   'google-adsense': {
     id: 'ca-pub-2810659463174293',
-    pageLevelAds: true,
+    pageLevelAds: false,
     analyticsUacct: 'UA-61070671-7',
     analyticsDomainName: 'mori.space'
   },
@@ -81,10 +70,12 @@ module.exports = {
         icons: ['faEnvelope']
       }, {
         package: '@fortawesome/fontawesome-free-brands',
-        icons: ['faTelegram', 'faDiscord', 'faNpm', 'faGithub', 'faNode']
+        icons: ['faTelegram', 'faDiscord', 'faNpm',
+          'faGithub', 'faNode']
       }, {
         package: '@fortawesome/fontawesome-free-solid',
-        icons: ['faExclamation']
+        icons: ['faHome', 'faWrench', 'faRobot',
+        'faKeyboard', 'faLaptop', 'faUserAlt']
       }
     ]
   },

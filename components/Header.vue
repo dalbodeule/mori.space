@@ -1,32 +1,59 @@
-<template>
-  <header>
-    <nav class="blue lighten-1 theme">
-      <div class="nav-wrapper"><nuxt-link to="/" class="brand-logo">ON Demand</nuxt-link><nuxt-link to="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></nuxt-link>
-        <ul class="right hide-on-med-and-down">
-          <li><nuxt-link to="/introduce">개발자 정보</nuxt-link></li>
-          <li><a href="#" data-activates="dev-nav" class="dropdown-button">Dev<i class="material-icons right">arrow_drop_down</i></a>
-            <ul id="dev-nav" class="dropdown-content">
-              <li><nuxt-link to="/dev" class="blue-text text-lighten-1">Dev</nuxt-link></li>
-              <li><nuxt-link to="/dev/moribot" class="blue-text text-lighten-1">MoriBot</nuxt-link></li>
-              <li><nuxt-link to="/dev/kkutu" class="blue-text text-lighten-1">모리끄투</nuxt-link></li>
-            </ul>
-          </li>
-          <li>
-            <p style="width: 1em"></p>
-          </li>
-        </ul>
-        <ul id="mobile-menu" class="side-nav">
-          <li><nuxt-link to="/introduce">개발자 정보</nuxt-link></li>
-          <li>
-            <a href="/dev" data-activates="dev-side" class="dropdown-button">Dev<i class="material-icons right">arrow_drop_down</i></a>
-            <ul id="dev-side" class="dropdown-content">
-              <li><nuxt-link to="/dev">Dev</nuxt-link></li>
-              <li><nuxt-link to="/dev/moribot">MoriBot</nuxt-link></li>
-              <li><nuxt-link to="/dev/kkutu">모리끄투</nuxt-link></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-</template>
+<template lang="pug">
+header
+  nav.navbar.is-info(role="navigation", aria-label="main navigation")
+    .navbar-brand
+      nuxt-link.navbar-item(to="/")
+        img(src="~/static/icon.png")
+        p(style="margin-left: 0.5em;") ON Demand
+      a.navbar-burger(role="button" aria-label="menu" aria-expanded="false"
+        @click="showNav = !showNav" :class="{ 'is-active': showNav }")
+        span(aria-hidden="true")
+        span(aria-hidden="true")
+        span(aria-hidden="true")
+    .navbar-menu(:class="{ 'is-active': showNav }" @click="toggleNav()")
+      .navbar-start
+        nuxt-link.navbar-item(to="/")
+          fa-icon(pack="fas" name="home")
+          | &nbsp; Home
+        nuxt-link.navbar-item(to="/introduce")
+          fa-icon(pack="fas" name="user-alt")
+          | &nbsp; 개발자 정보
+        .navbar-item.has-dropdown.is-hoverable
+          a.navbar-link
+            fa-icon(pack="fas" name="laptop")
+            | &nbsp; Dev
+          .navbar-dropdown
+            nuxt-link.navbar-item(to="/dev/moribot")
+              fa-icon(pack="fab" name="telegram")
+              | &nbsp; MoriBot
+            nuxt-link.navbar-item(to="/dev/kkutu")
+              fa-icon(pack="fas" name="keyboard")
+              | &nbsp; 모리끄투
+      .navbar-end
+</template> 
+
+<style scoped>
+.navbar-item img {
+  border-radius: 5px;
+}
+.navbar-brand .navbar-burger span {
+  color: #fff;
+}
+</style>
+
+<script>
+// https://jsfiddle.net/tbonz/80jkq0Ls/
+
+export default {
+  data() {
+    return {
+      showNav: false
+    }
+  },
+  methods: {
+    toggleNav () {
+      this.showNav = !this.showNav
+    }
+  }
+}
+</script>
