@@ -23,9 +23,9 @@ header
             fa-icon(pack="fas" name="laptop")
             | &nbsp; Dev
           .navbar-dropdown
-            nuxt-link.navbar-item(to="/dev/moribot")
+            nuxt-link.navbar-item(to="/dev/kuriyamabot")
               fa-icon(pack="fab" name="telegram")
-              | &nbsp; MoriBot
+              | &nbsp; KuriyamaBot
             nuxt-link.navbar-item(to="/dev/kkutu")
               fa-icon(pack="fas" name="keyboard")
               | &nbsp; 모리끄투

@@ -1,12 +1,5 @@
-const webpack = require('webpack')
-const SriPlugin = require('webpack-subresource-integrity')
-
 module.exports = {
-  /*
-  ** Headers of the page
-  */
-  head: {
-  },
+  mode: "spa",
   /*
   ** Build configuration
   */
@@ -15,15 +8,10 @@ module.exports = {
     middleware: ['ssr-cookie']
   },
   build: {
-    postcss: {
-      plugins: {
-        'postcss-custom-properties': false
-      }
-    },
     /*
     ** Run ESLint on save
     */
-    extend (config,  { isDev, isClient }) {
+    /* extend (config,  { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -32,24 +20,31 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-      config.output.crossOriginLoading = 'anonymous'
-    },
-    vendor: [
-    ],
-    plugins: [
-      new SriPlugin({
-        hashFuncNames: ['sha256', 'sha384'],
-        enabled: true
-      })
-    ]
+    },*/
   },
   modules: [
-    ['@nuxtjs/google-adsense'],
-    ['@nuxtjs/google-analytics'],
-    ['@nuxtjs/sitemap'],
-    ['qonfucius-nuxt-fontawesome'],
+    '@nuxtjs/google-adsense',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/sitemap',
     'nuxt-rfg-icon',
-    '@nuxtjs/bulma',
+    'nuxt-buefy',
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/free-regular-svg-icons',
+          icons: ['faEnvelope']
+        }, {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faTelegram', 'faDiscord', 'faNpm',
+            'faGithub', 'faNode']
+        }, {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faHome', 'faWrench', 'faRobot',
+          'faKeyboard', 'faLaptop', 'faUserAlt']
+        }
+      ]
+    }]
   ],
   'google-adsense': {
     id: 'ca-pub-2810659463174293',
@@ -63,36 +58,9 @@ module.exports = {
   sitemap: {
     path: '/sitemap.xml'
   },
-  fontAwesome: {
-    packs: [
-      {
-        package: '@fortawesome/fontawesome-free-regular',
-        icons: ['faEnvelope']
-      }, {
-        package: '@fortawesome/fontawesome-free-brands',
-        icons: ['faTelegram', 'faDiscord', 'faNpm',
-          'faGithub', 'faNode']
-      }, {
-        package: '@fortawesome/fontawesome-free-solid',
-        icons: ['faHome', 'faWrench', 'faRobot',
-        'faKeyboard', 'faLaptop', 'faUserAlt']
-      }
-    ]
-  },
   'rfg-icon': {
     static: true,
     staticPath: '/_favicons/',
     masterPicture: 'static/icon.png'
   },
-  render: {
-    /*csp: {
-      enabled: true,
-      hashAlgorithm: 'sha256',
-      allowedSources: ['pagead2.googlesyndication.com', 'www.google-analytics.com',
-        'ajax.cloudflare.com', 'adservice.google.co.kr', 'adservice.google.com'],
-      policies: {
-        'font-src': "'self'"
-      }
-    }*/
-  }
 }

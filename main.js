@@ -36,18 +36,6 @@ try {
   app.use(bodyParser.urlencoded({extended: true}))
   app.use(bodyParser.json())
 
-  app.use(userAgent.express())
-
-  // static setup (chrome.html)
-  app.use('/static/jquery',
-    express.static(path.resolve(__dirname, 'node_modules', 'jquery', 'dist')))
-  app.use('/static/materializecss',
-    express.static(path.resolve(__dirname, 'node_modules', 'materialize-css', 'dist')))
-  app.use('/static/material-design-icons',
-    express.static(path.resolve(__dirname, 'node_modules', 'material-design-icons-iconfont', 'dist')))
-  app.use('/static/jquery.sticky-kit.js',
-    express.static(path.resolve(__dirname, 'assets', 'jquery.sticky-kit.js')))
-
   // health moniter
   app.all('/health', (req, res) => {
     res.status(200).send().end()
@@ -60,15 +48,6 @@ try {
       logger.info(req.protocol + ' ' + req.method + ' ' + res.statusCode + ' ' + req.ip + ' ' + req.originalUrl)
     })
     next()
-  })
-
-  // userAgent Filter setup
-  app.use((req, res, next) => {
-    if (req.useragent.isIE === false) {
-      next()
-    } else {
-      res.sendFile(path.resolve(__dirname, 'chrome.html'))
-    }
   })
 
   // Init Nuxt.js

@@ -22,9 +22,9 @@ aside.menu
     | &nbsp; Dev
   ul.menu-list
     li
-      nuxt-link(to="/dev/moribot") 
+      nuxt-link(to="/dev/kuriyamabot") 
         fa-icon(pack="fab" name="telegram")
-        | &nbsp; MoriBot
+        | &nbsp; KuriyamaBot
     li
       nuxt-link(to="/dev/kkutu")
         fa-icon(pack="fas" name="keyboard")

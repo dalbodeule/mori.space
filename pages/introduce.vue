@@ -7,22 +7,21 @@ div
       .content
         h3 기본 신상
         ul.introduce
-          li 이름: 최진우
           li 별명: 볕뉘 (small_sunshine)
           li 현재 상태: 고등학생, 개발자
           li 연락처
           li.ul
             ul.introduce
               li
-                fa-icon(pack="far" name="envelope")
+                fa(:icon="['far', 'envelope']")
                 | &nbsp;
                 a(href="mailto:jioo0224@naver.com") jioo0224@naver.com
               li
-                fa-icon(pack="fab" name="telegram")
+                fa(:icon="['fab', 'telegram']")
                 | &nbsp;
                 a(href="https://t.me/small_sunshine", target="_blank") @small_sunshine
               li
-                fa-icon(pack="fab" name="discord")
+                fa(:icon="['fab', 'discord']")
                 | &nbsp; 볕뉘#8486
   .box
     .media-content
@@ -30,15 +29,15 @@ div
         h3 개발 관련
         ul.introduce
           li
-            fa-icon(pack="fab" name="node")
+            fa(:icon="['fab', 'node']")
             | &nbsp;
             a(href="https://nodejs.org/", target="_blank") Node.js
           li
-            fa-icon(pack="fab" name="npm")
+            fa(:icon="['fab', 'npm']")
             | &nbsp;
             a(href="https://www.npmjs.com/~trusty_people", target="_blank") trusty_people
           li 
-            fa-icon(pack="fab" name="github")
+            fa(:icon="['fab', 'github']")
             | &nbsp;
             a(href="https://github.com/small-sunshines", target="_blank") small-sunshines
   .box
