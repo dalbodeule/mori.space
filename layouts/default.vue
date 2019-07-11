@@ -1,10 +1,6 @@
 <template lang="pug">
 #__main
   Header
-  .ad
-      <!-- On Demand-main -->
-      adsbygoogle(ad-slot="4386636415")
-      p google AD
   .container
     .columns
       aside.column.is-hidden-mobile.is-3.section
@@ -13,9 +9,6 @@
         Sidebar
       .column.is-9.section
         nuxt
-  .ad
-      adsbygoogle(ad-slot="9403901631")
-      p google AD
   Footer
 </template>
 
@@ -57,22 +50,6 @@
     // Import Bulma and Buefy styles
     @import "~bulma";
     @import "~buefy/src/scss/buefy";
-    
-  div.ad {
-      margin-top: 0.8em;
-      margin-bottom: 0.8em;
-      width: 100%;
-      min-height: 60px;
-      position: relative;
-  }
-  div.ad p {
-      font-size: 0.8em;
-      margin: 0;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      margin-right: 4em;
-  }
 </style>
 
 

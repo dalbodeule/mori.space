@@ -2,9 +2,14 @@
 div
   p.menu-label index
   hr
-  .content
-    h2 제작중입니다....
-    p 아직 제작중입니다. 여기는 메인 페이지입니다.
+  .box
+    .media-content
+      .content
+        h2 어서오세요
+        p 여기에는 제가 진행했던 프로젝트들을 모아둔 페이지입니다.
+        br
+        p
+          strike .... 뭔가 더 채워야되는데.. 채울게 없다..
 </template>
 
 <style>

@@ -5,8 +5,6 @@ const onFinished = require('on-finished')
 const logger = require('log4js').getLogger()
 const bodyParser = require('body-parser')
 const nuxtConfig = require('./nuxt.config.js')
-const userAgent = require('express-useragent')
-const path = require('path')
 const helmet = require('helmet')
 
 const config = {

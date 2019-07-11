@@ -23,7 +23,6 @@ module.exports = {
     },*/
   },
   modules: [
-    '@nuxtjs/google-adsense',
     '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap',
     'nuxt-rfg-icon',
@@ -46,12 +45,6 @@ module.exports = {
       ]
     }]
   ],
-  'google-adsense': {
-    id: 'ca-pub-2810659463174293',
-    pageLevelAds: false,
-    analyticsUacct: 'UA-61070671-7',
-    analyticsDomainName: 'mori.space'
-  },
   'google-analytics': {
     id: 'UA-61070671-7'
   },
