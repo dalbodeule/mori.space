@@ -7,7 +7,7 @@ div
       .content
         h3 기본 신상
         ul.introduce
-          li 별명: 볕뉘 (small_sunshine)
+          li 별명: 달보드레 (dalbodeule)
           li 현재 상태: 고등학생, 개발자
           li 연락처
           li.ul
@@ -19,10 +19,10 @@ div
               li
                 fa(:icon="['fab', 'telegram']")
                 | &nbsp;
-                a(href="https://t.me/small_sunshine", target="_blank") @small_sunshine
+                a(href="https://t.me/dalbodeule", target="_blank") @dalbodeule
               li
                 fa(:icon="['fab', 'discord']")
-                | &nbsp; 볕뉘#8486
+                | &nbsp; 달보드레#8486
   .box
     .media-content
       .content
@@ -39,7 +39,7 @@ div
           li 
             fa(:icon="['fab', 'github']")
             | &nbsp;
-            a(href="https://github.com/small-sunshines", target="_blank") small-sunshines
+            a(href="https://github.com/dalbodeule", target="_blank") dalbodeule
   .box
     .media-content
       .content
@@ -95,8 +95,8 @@ export default {
       image: null,
       width: null,
       height: null,
-      author: 'small_sunshine',
-      twitterCreator: '@jioo0224'
+      author: 'dalbodeule',
+      twitterCreator: '@dalbodeule'
     }, [
       {hid: 'theme-color', name: 'theme-color', content: '#37AEE2'}
     ], null)

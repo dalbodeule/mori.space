@@ -24,7 +24,7 @@ div
           li 
             fa(:icon="['fab', 'github']")
             | &nbsp;
-            a(href="https://github.com/small-sunshines/kuriyamabot") https://git.mori.space/small-sunshine/kuriyamabot
+            a(href="https://github.com/dalbodeule/kuriyamabot") https://git.mori.space/dalbodeule/kuriyamabot
           li 
             fa(:icon="['fab', 'telegram']")
             | &nbsp; 
@@ -76,8 +76,8 @@ export default {
       image: null,
       width: null,
       height: null,
-      author: 'small_sunshine',
-      twitterCreator: '@jioo0224'
+      author: 'dalbodeule',
+      twitterCreator: '@dalbodeule'
     }, [
       {hid: 'theme-color', name: 'theme-color', content: '#37AEE2'}
     ], null)

@@ -43,8 +43,8 @@ export default {
       image: null,
       width: null,
       height: null,
-      author: 'small_sunshine',
-      twitterCreator: '@jioo0224'
+      author: 'dalbodeule',
+      twitterCreator: '@dalbodeule'
     }, [
       {hid: 'theme-color', name: 'theme-color', content: '#37AEE2'}
     ], null)
