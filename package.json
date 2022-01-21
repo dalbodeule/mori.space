@@ -31,7 +31,7 @@
     "cross-env": "^5.1.1",
     "express": "^4.17.1",
     "helmet": "^3.20.0",
-    "log4js": "^4.5.1",
+    "log4js": "^6.4.0",
     "nuxt": "^2.8.1",
     "nuxt-buefy": "^0.3.13",
     "nuxt-fontawesome": "^0.4.0",
