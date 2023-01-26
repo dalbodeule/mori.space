@@ -3,5 +3,8 @@ export default defineNuxtConfig({
     telemetry: false,
     nitro: {
         preset: 'cloudflare'
-    }
+    },
+    modules: [
+        '@nuxtjs/tailwindcss'
+    ]
 })
