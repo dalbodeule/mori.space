@@ -1,8 +1,7 @@
-name = "mori_space"
+name = "mori-space"
 main = "./.output/server/index.mjs"
 workers_dev = true
-compatibility_date = "2022-09-10"
-account_id = "<the account_id you obtained (optional)>"
-route = "<mainly useful when you want to setup custom domains (optional too)>"
+compatibility_date = "2022-11-30"
+node_compat = true
 [site]
 bucket = ".output/public"
