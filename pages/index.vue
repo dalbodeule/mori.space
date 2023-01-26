@@ -2,10 +2,10 @@
     <h1 class="text-3xl font-bold underline">Hello World!</h1>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 
 useSeoMeta({
-  title: 'Hello World!'  
+  title: 'Hello World!'
 })
 
 </script>
