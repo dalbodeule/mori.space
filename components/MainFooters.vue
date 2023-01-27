@@ -8,7 +8,7 @@
       </div>
       <div class="flex justify-center">
         <a href="https://github.com/dalbodeule" class="text-gray-600">
-          <font-awesome-icon icon="fa-brands fa-github" />
+          <font-awesome-icon icon="fab fa-github" />
         </a>
       </div>
     </div>
@@ -18,7 +18,7 @@
           <h6
             class="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start"
           >
-            <font-awesome-icon icon="fa-solid fa-spinner" />&nbsp;Loading...
+            <font-awesome-icon icon="spinner" />&nbsp;Loading...
           </h6>
           <p>This site is testing with tailwind-elements!</p>
         </div>
@@ -59,11 +59,10 @@
             Contact
           </h6>
           <p class="flex items-center justify-center md:justify-start mb-4">
-            <font-awesome-icon icon="fa-solid fa-envelope" />&nbsp;
-            webmaster@mori.space
+            <font-awesome-icon icon="envelope" />&nbsp; webmaster@mori.space
           </p>
           <p class="flex items-center justify-center md:justify-start">
-            <font-awesome-icon icon="fa-solid fa-fax" />&nbsp; + 82 504 480 6498
+            <font-awesome-icon icon="fax" />&nbsp; + 82 504 480 6498
           </p>
         </div>
       </div>
@@ -74,3 +73,5 @@
     </div>
   </footer>
 </template>
+
+<script setup lang="ts"></script>

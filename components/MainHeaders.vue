@@ -14,7 +14,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <font-awesome-icon icon="fa-solid fa-bars" />&nbsp;
+        <font-awesome-icon icon="bars" />&nbsp;
       </button>
       <div
         id="navbarSupportedContent"
@@ -24,29 +24,29 @@
           class="flex items-center text-gray-900 hover:text-gray-900 focus:text-gray-900 mt-2 lg:mt-0 mr-1"
           to="/"
         >
-          <font-awesome-icon icon="fa-solid fa-house" size="lg" />
+          <font-awesome-icon icon="house" size="lg" />
         </NuxtLink>
         <!-- Left links -->
         <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
           <li class="nav-item p-2">
-            <a
+            <NuxtLink
               class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-              href="#"
-              >Test1</a
+              to="/test1"
+              >Test1</NuxtLink
             >
           </li>
           <li class="nav-item p-2">
-            <a
+            <NuxtLink
               class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-              href="#"
-              >Test2</a
+              to="/test2"
+              >Test2</NuxtLink
             >
           </li>
           <li class="nav-item p-2">
-            <a
+            <NuxtLink
               class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-              href="#"
-              >Test3</a
+              to="/test3"
+              >Test3</NuxtLink
             >
           </li>
         </ul>
@@ -72,9 +72,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <span
-              >Test5 <font-awesome-icon icon="fa-solid fa-caret-down"
-            /></span>
+            <span>Test5 <font-awesome-icon icon="caret-down" /></span>
           </a>
           <ul
             class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
@@ -112,9 +110,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <span
-              >Test6 <font-awesome-icon icon="fa-solid fa-caret-down"
-            /></span>
+            <span>Test6 <font-awesome-icon icon="caret-down" /></span>
           </a>
           <ul
             class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
@@ -148,3 +144,5 @@
     </div>
   </nav>
 </template>
+
+<script setup lang="ts"></script>

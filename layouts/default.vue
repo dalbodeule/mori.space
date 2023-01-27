@@ -5,9 +5,8 @@
       <slot></slot>
     </div>
     <MainFooters></MainFooters>
+    <ClientOnly>
+      <TailwindElements></TailwindElements>
+    </ClientOnly>
   </div>
 </template>
-
-<script setup lang="ts">
-import "tw-elements"
-</script>

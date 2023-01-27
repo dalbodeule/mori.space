@@ -23,8 +23,6 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "prettier/prettier": ["error", {}],
-    "vue/multi-word-component-names": ["error", {
-      "ignores": ["index", "default"]
-    }]
+    "vue/multi-word-component-names": 0
   }
 }
