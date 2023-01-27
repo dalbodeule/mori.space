@@ -11,6 +11,10 @@
     "lint-prettier": "prettier --write \"**/*.(ts|tsx|vue|js|json)\""
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@headlessui/vue": "^1.7.7",
     "@heroicons/vue": "^2.0.14",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
@@ -29,5 +33,7 @@
     "vite-plugin-eslint": "^1.8.1",
     "vue-eslint-parser": "^9.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1"
+  }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <MainHeaders></MainHeaders>
-    <div class="container mx-auto" style="height: 60em">
+    <div class="container mx-auto m-auto my-10" style="height: 60em">
       <slot></slot>
     </div>
     <MainFooters></MainFooters>
