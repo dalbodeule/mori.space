@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { OutputOptions } from "rollup"
 import eslintPlugin from "vite-plugin-eslint"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -31,5 +33,31 @@ export default defineNuxtConfig({
       "@fortawesome/free-regular-svg-icons",
       "@fortawesome/free-brands-svg-icons"
     ]
+  },
+  hooks: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    "vite:extendConfig"(clientConfig, { isClient }) {
+      if (isClient) {
+        // eslint-disable-next-line @typescript-eslint/no-extra-semi
+        ;(
+          clientConfig.build!.rollupOptions!.output as OutputOptions
+        ).manualChunks = {
+          "@fortawesome/vue-fontawesome": ["@fortawesome/vue-fontawesome"],
+          "@fortawesome/fontawesome-svg-core": [
+            "@fortawesome/fontawesome-svg-core"
+          ],
+          "@fortawesome/free-solid-svg-icons": [
+            "@fortawesome/free-solid-svg-icons"
+          ],
+          "@fortawesome/free-regular-svg-icons": [
+            "@fortawesome/free-regular-svg-icons"
+          ],
+          "@fortawesome/free-brands-svg-icons": [
+            "@fortawesome/free-brands-svg-icons"
+          ],
+          "tw-elements": ["tw-elements"]
+        }
+      }
+    }
   }
 })
