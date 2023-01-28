@@ -5,11 +5,16 @@ import eslintPlugin from "vite-plugin-eslint"
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   telemetry: false,
+  runtimeConfig: {
+    public: {
+      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
+    }
+  },
   css: [
     "@/assets/css/tailwind.css",
     "@fortawesome/fontawesome-svg-core/styles.css"
   ],
-  plugins: ["@/plugins/fontawesome.ts"],
+  plugins: ["@/plugins/fontawesome.ts", "@/plugins/google_analytics.client.ts"],
   nitro: {
     preset: "cloudflare"
   },
@@ -55,7 +60,8 @@ export default defineNuxtConfig({
           "@fortawesome/free-brands-svg-icons": [
             "@fortawesome/free-brands-svg-icons"
           ],
-          "tw-elements": ["tw-elements"]
+          "tw-elements": ["tw-elements"],
+          "vue-gtag": ["vue-gtag"]
         }
       }
     }
