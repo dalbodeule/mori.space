@@ -2,12 +2,17 @@
 import { OutputOptions } from "rollup"
 import eslintPlugin from "vite-plugin-eslint"
 
+declare global {
+  const GOOGLE_ANALYTICS_ID: string
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   telemetry: false,
   runtimeConfig: {
     public: {
-      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
+      GOOGLE_ANALYTICS_ID:
+        process.env.GOOGLE_ANALYTICS_ID || GOOGLE_ANALYTICS_ID || "null"
     }
   },
   css: [
