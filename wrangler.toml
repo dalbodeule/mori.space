@@ -5,3 +5,5 @@ compatibility_date = "2022-11-30"
 node_compat = true
 [site]
 bucket = ".output/public"
+[env]
+GOOGLE_ANALYTICS_ID = "G-X036TNBC2Q"
