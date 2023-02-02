@@ -33,6 +33,5 @@
     "vite-plugin-eslint": "^1.8.1",
     "vue-eslint-parser": "^9.1.0",
     "vue-gtag": "^2.0.1"
-  },
-  "dependencies": {}
+  }
 }
