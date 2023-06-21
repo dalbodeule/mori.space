@@ -26,7 +26,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
-    "nuxt": "^3.1.0",
+    "nuxt": "^3.4.3",
     "prettier": "^2.8.3",
     "tw-elements": "^1.0.0-alpha13",
     "typescript": "^4.9.4",
