@@ -11,23 +11,21 @@ export default defineNuxtConfig({
       GOOGLE_ANALYTICS_ID: variables.GOOGLE_ANALYTICS_ID
     }
   },
-  css: [
-    "@/assets/css/tailwind.css",
-    "@fortawesome/fontawesome-svg-core/styles.css"
+  css: ["@fortawesome/fontawesome-svg-core/styles.css"],
+  plugins: [
+    "@/plugins/fontawesome.ts",
+    "@/plugins/google_analytics.client.ts",
+    "@/plugins/oruga.ts"
   ],
-  plugins: ["@/plugins/fontawesome.ts", "@/plugins/google_analytics.client.ts"],
   nitro: {
     preset: "cloudflare"
   },
-  modules: ["@nuxtjs/tailwindcss"],
   vite: {
     plugins: [eslintPlugin()]
   },
   postcss: {
     plugins: {
       "postcss-import": {},
-      "tailwindcss/nesting": {},
-      tailwindcss: {},
       autoprefixer: {}
     }
   },
@@ -41,8 +39,8 @@ export default defineNuxtConfig({
     ]
   },
   hooks: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    "vite:extendConfig"(clientConfig, { isClient }) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+    "vite:extendConfig"(clientConfig: { build: any }, { isClient }: any) {
       if (isClient) {
         // eslint-disable-next-line @typescript-eslint/no-extra-semi
         ;(
@@ -61,7 +59,6 @@ export default defineNuxtConfig({
           "@fortawesome/free-brands-svg-icons": [
             "@fortawesome/free-brands-svg-icons"
           ],
-          "tw-elements": ["tw-elements"],
           "vue-gtag": ["vue-gtag"]
         }
       }
