@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node: [ 16 ]
+        node: [ latest ]
 
     steps:
       - uses: actions/setup-node@v1
@@ -32,9 +32,10 @@ jobs:
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
       - name: Make envfile
-        uses: SpicyPizza/create-envfile@v2.0
-        with:
-          envkey_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+        run: |
+          echo "GOOGLE_ANALYTICS_ID=$GOOGLE_ANALYTICS_ID" >> .env
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
