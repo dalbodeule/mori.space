@@ -8,7 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     {
       appName: "mori.space",
       pageTrackerScreenviewEnabled: true,
-      config: { id: config.GOOGLE_ANALYTICS_ID }
+      config: { id: config.public.GOOGLE_ANALYTICS_ID }
     },
     useRouter()
   )

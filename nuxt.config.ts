@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { OutputOptions } from "rollup"
 import eslintPlugin from "vite-plugin-eslint"
-import variables from "./variables"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   telemetry: false,
   runtimeConfig: {
     public: {
-      GOOGLE_ANALYTICS_ID: variables.GOOGLE_ANALYTICS_ID
+      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
     }
   },
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
