@@ -59,7 +59,9 @@ export default defineNuxtConfig({
           "@fortawesome/free-brands-svg-icons": [
             "@fortawesome/free-brands-svg-icons"
           ],
-          "vue-gtag": ["vue-gtag"]
+          "vue-gtag": ["vue-gtag"],
+          "@oruga-ui/oruga-next": ["@oruga-ui/oruga-next"],
+          "@oruga-ui/theme-bulma": ["@oruga-ui/theme-bulma"]
         }
       }
     }
