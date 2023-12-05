@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { OutputOptions } from "rollup"
+import { type OutputOptions } from "rollup"
 import eslintPlugin from "vite-plugin-eslint"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
