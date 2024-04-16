@@ -32,6 +32,9 @@
         <nuxt-link to="/" class="navbar-item">Home</nuxt-link>
       </div>
       <div class="navbar-end">
+        <a href="https://correction.mori.space/" class="navbar-item">
+          맞춤법 검사기
+        </a>
         <nuxt-link to="/test1" class="navbar-item">Test1</nuxt-link>
         <nuxt-link to="/test2" class="navbar-item">Test2</nuxt-link>
         <nuxt-link to="/test3" class="navbar-item">Test3</nuxt-link>
