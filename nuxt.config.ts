@@ -10,6 +10,10 @@ export default defineNuxtConfig({
       GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
     }
   },
+  modules: ["@nuxtjs/google-adsense"],
+  googleAdsense: {
+    id: "ca-pub-2810659463174293"
+  },
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
   plugins: [
     "@/plugins/fontawesome.ts",

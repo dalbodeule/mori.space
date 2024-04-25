@@ -2,9 +2,9 @@
   <footer class="footer">
     <div class="columns">
       <div class="column content has-text-left">
-        <b><font-awesome-icon :icon="['fas', 'spinner']" /> Loading... </b
+        <b><font-awesome-icon :icon="['fas', 'book']" /> Portpolio </b
         ><br /><br />
-        This site is testing with bulma.
+        이 사이트는 개인 포트폴리오 사이트입니다.
       </div>
       <div class="column is-half"></div>
       <div class="column content has-text-left">
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="content has-text-centered">
-      <p>© 2023 Copyright : <nuxt-link to="/">mori.space</nuxt-link></p>
+      <p>© 2024 Copyright : <nuxt-link to="/">mori.space</nuxt-link></p>
     </div>
   </footer>
 </template>

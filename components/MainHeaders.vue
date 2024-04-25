@@ -30,14 +30,15 @@
     >
       <div class="navbar-start">
         <nuxt-link to="/" class="navbar-item">Home</nuxt-link>
+        <nuxt-link to="/kkutu" class="navbar-item">끄투</nuxt-link>
+        <nuxt-link to="/kuriyamabot" class="navbar-item">쿠리야마봇</nuxt-link>
+        <nuxt-link to="/sentence" class="navbar-item">맞춤법 검사기</nuxt-link>
+        <nuxt-link to="/PR" class="navbar-item">기타 PR</nuxt-link>
       </div>
       <div class="navbar-end">
         <a href="https://correction.mori.space/" class="navbar-item">
-          맞춤법 검사기
+          맞춤법 검사기 이동
         </a>
-        <nuxt-link to="/test1" class="navbar-item">Test1</nuxt-link>
-        <nuxt-link to="/test2" class="navbar-item">Test2</nuxt-link>
-        <nuxt-link to="/test3" class="navbar-item">Test3</nuxt-link>
       </div>
     </div>
   </nav>
