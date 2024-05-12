@@ -5,6 +5,13 @@
     <NuxtLink to="/sentence">소개 페이지 바로가기</NuxtLink>
   </div>
   <div class="content box">
+    <h1>블로그로 이동</h1>
+    <NuxtLink to="https://blog.mori.space/"
+      ><font-awesome-icon :icon="['fas', 'blog']" /> &nbsp;블로그로
+      이동!</NuxtLink
+    >
+  </div>
+  <div class="content box">
     <h1>끄투 PR 소개페이지</h1>
     <NuxtLink to="/kkutu">소개 페이지 바로가기</NuxtLink>
   </div>

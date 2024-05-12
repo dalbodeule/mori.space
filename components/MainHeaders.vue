@@ -30,6 +30,12 @@
     >
       <div class="navbar-start">
         <nuxt-link to="/" class="navbar-item">Home</nuxt-link>
+        <nuxt-link
+          to="https://blog.mori.space"
+          target="_blank"
+          class="navbar-item"
+          ><font-awesome-icon :icon="['fas', 'blog']" />&nbsp; Blog</nuxt-link
+        >
         <nuxt-link to="/kkutu" class="navbar-item">끄투</nuxt-link>
         <nuxt-link to="/kuriyamabot" class="navbar-item">쿠리야마봇</nuxt-link>
         <nuxt-link to="/sentence" class="navbar-item">맞춤법 검사기</nuxt-link>

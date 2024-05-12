@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   telemetry: false,
   runtimeConfig: {
     public: {
-      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
+      googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
     }
   },
   modules: ["@nuxtjs/google-adsense"],
