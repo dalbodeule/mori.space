@@ -39,6 +39,7 @@
         <nuxt-link to="/kkutu" class="navbar-item">끄투</nuxt-link>
         <nuxt-link to="/kuriyamabot" class="navbar-item">쿠리야마봇</nuxt-link>
         <nuxt-link to="/sentence" class="navbar-item">맞춤법 검사기</nuxt-link>
+        <nuxt-link to="/sh0rt-kr" class="navbar-item">sh0rt.kr</nuxt-link>
         <nuxt-link to="/PR" class="navbar-item">기타 PR</nuxt-link>
       </div>
       <div class="navbar-end">

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { type OutputOptions } from "rollup"
 import eslintPlugin from "vite-plugin-eslint"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -8,12 +6,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
+    },
+    googleAdsense: {
+      id: process.env.GOOGLE_ADSENSE_ID
     }
   },
-  modules: ["@nuxtjs/google-adsense"],
-  googleAdsense: {
-    id: "ca-pub-2810659463174293"
-  },
+  modules: ["@nuxtjs/google-adsense", "nuxt-purgecss"],
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
   plugins: [
     "@/plugins/fontawesome.ts",
@@ -41,32 +39,7 @@ export default defineNuxtConfig({
       "@fortawesome/free-brands-svg-icons"
     ]
   },
-  hooks: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-    "vite:extendConfig"(clientConfig: { build: any }, { isClient }: any) {
-      if (isClient) {
-        // eslint-disable-next-line @typescript-eslint/no-extra-semi
-        ;(
-          clientConfig.build!.rollupOptions!.output as OutputOptions
-        ).manualChunks = {
-          "@fortawesome/vue-fontawesome": ["@fortawesome/vue-fontawesome"],
-          "@fortawesome/fontawesome-svg-core": [
-            "@fortawesome/fontawesome-svg-core"
-          ],
-          "@fortawesome/free-solid-svg-icons": [
-            "@fortawesome/free-solid-svg-icons"
-          ],
-          "@fortawesome/free-regular-svg-icons": [
-            "@fortawesome/free-regular-svg-icons"
-          ],
-          "@fortawesome/free-brands-svg-icons": [
-            "@fortawesome/free-brands-svg-icons"
-          ],
-          "vue-gtag": ["vue-gtag"],
-          "@oruga-ui/oruga-next": ["@oruga-ui/oruga-next"],
-          "@oruga-ui/theme-bulma": ["@oruga-ui/theme-bulma"]
-        }
-      }
-    }
+  purgecss: {
+    safelist: [/svg.*/, /fa.*/]
   }
 })

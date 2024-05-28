@@ -20,6 +20,10 @@
     <NuxtLink to="/kuriyamabot">소개 페이지 바로가기</NuxtLink>
   </div>
   <div class="content box">
+    <h1>sh0rt.kr</h1>
+    <NuxtLink to="/sh0rt-kr">소개 페이지 바로가기</NuxtLink>
+  </div>
+  <div class="content box">
     <h1>Github PR 활동 소개페이지</h1>
     <NuxtLink to="/PR">소개 페이지 바로가기</NuxtLink>
   </div>

@@ -3,5 +3,10 @@ main = "./.output/server/index.mjs"
 workers_dev = true
 compatibility_date = "2022-11-30"
 node_compat = true
+
 [site]
 bucket = ".output/public"
+
+[vars]
+NUXT_PUBLIC_GOOGLE_ANALYTICS_ID = "G-X036TNBC2Q"
+NUXT_GOOGLE_ADSENSE_ID = "ca-pub-2810659463174293"
