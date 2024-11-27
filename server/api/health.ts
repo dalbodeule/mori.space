@@ -1,6 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (_event) => {
   return {
-    api: true
-  }
-})
+    api: true,
+  };
+});

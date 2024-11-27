@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from "@unhead/vue"
+import { useSeoMeta } from "@unhead/vue";
 
 useSeoMeta({
   title: "mori.space :: 맞춤법 검사기",
@@ -15,6 +15,6 @@ useSeoMeta({
   ogType: "website",
   ogSiteName: "mori.space",
   ogDescription: "mori.space - 메인 페이지",
-  ogImage: "/favicon.png"
-})
+  ogImage: "/favicon.png",
+});
 </script>

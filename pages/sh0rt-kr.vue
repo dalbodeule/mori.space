@@ -17,7 +17,7 @@
     </p>
     <ul class="introduce">
       <li>
-        <font-awesome-icon :icon="['fab', 'github']" />&nbsp;
+        <FontAwesomeIcon :icon="['fab', 'github']" />&nbsp;
         <a href="https://github.com/dalbodeule/sh0rt.kr"
           >https://github.com/dalbodeule/sh0rt.kr</a
         >
@@ -27,7 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from "@unhead/vue"
+import { useSeoMeta } from "@unhead/vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 
 useSeoMeta({
   title: "mori.space :: sh0rt.kr",
@@ -35,6 +36,6 @@ useSeoMeta({
   ogType: "website",
   ogSiteName: "mori.space",
   ogDescription: "mori.space - 메인 페이지",
-  ogImage: "/favicon.png"
-})
+  ogImage: "/favicon.png",
+});
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="box content">
-    <img src="/kuriyamabot_screenshot.png" />
+    <img src="/kuriyamabot_screenshot.png" alt="">
     <h1>쿠리야마봇</h1>
     <p>
       이 봇을 만들 당시, 제가 자주 사용하던 다른 검색봇이 자주 작동하지
@@ -18,12 +18,12 @@
     <p>
       이 봇은
       <a href="https://nodejs.org/" target="_blank"
-        ><font-awesome-icon :icon="['fab', 'node']" size="2x" /></a
+        ><FontAwesomeIcon icon="['fab', 'node']" size="2x" /></a
       >를 이용해서 만들어졌습니다.
     </p>
     <ul>
       <li>
-        <font-awesome-icon :icon="['fab', 'github']" />&nbsp;
+        <FontAwesomeIcon :icon="['fab', 'github']" />&nbsp;
         <a href="https://github.com/dalbodeule/kuriyamabot"
           >https://github.com/dalbodeule/kuriyamabot</a
         >
@@ -33,7 +33,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from "@unhead/vue"
+import { useSeoMeta } from "@unhead/vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 
 useSeoMeta({
   title: "mori.space :: 쿠리야마봇",
@@ -41,6 +42,6 @@ useSeoMeta({
   ogType: "website",
   ogSiteName: "mori.space",
   ogDescription: "mori.space - 메인 페이지",
-  ogImage: "/favicon.png"
-})
+  ogImage: "/favicon.png",
+});
 </script>

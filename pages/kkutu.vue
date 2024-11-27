@@ -1,6 +1,6 @@
 <template>
   <div class="box content">
-    <img src="/kkutu_screenshot.png" />
+    <img alt="" src="/kkutu_screenshot.png" >
     <h1>끄투</h1>
     <p>
       저는 끄투에도 여러가지 기여를 하였습니다. 예를 들자면
@@ -21,24 +21,24 @@
     <p>
       끄투는
       <a href="https://nodejs.org/" target="_blank"
-        ><font-awesome-icon :icon="['fab', 'node']" size="2x" /></a
+        ><FontAwesomeIcon :icon="['fab', 'node']" size="2x" /></a
       >를 이용해서 만들어졌습니다.
     </p>
     <ul class="introduce">
       <li>
-        <font-awesome-icon :icon="['fab', 'github']" />&nbsp;
+        <FontAwesomeIcon :icon="['fab', 'github']" />&nbsp;
         <a href="https://github.com/hatty163/morikkutu-game"
           >https://github.com/hatty163/morikkutu-game</a
         ><span>&nbsp; Game</span>
       </li>
       <li>
-        <font-awesome-icon :icon="['fab', 'github']" />&nbsp;
+        <FontAwesomeIcon :icon="['fab', 'github']" />&nbsp;
         <a href="https://github.com/hatty163/morikkutu-web"
           >https://github.com/hatty163/morikkutu-web</a
         ><span>&nbsp; Web</span>
       </li>
       <li>
-        <font-awesome-icon :icon="['fab', 'github']" />&nbsp;
+        <FontAwesomeIcon :icon="['fab', 'github']" />&nbsp;
         <a href="https://github.com/hatty163/morikkutu-lib"
           >https://github.com/hatty163/morikkutu-lib</a
         ><span>&nbsp; Lib</span>
@@ -48,7 +48,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from "@unhead/vue"
+import { useSeoMeta } from "@unhead/vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 
 useSeoMeta({
   title: "mori.space :: 끄투",
@@ -56,6 +57,6 @@ useSeoMeta({
   ogType: "website",
   ogSiteName: "mori.space",
   ogDescription: "mori.space - 메인 페이지",
-  ogImage: "/favicon.png"
-})
+  ogImage: "/favicon.png",
+});
 </script>

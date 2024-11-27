@@ -1,15 +1,15 @@
-import VueGtag from "vue-gtag"
+import VueGtag from "vue-gtag";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig();
 
   nuxtApp.vueApp.use(
     VueGtag,
     {
       appName: "mori.space",
       pageTrackerScreenviewEnabled: true,
-      config: { id: config.public.googleAnalyticsId }
+      config: { id: config.public.googleAnalyticsId },
     },
-    useRouter()
-  )
-})
+    useRouter(),
+  );
+});

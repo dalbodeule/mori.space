@@ -2,7 +2,6 @@
 
 [![Discord](https://img.shields.io/discord/630271953806295051)](https://discord.gg/EPnCfz7xx5) [![Build Status](https://teamcity.mori.space/app/rest/builds/buildType:MoriSpace_Build/statusIcon)](https://teamcity.mori.space/project/MoriSpace?mode=builds)
 
-
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup

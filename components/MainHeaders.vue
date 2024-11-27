@@ -3,12 +3,12 @@
     class="navbar"
     role="navigation"
     aria-label="main navigation"
-    style="padding: 0rem 1rem"
+    style="padding: 0 1rem"
   >
     <div class="navbar-brand">
-      <nuxt-link class="navbar-item" to="/">
-        <img src="/favicon.png" height="28" width="28" />
-      </nuxt-link>
+      <NuxtLink class="navbar-item" to="/">
+        <img alt="logo" src="/favicon.png" height="28" width="28" >
+      </NuxtLink>
       <a
         role="button"
         class="navbar-burger"
@@ -18,9 +18,9 @@
         :class="burgerStatus ? 'is-active' : ''"
         @click="burgerStatus = !burgerStatus.valueOf()"
       >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true"/>
+        <span aria-hidden="true"/>
+        <span aria-hidden="true"/>
       </a>
     </div>
     <div
@@ -29,18 +29,18 @@
       :class="burgerStatus ? 'is-active' : ''"
     >
       <div class="navbar-start">
-        <nuxt-link to="/" class="navbar-item">Home</nuxt-link>
-        <nuxt-link
+        <NuxtLink to="/" class="navbar-item">Home</NuxtLink>
+        <NuxtLink
           to="https://blog.mori.space"
           target="_blank"
           class="navbar-item"
-          ><font-awesome-icon :icon="['fas', 'blog']" />&nbsp; Blog</nuxt-link
+          ><FontAwesomeIcon :icon="['fas', 'blog']" />&nbsp; Blog</NuxtLink
         >
-        <nuxt-link to="/kkutu" class="navbar-item">끄투</nuxt-link>
-        <nuxt-link to="/kuriyamabot" class="navbar-item">쿠리야마봇</nuxt-link>
-        <nuxt-link to="/sentence" class="navbar-item">맞춤법 검사기</nuxt-link>
-        <nuxt-link to="/sh0rt-kr" class="navbar-item">sh0rt.kr</nuxt-link>
-        <nuxt-link to="/PR" class="navbar-item">기타 PR</nuxt-link>
+        <NuxtLink to="/kkutu" class="navbar-item">끄투</NuxtLink>
+        <NuxtLink to="/kuriyamabot" class="navbar-item">쿠리야마봇</NuxtLink>
+        <NuxtLink to="/sentence" class="navbar-item">맞춤법 검사기</NuxtLink>
+        <NuxtLink to="/sh0rt-kr" class="navbar-item">sh0rt.kr</NuxtLink>
+        <NuxtLink to="/PR" class="navbar-item">기타 PR</NuxtLink>
       </div>
       <div class="navbar-end">
         <a href="https://correction.mori.space/" class="navbar-item">
@@ -52,6 +52,8 @@
 </template>
 
 <script setup lang="ts">
-// eslint-disable-next-line no-undef
-let burgerStatus = ref(false)
+ 
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+
+const burgerStatus = ref(false);
 </script>
