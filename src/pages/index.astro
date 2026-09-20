@@ -1,0 +1,19 @@
+---
+import { getEmDashCollection, getSiteSettings } from "emdash";
+import Base from "../layouts/Base.astro";
+import PostCard from "../components/PostCard.astro";
+const [settings, { entries: posts, cacheHint }, { entries: projects }] = await Promise.all([
+  getSiteSettings(),
+  getEmDashCollection("posts", { orderBy: { published_at: "desc" }, limit: 6 }),
+  getEmDashCollection("projects", { orderBy: { published_at: "desc" }, limit: 3 }),
+]);
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+---
+<Base description="mori.space — 개발과 만든 것들을 기록하는 개인 포트폴리오">
+  <section class="shell grid gap-10 pb-20 pt-20 sm:pb-28 sm:pt-28 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+    <div><p class="eyebrow">Developer · Builder · Writer</p><h1 class="mt-5 max-w-3xl text-5xl font-bold leading-[1.05] tracking-[-0.05em] sm:text-7xl">만든 것과<br /><span class="text-moss">배운 것</span>을 기록합니다.</h1><p class="mt-7 max-w-xl text-lg leading-8 text-ink/65">{settings?.tagline || "서비스를 만들고, 문제를 해결하고, 그 과정을 글로 남깁니다."}</p><div class="mt-9 flex flex-wrap gap-3"><a href="/posts" class="rounded-full bg-ink px-5 py-3 text-sm font-bold text-paper hover:bg-moss">전체 글 보기</a><a href="/about" class="rounded-full border border-line px-5 py-3 text-sm font-bold hover:border-ink">소개 →</a></div></div>
+    <div class="rounded-[2rem] bg-moss p-7 text-paper shadow-xl shadow-moss/15 sm:p-9"><p class="text-sm font-semibold text-paper/60">NOW BUILDING</p><h2 class="mt-12 text-3xl font-bold leading-tight">작은 도구를 오래<br />쓸 수 있게 만들기</h2><p class="mt-5 leading-7 text-paper/70">Cloudflare Workers, D1, R2와 TypeScript를 좋아합니다. 실패와 개선의 기록도 함께 남깁니다.</p><a href="/posts?tag=development" class="mt-8 inline-block text-sm font-bold underline underline-offset-4">개발 글 둘러보기 →</a></div>
+  </section>
+  <section class="shell pb-20"><div class="mb-7 flex items-end justify-between border-b border-line pb-4"><div><p class="eyebrow">Latest notes</p><h2 class="mt-2 text-2xl font-bold">최근 기술 글</h2></div><a href="/posts" class="text-sm font-bold text-moss hover:text-ink">모두 보기 →</a></div><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{posts.slice(0, 3).map((post) => <PostCard post={post} />)}</div></section>
+  <section class="shell pb-20"><div class="mb-7 flex items-end justify-between border-b border-line pb-4"><div><p class="eyebrow">Selected work</p><h2 class="mt-2 text-2xl font-bold">작업물</h2></div><a href="/projects" class="text-sm font-bold text-moss hover:text-ink">전체 작업물 →</a></div><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{projects.map((project) => <PostCard post={project} kind="project" href={`/projects/${project.id}`} />)}</div></section>
+</Base>

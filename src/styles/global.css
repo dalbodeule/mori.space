@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #18201d;
+  --color-moss: #405c4e;
+  --color-paper: #f7f8f3;
+  --color-line: #d8ded7;
+}
+
+@layer base {
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper text-ink antialiased; }
+  a { @apply transition-colors duration-200; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.22em] text-moss; }
+  .prose-mori { @apply max-w-3xl text-[1.05rem] leading-8 text-ink/80; }
+  .prose-mori p { @apply mb-6; }
+  .prose-mori h2 { @apply mt-12 mb-4 text-2xl font-bold text-ink; }
+  .prose-mori h3 { @apply mt-8 mb-3 text-xl font-bold text-ink; }
+  .prose-mori a { @apply font-medium text-moss underline decoration-moss/40 underline-offset-4 hover:text-ink; }
+  .prose-mori ul { @apply mb-6 list-disc space-y-2 pl-6; }
+}

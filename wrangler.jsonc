@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mori-space",
+  "main": "./src/worker.ts",
+  "compatibility_date": "2026-09-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mori-space",
+      "database_id": "844091f4-36dc-4933-b4fa-2744381c6499",
+      "migrations_dir": "../../migrations",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "mori-space-media",
+    },
+  ],
+  "vars": {
+    "SITE_URL": "https://mori.space",
+  },
+}

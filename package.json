@@ -1,35 +1,31 @@
 {
+  "name": "mori-space",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "emdash": { "label": "mori.space", "seed": "seed/seed.json" },
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "npx eslint \"**/*.{ts,tsx,vue,js}\" --fix",
-    "lint-eslint": "npx eslint --ignorepath .gitignore \"**/*.{ts,tsx,vue,js}\" --fix",
-    "lint-prettier": "npx prettier --write \"**/*.(ts|tsx|vue|js|json)\""
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.1",
-    "@fortawesome/free-brands-svg-icons": "^6.7.1",
-    "@fortawesome/free-regular-svg-icons": "^6.7.1",
-    "@fortawesome/free-solid-svg-icons": "^6.7.1",
-    "@fortawesome/vue-fontawesome": "^3.0.8",
-    "@nuxt/eslint": "^0.7.2",
-    "@oruga-ui/oruga-next": "^0.9.1",
-    "@oruga-ui/theme-bulma": "^0.5.2",
-    "@types/node": "^22.10.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "nuxt": "^3.14.1592",
-    "nuxt-purgecss": "^2.0.0",
-    "postcss-import": "^16.1.0",
-    "prettier": "^3.4.1",
-    "typescript": "^5.7.2",
-    "vue-gtag": "^2.0.1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy",
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "@nuxtjs/google-adsense": "^3.0.0"
+    "@astrojs/cloudflare": "^14.3.1",
+    "@astrojs/react": "^6.0.5",
+    "@emdash-cms/cloudflare": "^0.38.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^7.3.2",
+    "emdash": "^0.38.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@cloudflare/workers-types": "^5.20260820.1",
+    "typescript": "^5.7.2",
+    "wrangler": "^4.125.0"
   }
 }

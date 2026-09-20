@@ -1,0 +1,15 @@
+---
+import { getEmDashCollection, getTaxonomyTerms } from "emdash";
+import Base from "../../layouts/Base.astro";
+import PostCard from "../../components/PostCard.astro";
+const activeTag = Astro.url.searchParams.get("tag");
+const [{ entries: posts, cacheHint }, tags] = await Promise.all([
+  getEmDashCollection("posts", { orderBy: { published_at: "desc" }, ...(activeTag ? { where: { tag: activeTag } } : {}) }),
+  getTaxonomyTerms("tag", { includeCounts: false }),
+]);
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+---
+<Base title="글과 작업 기록">
+  <section class="shell pb-10 pt-16 sm:pt-24"><p class="eyebrow">Notes & work</p><h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">글과 작업 기록</h1><p class="mt-5 max-w-2xl text-lg leading-8 text-ink/60">프로젝트를 만든 과정, 기술적인 선택, 그리고 다음에 더 잘하기 위해 배운 것들을 기록합니다.</p><div class="mt-8 flex flex-wrap gap-2"><a href="/posts" class:list={["rounded-full border px-4 py-2 text-sm font-semibold", {"border-ink bg-ink text-paper": !activeTag, "border-line": activeTag}]} >전체</a>{tags.map((tag) => <a href={`/posts?tag=${tag.slug}`} class:list={["rounded-full border px-4 py-2 text-sm font-semibold", {"border-ink bg-ink text-paper": activeTag === tag.slug, "border-line": activeTag !== tag.slug}]}>{tag.label}</a>)}</div></section>
+  <section class="shell pb-24"><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{posts.map((post) => <PostCard post={post} />)}</div></section>
+</Base>

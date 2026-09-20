@@ -7,4 +7,7 @@ node_modules
 .env
 .yarn
 dist
+.astro
+.wrangler
+.emdash
 .yarn

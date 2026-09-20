@@ -1,0 +1,38 @@
+---
+import { getMenu, getSiteSettings } from "emdash";
+import { EmDashHead } from "emdash/ui";
+import { createPublicPageContext } from "emdash/page";
+import "../styles/global.css";
+
+interface Props { title?: string; description?: string; image?: string; type?: "website" | "article"; }
+const { title, description, image, type = "website" } = Astro.props;
+const settings = await getSiteSettings();
+const menu = await getMenu("primary");
+const siteTitle = settings?.title || "mori.space";
+const siteDescription = settings?.tagline || "개발과 기록을 위한 개인 포트폴리오";
+const page = createPublicPageContext({ Astro, kind: "custom", pageType: type, title: title ? `${title} — ${siteTitle}` : siteTitle, pageTitle: title || siteTitle, description: description || siteDescription, canonical: Astro.url.href, image, seo: { ogImage: image }, siteName: siteTitle });
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <EmDashHead page={page} />
+  </head>
+  <body>
+    <header class="border-b border-line/80 bg-paper/90 backdrop-blur">
+      <nav class="shell flex h-20 items-center justify-between" aria-label="주 메뉴">
+        <a href="/" class="flex items-center gap-3 text-lg font-bold tracking-tight"><img src="/favicon.png" width="34" height="34" alt="mori.space" class="rounded-xl" />mori.space</a>
+        <div class="hidden items-center gap-6 text-sm font-medium text-ink/65 sm:flex">
+          {(menu?.items || []).map((item) => <a href={item.url} target={item.target} class="hover:text-ink">{item.label}</a>)}
+          <a href="https://blog.mori.space" target="_blank" class="hover:text-ink">블로그 ↗</a>
+          <a href="/_emdash/admin" class="rounded-full bg-ink px-4 py-2 text-paper hover:bg-moss">관리자</a>
+        </div>
+        <a href="/posts" class="text-sm font-semibold text-moss sm:hidden">글 보기</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="mt-24 border-t border-line/80"><div class="shell flex flex-col gap-3 py-10 text-sm text-ink/60 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 mori.space · 개발과 만든 것들을 기록합니다.</p><a href="mailto:webmaster@mori.space" class="hover:text-ink">webmaster@mori.space</a></div></footer>
+  </body>
+</html>

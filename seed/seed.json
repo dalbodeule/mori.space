@@ -1,0 +1,107 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": { "name": "mori.space", "description": "개발과 작업 기록을 위한 개인 포트폴리오", "author": "mori" },
+  "settings": { "title": "mori.space", "tagline": "서비스를 만들고, 문제를 해결하고, 그 과정을 글로 남깁니다." },
+  "collections": [
+    {
+      "slug": "posts",
+      "label": "Posts · 기술 글",
+      "labelSingular": "Post",
+      "supports": ["drafts", "revisions", "search", "seo", "scheduling"],
+      "fields": [
+        { "slug": "title", "label": "Title", "type": "string", "required": true, "searchable": true },
+        { "slug": "featured_image", "label": "Featured Image", "type": "image" },
+        { "slug": "summary", "label": "Summary", "type": "text", "searchable": true },
+        { "slug": "content", "label": "Content", "type": "portableText", "searchable": true },
+        { "slug": "video", "label": "Video / File", "type": "file" }
+      ]
+    },
+    {
+      "slug": "projects",
+      "label": "Projects · 작업물",
+      "labelSingular": "Project",
+      "supports": ["drafts", "revisions", "search", "seo"],
+      "fields": [
+        { "slug": "title", "label": "Title", "type": "string", "required": true, "searchable": true },
+        { "slug": "featured_image", "label": "Featured Image", "type": "image" },
+        { "slug": "year", "label": "Year", "type": "string" },
+        { "slug": "summary", "label": "Summary", "type": "text", "searchable": true },
+        { "slug": "content", "label": "Content", "type": "portableText", "searchable": true },
+        { "slug": "url", "label": "Related URL", "type": "string" },
+        { "slug": "video", "label": "Video / File", "type": "file" }
+      ]
+    }
+  ],
+  "taxonomies": [{
+    "name": "tag", "label": "Tags", "labelSingular": "Tag", "hierarchical": false, "collections": ["posts", "projects"],
+    "terms": [
+      { "slug": "development", "label": "개발" },
+      { "slug": "cloudflare", "label": "Cloudflare" },
+      { "slug": "opensource", "label": "오픈소스" },
+      { "slug": "bot", "label": "봇" },
+      { "slug": "web", "label": "웹" }
+    ]
+  }],
+  "menus": [{ "name": "primary", "label": "Primary Navigation", "items": [
+    { "type": "custom", "label": "기술 글", "url": "/posts" },
+    { "type": "custom", "label": "작업물", "url": "/projects" },
+    { "type": "custom", "label": "소개", "url": "/about" }
+  ]}],
+  "content": {
+    "posts": [{
+      "id": "writing-on-the-edge", "slug": "writing-on-the-edge", "status": "published",
+      "data": {
+        "title": "앞으로의 기술 기록: 엣지에서 작게 만들기",
+        "summary": "Workers, D1, R2를 이용해 개인 서비스의 운영 부담을 줄이는 방법을 기록합니다.",
+        "featured_image": { "$media": { "url": "/favicon.png", "alt": "기술 글", "filename": "favicon.png" } },
+        "content": [
+          { "_type": "block", "style": "h2", "children": [{ "_type": "span", "text": "이 사이트를 글쓰기 공간으로 바꾸는 이유", "_key": "t1" }], "_key": "t0" },
+          { "_type": "block", "style": "normal", "children": [{ "_type": "span", "text": "작업물을 소개하는 페이지는 시간이 지나면 맥락을 잃기 쉽습니다. 무엇을 만들었는지뿐 아니라 왜 그렇게 만들었고 무엇을 배웠는지를 게시글로 남기면, 포트폴리오와 기술 블로그를 하나의 흐름으로 운영할 수 있습니다.", "_key": "t3" }], "_key": "t2" },
+          { "_type": "block", "style": "normal", "children": [{ "_type": "span", "text": "앞으로는 Cloudflare Workers와 D1/R2, TypeScript, 오픈소스 기여, 서비스 운영에서 얻은 교훈을 중심으로 글을 추가할 예정입니다.", "_key": "t5" }], "_key": "t4" }
+        ]
+      }
+    }],
+    "projects": [
+      {
+        "id": "kkutu", "slug": "kkutu", "status": "published",
+        "data": {
+          "title": "끄투 서버와 오픈소스 기여", "year": "2024",
+          "summary": "소셜 로그인 개선, 그림퀴즈, Webserver SSL 적용까지 끄투 생태계에서 만들고 고친 것들.",
+          "featured_image": { "$media": { "url": "/kkutu_screenshot.png", "alt": "끄투 프로젝트 화면", "filename": "kkutu_screenshot.png" } },
+          "content": [{ "_type": "block", "style": "normal", "children": [{ "_type": "span", "text": "끄투에 여러 기능을 기여했고, 이후 직접 서버를 운영하며 실제 사용자가 있는 서비스를 개선하는 경험을 했습니다. Passport.js를 적용한 소셜 로그인, 그림퀴즈, Webserver SSL을 다뤘고 프로젝트는 이후 끄투3로 이어졌습니다.", "_key": "k1" }], "_key": "k0" }]
+        }
+      },
+      {
+        "id": "kuriyamabot", "slug": "kuriyamabot", "status": "published",
+        "data": {
+          "title": "KuriyamaBot: 검색을 돕는 Telegram 봇", "year": "2023",
+          "summary": "Google 검색과 이미지 검색, trace.moe 애니메이션 검색을 한 곳에 모은 Telegram 봇.",
+          "featured_image": { "$media": { "url": "/kuriyamabot_screenshot.png", "alt": "KuriyamaBot 화면", "filename": "kuriyamabot_screenshot.png" } },
+          "url": "https://github.com/dalbodeule/kuriyamabot",
+          "content": [{ "_type": "block", "style": "normal", "children": [{ "_type": "span", "text": "자주 사용하던 검색봇이 안정적으로 작동하지 않아 직접 만든 Telegram 봇입니다. Google 검색, 이미지 검색, trace.moe를 이용한 애니메이션 검색을 지원했습니다.", "_key": "b1" }], "_key": "b0" }]
+        }
+      },
+      {
+        "id": "short-kr", "slug": "short-kr", "status": "published",
+        "data": {
+          "title": "sh0rt.kr: Cloudflare로 만든 URL 단축기", "year": "2024",
+          "summary": "Nuxt 3, TypeScript, OAuth2, Workers, D1, Analytics Engine을 결합한 URL 단축 서비스.",
+          "featured_image": { "$media": { "url": "/favicon.png", "alt": "sh0rt.kr", "filename": "favicon.png" } },
+          "url": "https://github.com/dalbodeule/sh0rt.kr",
+          "content": [{ "_type": "block", "style": "normal", "children": [{ "_type": "span", "text": "sh0rt.kr는 Cloudflare Workers만으로 동작하는 URL 단축기입니다. Nuxt 3와 TypeScript, OAuth2 인증, D1 저장소, Analytics Engine을 연결했습니다.", "_key": "s1" }], "_key": "s0" }]
+        }
+      },
+      {
+        "id": "fastapi-sso-pr", "slug": "fastapi-sso-pr", "status": "published",
+        "data": {
+          "title": "사용자 기능을 고치며 연 오픈소스 PR", "year": "2024",
+          "summary": "맞춤법 검사기의 OAuth 구현 중 발견한 fastapi-sso의 문제를 수정하고 여러 프로젝트에 기여한 기록.",
+          "featured_image": { "$media": { "url": "/favicon.png", "alt": "오픈소스 기여", "filename": "favicon.png" } },
+          "url": "https://github.com/tomasvotava/fastapi-sso",
+          "content": [{ "_type": "block", "style": "normal", "children": [{ "_type": "span", "text": "맞춤법 검사기의 OAuth를 구현하던 중 fastapi-sso 라이브러리의 오류를 발견했고, 재현 과정과 수정 내용을 정리해 PR을 열었습니다. KKuTu와 node-base64-image에도 기여했습니다.", "_key": "p1" }], "_key": "p0" }]
+        }
+      }
+    ]
+  }
+}
