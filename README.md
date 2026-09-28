@@ -4,6 +4,12 @@ Cloudflare EmDash + Astro + Tailwind CSS로 운영하는 개인 포트폴리오�
 
 프로젝트 소개와 기술 글을 모두 EmDash의 `posts` 컬렉션에 게시글 형태로 관리합니다. 기존 작업물은 `seed/seed.json`에 초기 콘텐츠로 옮겨 두었고, 이후 글은 `/_emdash/admin`에서 작성할 수 있습니다.
 
+## 코드 하이라이트
+
+`@masonjames/emdash-syntax-highlighter` 플러그인을 연결했습니다. 관리자 글 편집기에서 `/`를 입력해 `Code Snippet` 블록을 추가하면 서버에서 Shiki 하이라이트가 적용됩니다. 언어, 제목, 강조할 줄, 줄 번호, 복사 버튼, 접기 상태를 블록별로 설정할 수 있고, 플러그인 설정에서 기본 테마와 허용 언어를 조정할 수 있습니다.
+
+현재 패키지의 native entrypoint가 npm에 공개되지 않은 패키지명을 가리키는 문제를 피하기 위해 `src/emdash-syntax-highlighter-plugin.ts`에서 진입점만 프로젝트 로컬로 보정했습니다. 실제 블록 컴포넌트와 관리자 스키마는 원본 패키지를 사용합니다.
+
 ## 로컬 개발
 
 ```bash

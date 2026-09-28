@@ -21,18 +21,21 @@ const page = createPublicPageContext({ Astro, kind: "custom", pageType: type, ti
     <EmDashHead page={page} />
   </head>
   <body>
-    <header class="border-b border-line/80 bg-paper/90 backdrop-blur">
-      <nav class="shell flex h-20 items-center justify-between" aria-label="주 메뉴">
-        <a href="/" class="flex items-center gap-3 text-lg font-bold tracking-tight"><img src="/favicon.png" width="34" height="34" alt="mori.space" class="rounded-xl" />mori.space</a>
-        <div class="hidden items-center gap-6 text-sm font-medium text-ink/65 sm:flex">
-          {(menu?.items || []).map((item) => <a href={item.url} target={item.target} class="hover:text-ink">{item.label}</a>)}
-          <a href="https://blog.mori.space" target="_blank" class="hover:text-ink">블로그 ↗</a>
-          <a href="/_emdash/admin" class="rounded-full bg-ink px-4 py-2 text-paper hover:bg-moss">관리자</a>
+    <header class="sticky top-0 z-20 border-b border-line/80 bg-paper/85 backdrop-blur-xl">
+      <nav class="shell flex h-[4.5rem] items-center justify-between" aria-label="주 메뉴">
+        <a href="/" class="focus-ring flex items-center gap-3 text-[1.05rem] font-bold tracking-[-0.02em]"><img src="/favicon.png" width="32" height="32" alt="mori.space" class="rounded-[0.7rem]" />mori.space</a>
+        <div class="hidden items-center gap-7 text-sm font-medium text-ink/60 sm:flex">
+          {(menu?.items || []).map((item) => <a href={item.url} target={item.target} class="focus-ring hover:text-ink">{item.label}</a>)}
+          <a href="/posts" class="focus-ring hover:text-ink">글</a>
+          <a href="/projects" class="focus-ring hover:text-ink">작업물</a>
+          <a href="/about" class="focus-ring hover:text-ink">소개</a>
+          <a href="https://blog.mori.space" target="_blank" class="focus-ring hover:text-ink">블로그 ↗</a>
+          <a href="/_emdash/admin" class="focus-ring rounded-full bg-ink px-4 py-2 text-paper hover:bg-moss">관리자</a>
         </div>
-        <a href="/posts" class="text-sm font-semibold text-moss sm:hidden">글 보기</a>
+        <a href="/posts" class="focus-ring text-sm font-bold text-moss sm:hidden">글 읽기&nbsp;↗</a>
       </nav>
     </header>
     <main><slot /></main>
-    <footer class="mt-24 border-t border-line/80"><div class="shell flex flex-col gap-3 py-10 text-sm text-ink/60 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 mori.space · 개발과 만든 것들을 기록합니다.</p><a href="mailto:webmaster@mori.space" class="hover:text-ink">webmaster@mori.space</a></div></footer>
+    <footer class="mt-28 border-t border-line/80"><div class="shell flex flex-col gap-3 py-10 text-sm text-ink/55 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 mori.space · 개발과 만든 것들을 기록합니다.</p><a href="mailto:webmaster@mori.space" class="focus-ring hover:text-ink">webmaster@mori.space</a></div></footer>
   </body>
 </html>

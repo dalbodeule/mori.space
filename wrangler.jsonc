@@ -18,7 +18,26 @@
       "bucket_name": "mori-space-media",
     },
   ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "0f71745735e84428a04bc05de1953473",
+    },
+  ],
   "vars": {
     "SITE_URL": "https://mori.space",
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true,
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+    },
   },
 }

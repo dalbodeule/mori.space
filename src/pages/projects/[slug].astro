@@ -6,14 +6,15 @@ const slug = decodeSlug(Astro.params.slug);
 const { entry: project, cacheHint } = await getEmDashEntry("projects", slug || "");
 if (!project) return Astro.redirect("/404");
 if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+const projectData = project.data as any;
 const title = String(project.data.title || "");
 const summary = project.data.summary ? String(project.data.summary) : undefined;
 const featuredImage = project.data.featured_image as any;
-const relatedUrl = project.data.url ? String(project.data.url) : undefined;
+const relatedUrl = projectData.url ? String(projectData.url) : undefined;
 const { entries: related } = await getEmDashCollection("projects", { orderBy: { published_at: "desc" }, limit: 4 });
 const others = related.filter((item) => item.id !== project.id).slice(0, 2);
 ---
 <Base title={title} description={summary} type="article">
-  <article class="shell max-w-4xl pb-24 pt-16 sm:pt-24"><header class="max-w-3xl"><div class="eyebrow">작업물{project.data.year && ` · ${project.data.year}`}</div><h1 class="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-6xl" {...project.edit.title}>{title}</h1>{summary && <p class="mt-6 text-xl leading-8 text-ink/60" {...project.edit.summary}>{summary}</p>}</header>{featuredImage && <div class="mt-12 overflow-hidden rounded-3xl"><Image image={featuredImage} class="max-h-[32rem] w-full object-cover" /></div>}<div class="prose-mori mt-12" {...project.edit.content}><PortableText value={project.data.content as any} /></div>{relatedUrl && <a href={relatedUrl} target="_blank" rel="noreferrer" class="mt-10 inline-block rounded-full bg-ink px-5 py-3 text-sm font-bold text-paper hover:bg-moss">관련 링크 열기 ↗</a>}</article>
+  <article class="shell max-w-4xl pb-24 pt-16 sm:pt-24"><header class="max-w-3xl"><div class="eyebrow">작업물{projectData.year && ` · ${projectData.year}`}</div><h1 class="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-6xl" {...project.edit.title}>{title}</h1>{summary && <p class="mt-6 text-xl leading-8 text-ink/60" {...project.edit.summary}>{summary}</p>}</header>{featuredImage && <div class="mt-12 overflow-hidden rounded-3xl"><Image image={featuredImage} class="max-h-[32rem] w-full object-cover" /></div>}<div class="prose-mori mt-12" {...project.edit.content}><PortableText value={projectData.content} /></div>{relatedUrl && <a href={relatedUrl} target="_blank" rel="noreferrer" class="mt-10 inline-block rounded-full bg-ink px-5 py-3 text-sm font-bold text-paper hover:bg-moss">관련 링크 열기 ↗</a>}</article>
   {others.length > 0 && <section class="border-t border-line py-16"><div class="shell"><p class="eyebrow">More work</p><div class="mt-5 grid gap-5 md:grid-cols-2">{others.map((item) => <a href={`/projects/${item.id}`} class="rounded-2xl border border-line p-5 hover:border-moss"><p class="text-xs font-bold uppercase tracking-widest text-moss">다음 작업물</p><h2 class="mt-3 text-xl font-bold">{item.data.title}</h2><p class="mt-2 text-sm text-ink/60">{item.data.summary}</p></a>)}</div></div></section>}
 </Base>

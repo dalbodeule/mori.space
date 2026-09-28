@@ -5,12 +5,12 @@ const { post, href = `/posts/${post.id}`, kind = "post" } = Astro.props;
 const image = post.data.featured_image;
 const postType = kind === "project" ? "작업물" : "기술 글";
 ---
-<article class="group rounded-3xl border border-line bg-white/50 p-3 shadow-sm shadow-ink/5">
-  {image && <a href={href} class="block overflow-hidden rounded-2xl"><Image image={image} class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" /></a>}
-  <div class="p-4 sm:p-5">
-    <div class="mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink/45"><span>{postType}</span>{post.data.year && <span>· {post.data.year}</span>}</div>
-    <h2 class="text-xl font-bold tracking-tight"><a href={href} class="hover:text-moss">{post.data.title}</a></h2>
-    {post.data.summary && <p class="mt-3 line-clamp-2 text-sm leading-6 text-ink/60">{post.data.summary}</p>}
-    <a href={href} class="mt-5 inline-block text-sm font-bold text-moss">읽어보기 →</a>
+<article class="group flex h-full flex-col border-t border-ink/20 pt-4">
+  {image && <a href={href} class="focus-ring mb-5 block overflow-hidden rounded-2xl bg-moss/10"><Image image={image} class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" /></a>}
+  <div class="flex flex-1 flex-col">
+    <div class="mb-3 flex items-center gap-3 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-ink/45"><span>{postType}</span>{post.data.year && <span>· {post.data.year}</span>}</div>
+    <h2 class="text-[1.35rem] font-bold leading-snug tracking-[-0.025em]"><a href={href} class="focus-ring rounded-sm hover:text-moss">{post.data.title}</a></h2>
+    {post.data.summary && <p class="mt-3 line-clamp-3 text-[0.95rem] leading-7 text-ink/60">{post.data.summary}</p>}
+    <a href={href} class="focus-ring mt-auto pt-6 text-sm font-bold text-moss hover:text-ink">자세히 읽기&nbsp;↗</a>
   </div>
 </article>

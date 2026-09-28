@@ -1,9 +1,10 @@
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
-import { cloudflareStream, d1, r2 } from "@emdash-cms/cloudflare";
+import { d1, r2, kvCache } from "@emdash-cms/cloudflare";
 import { defineConfig } from "astro/config";
 import emdash from "emdash/astro";
 import tailwindcss from "@tailwindcss/vite";
+import { syntaxHighlighterPlugin } from "./src/emdash-syntax-highlighter-plugin";
 
 export default defineConfig({
   output: "server",
@@ -14,7 +15,8 @@ export default defineConfig({
     emdash({
       database: d1({ binding: "DB", session: "auto" }),
       storage: r2({ binding: "MEDIA" }),
-      mediaProviders: [cloudflareStream({})],
+      objectCache: kvCache({ binding: "CACHE" }),
+      plugins: [syntaxHighlighterPlugin()],
     }),
   ],
   devToolbar: { enabled: false },

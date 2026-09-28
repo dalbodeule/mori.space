@@ -11,17 +11,22 @@
 @layer base {
   :root { color-scheme: light; }
   html { scroll-behavior: smooth; }
-  body { @apply bg-paper text-ink antialiased; }
+  body { @apply bg-paper text-ink antialiased; background-image: linear-gradient(to bottom, rgba(216, 222, 215, .18) 1px, transparent 1px); background-size: 100% 8rem; }
   a { @apply transition-colors duration-200; }
+  ::selection { @apply bg-moss text-paper; }
 }
 
 @layer components {
-  .shell { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
-  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.22em] text-moss; }
+  .shell { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12; }
+  .eyebrow { @apply text-[0.7rem] font-bold uppercase tracking-[0.24em] text-moss; }
   .prose-mori { @apply max-w-3xl text-[1.05rem] leading-8 text-ink/80; }
   .prose-mori p { @apply mb-6; }
   .prose-mori h2 { @apply mt-12 mb-4 text-2xl font-bold text-ink; }
   .prose-mori h3 { @apply mt-8 mb-3 text-xl font-bold text-ink; }
   .prose-mori a { @apply font-medium text-moss underline decoration-moss/40 underline-offset-4 hover:text-ink; }
   .prose-mori ul { @apply mb-6 list-disc space-y-2 pl-6; }
+  .focus-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-4 focus-visible:ring-offset-paper; }
+  .button-primary { @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-3 text-sm font-bold text-paper hover:bg-moss focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-4 focus-visible:ring-offset-paper; }
+  .button-secondary { @apply inline-flex items-center justify-center rounded-full border border-line px-5 py-3 text-sm font-bold hover:border-ink hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-4 focus-visible:ring-offset-paper; }
+  .section-rule { @apply flex items-end justify-between border-b border-ink/15 pb-4; }
 }
