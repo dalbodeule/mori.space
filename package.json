@@ -15,21 +15,21 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.3.3",
-    "@astrojs/react": "^7.0.0",
-    "@emdash-cms/cloudflare": "^0.42.0",
+    "@astrojs/cloudflare": "^14.4.2",
+    "@astrojs/react": "^7.1.1",
+    "@emdash-cms/cloudflare": "^1.3.1",
     "@masonjames/emdash-syntax-highlighter": "^0.1.1",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.5",
-    "emdash": "^0.42.0",
+    "astro": "^7.4.2",
+    "emdash": "^1.3.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@cloudflare/workers-types": "^5.20260820.1",
     "typescript": "^5.7.2",
-    "wrangler": "^4.125.0"
+    "wrangler": "^4.151.3"
   }
 }
